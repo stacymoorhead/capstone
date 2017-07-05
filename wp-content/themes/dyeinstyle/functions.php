@@ -7,7 +7,7 @@
  * @package dyeinstyle
  */
 
-if ( ! function_exists( 'dyeinstyle_setup' ) ) :
+if ( ! function_exists( 'custom_theme_for_marias_dye_in_style_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'dyeinstyle_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function dyeinstyle_setup() {
+function custom_theme_for_marias_dye_in_style_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on dyeinstyle, use a find and replace
-	 * to change 'dyeinstyle' to the name of your theme in all the template files.
+	 * to change 'custom-theme-for-marias-dye-in-style' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'dyeinstyle', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'custom-theme-for-marias-dye-in-style', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function dyeinstyle_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'dyeinstyle' ),
+		'menu-1' => esc_html__( 'Primary', 'custom-theme-for-marias-dye-in-style' ),
 	) );
 
 	/*
@@ -60,7 +60,7 @@ function dyeinstyle_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'dyeinstyle_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'custom_theme_for_marias_dye_in_style_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -81,7 +81,7 @@ function dyeinstyle_setup() {
 	) );
 }
 endif;
-add_action( 'after_setup_theme', 'dyeinstyle_setup' );
+add_action( 'after_setup_theme', 'custom_theme_for_marias_dye_in_style_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,44 +90,44 @@ add_action( 'after_setup_theme', 'dyeinstyle_setup' );
  *
  * @global int $content_width
  */
-function dyeinstyle_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dyeinstyle_content_width', 640 );
+function custom_theme_for_marias_dye_in_style_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'custom_theme_for_marias_dye_in_style_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'dyeinstyle_content_width', 0 );
+add_action( 'after_setup_theme', 'custom_theme_for_marias_dye_in_style_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function dyeinstyle_widgets_init() {
+function custom_theme_for_marias_dye_in_style_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'dyeinstyle' ),
+		'name'          => esc_html__( 'Sidebar', 'custom-theme-for-marias-dye-in-style' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'dyeinstyle' ),
+		'description'   => esc_html__( 'Add widgets here.', 'custom-theme-for-marias-dye-in-style' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'dyeinstyle_widgets_init' );
+add_action( 'widgets_init', 'custom_theme_for_marias_dye_in_style_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function dyeinstyle_scripts() {
-	wp_enqueue_style( 'dyeinstyle-style', get_stylesheet_uri() );
+function custom_theme_for_marias_dye_in_style_scripts() {
+	wp_enqueue_style( 'custom-theme-for-marias-dye-in-style-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'dyeinstyle-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'custom-theme-for-marias-dye-in-style-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'dyeinstyle-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'custom-theme-for-marias-dye-in-style-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'dyeinstyle_scripts' );
+add_action( 'wp_enqueue_scripts', 'custom_theme_for_marias_dye_in_style_scripts' );
 
 /**
  * Implement the Custom Header feature.
