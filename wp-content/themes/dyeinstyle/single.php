@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package dyeinstyle
+ * @package Dye_in_Style
  */
 
 get_header(); ?>

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dyeinstyle
+ * @package Dye_in_Style
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

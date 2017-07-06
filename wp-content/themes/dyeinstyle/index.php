@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package dyeinstyle
+ * @package Dye_in_Style
  */
 
 get_header(); ?>

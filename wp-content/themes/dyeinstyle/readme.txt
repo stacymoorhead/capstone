@@ -1,4 +1,4 @@
-=== dyeinstyle ===
+=== Dye in Style ===
 
 Contributors: automattic
 Tags:
@@ -9,11 +9,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called dyeinstyle.
+A starter theme called Dye in Style.
 
 == Description ==
 
-Description
+Custom theme for Maria\'s Dye in Style
 
 == Installation ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-dyeinstyle includes support for Infinite Scroll in Jetpack.
+Dye in Style includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

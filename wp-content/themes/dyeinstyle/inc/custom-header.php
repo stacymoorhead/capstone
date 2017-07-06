@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package dyeinstyle
+ * @package Dye_in_Style
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses custom_theme_for_marias_dye_in_style_header_style()
+ * @uses dyeinstyle_header_style()
  */
-function custom_theme_for_marias_dye_in_style_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'custom_theme_for_marias_dye_in_style_custom_header_args', array(
+function dyeinstyle_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'dyeinstyle_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'custom_theme_for_marias_dye_in_style_header_style',
+		'wp-head-callback'       => 'dyeinstyle_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'custom_theme_for_marias_dye_in_style_custom_header_setup' );
+add_action( 'after_setup_theme', 'dyeinstyle_custom_header_setup' );
 
-if ( ! function_exists( 'custom_theme_for_marias_dye_in_style_header_style' ) ) :
+if ( ! function_exists( 'dyeinstyle_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see custom_theme_for_marias_dye_in_style_custom_header_setup().
+ * @see dyeinstyle_custom_header_setup().
  */
-function custom_theme_for_marias_dye_in_style_header_style() {
+function dyeinstyle_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

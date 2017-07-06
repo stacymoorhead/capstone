@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package dyeinstyle
+ * @package Dye_in_Style
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php custom_theme_for_marias_dye_in_style_posted_on(); ?>
+			<?php dyeinstyle_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -31,7 +31,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'custom-theme-for-marias-dye-in-style' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dyeinstyle' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -42,13 +42,13 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'custom-theme-for-marias-dye-in-style' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dyeinstyle' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php custom_theme_for_marias_dye_in_style_entry_footer(); ?>
+		<?php dyeinstyle_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

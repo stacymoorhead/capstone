@@ -1,13 +1,13 @@
 /*!
-Theme Name: dyeinstyle
-Theme URI: http://underscores.me/
+Theme Name: Dye in Style
+Theme URI: https://github.com/stacymoorhead/capstone
 Author: Stacy Moorhead
 Author URI: http://www.stacylauren.com
-Description: Description
+Description: Custom theme for Maria's Dye in Style
 Version: 1.0.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: custom-theme-for-marias-dye-in-style
+License URI: http://www.gnu.org/license/gpl-2.0.html
+Text Domain: dyeinstyle
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -86,14 +86,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
 # Infinite scroll
