@@ -64,7 +64,7 @@ function dyeinstyle_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );*/
-
+	
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -76,6 +76,7 @@ function dyeinstyle_setup() {
 	add_theme_support( 'custom-logo', array(
 		'height'      => 250,
 		'width'       => 250,
+		'max-height'  => 200,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -86,7 +87,7 @@ add_action( 'after_setup_theme', 'dyeinstyle_setup' );
 /**
  * Add preconnect for Google Fonts.
  *
- * @since Twenty Seventeen 1.0
+ * @since Dye in Style 1.0
  *
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.

@@ -22,7 +22,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
+# Bootstrap
 # Typography
 # Elements
 # Forms
@@ -40,6 +40,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Bootstrap DISABLED
+
+@import "../gulp-dev/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -378,7 +383,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: url("images/greyfloral_2X.png") repeat fixed #fff;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -431,7 +436,7 @@ img {
 }
 
 figure {
-	margin: 1em 0;
+	margin: 0;
 	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
@@ -553,60 +558,80 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
+/*.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
-}
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
+			ul {
+				left: -999em;
+				top: 0;
+			}
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
 
-.main-navigation ul ul a {
-	width: 200px;
-}
+			a {
+				width: 200px;
+			}
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
+			:hover > a,
+			.focus > a {
+			}
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
+			a:hover,
+			a.focus {
+			}
+		}
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
 }
 
 /* Small menu. */
-.menu-toggle,
+/*.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -618,8 +643,7 @@ a:hover, a:active {
 	.main-navigation ul {
 		display: block;
 	}
-}
-
+}*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -740,12 +764,283 @@ a:hover, a:active {
 ## Global layouts
 --------------------------------------------------------------*/
 .site-content {
+	margin-top: -4px;
+	background-color: trans(white, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 	padding: 1em;
 }
 
 @media screen and (min-width: 600px) {
 	.site-content {
 		padding: 2em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+	position: relative;
+	padding: 1em;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: white;
+	background-color: black;
+}
+
+@media screen and (min-width: 600px) {
+	.site-header {
+		padding: 1em 2em;
+	}
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-family: "Grand Hotel", Georgia, Cambria, cursive;
+	font-size: 2em;
+	font-weight: 400;
+	line-height: 1em;
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+.site-title a {
+	color: white;
+	text-decoration: none;
+}
+
+.site-title a:hover, .site-title a:focus {
+	text-decoration: none;
+	color: #d2c7e2;
+}
+
+.header-image {
+	position: relative;
+	max-height: 60vh;
+	overflow: hidden;
+	z-index: 0;
+	background-color: black;
+}
+
+.header-image img {
+	position: relative;
+	display: block;
+	width: 100vw;
+	opacity: 0.55;
+}
+
+.logo-description {
+	position: absolute;
+	top: 50px;
+	margin: 0 2em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+@media screen and (min-width: 900px) {
+	.logo-description {
+		margin: 0 15em;
+	}
+}
+
+.custom-logo {
+	width: 25%;
+	height: auto;
+	margin-right: 3em;
+}
+
+.custom-logo img {
+	opacity: 1;
+}
+
+.site-description {
+	width: 70%;
+	font-weight: 100;
+	font-size: 1.4em !important;
+	line-height: 1.3em;
+	color: white;
+	text-shadow: 1px 1px 3px black;
+}
+
+@media screen and (min-width: 900px) {
+	.site-description {
+		font-size: 1.6em !important;
+	}
+}
+
+.divider {
+	position: relative;
+	z-index: 100;
+	margin: -4px 0 0 0;
+	padding: 0;
+	height: 8px;
+	background: url("images/divider.svg") repeat-x;
+	background-size: auto 8px;
+}
+
+@media screen and (min-width: 900px) {
+	.site-header {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+	.site-branding {
+		width: 35%;
+	}
+	.site-navigation {
+		width: 55%;
+	}
+}
+
+.main-navigation {
+	display: block;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 400;
+	clear: left;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	display: none;
+	top: 1.5em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	top: 0;
+}
+
+.main-navigation ul ul li {
+	padding-left: 1em;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: inline-block;
+	width: 100%;
+	padding: .5em 1em .5em 0;
+	text-decoration: none;
+	color: #d2c7e2;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	text-decoration: underline;
+}
+
+.main-navigation .menu-item-has-children,
+.main-navigation .page-item-has-children {
+	min-width: 218px;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a {
+	padding-right: 2em;
+}
+
+button.dropdown-toggle {
+	position: absolute;
+	right: 0;
+	border: none;
+	background: inherit;
+	color: white;
+	line-height: 1.5em;
+	padding: .4em 1em .4em .5em;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	margin: 1.2em 1.2em 0 0;
+	padding: .6em .8em;
+	font-size: 80%;
+	text-transform: uppercase;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Toggle small menu and sub-menus on */
+.toggled-on ul,
+.sub-menu.toggled-on {
+	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation .menu-item-has-children > a,
+	.main-navigation .page_item_has_children > a {
+		padding-right: 2em;
+		background: rgba(255, 255, 255, 0.1);
+	}
+	.main-navigation ul {
+		display: block;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.main-navigation ul ul {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: 0;
+	}
+	.main-navigation ul ul li {
+		padding-left: 0;
+	}
+	.main-navigation ul ul li a {
+		width: 218px;
+		background: none;
+	}
+	.main-navigation ul li a {
+		padding: .4em 1em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.main-navigation ul {
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		padding-top: 0;
 	}
 }
 

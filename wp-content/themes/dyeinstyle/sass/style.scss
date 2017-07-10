@@ -23,7 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
+# Bootstrap
 # Typography
 # Elements
 # Forms
@@ -44,6 +44,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Bootstrap DISABLED
+
+@import "../gulp-dev/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Normalize

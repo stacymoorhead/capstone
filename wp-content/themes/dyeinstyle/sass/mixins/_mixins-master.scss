@@ -22,3 +22,15 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+//Transparent background colors
+@mixin transparent($type, $color, $percentage) {
+    @if $type == color {
+        color: trans($color, $percentage);
+        color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+        background-color: trans($color, $percentage);
+        background-color: rgba($color, $percentage);
+    }
+}
