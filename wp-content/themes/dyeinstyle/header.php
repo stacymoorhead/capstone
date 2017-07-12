@@ -22,7 +22,15 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dyeinstyle' ); ?></a>
-
+	<div class="info">
+		<div class="social-top">
+			<a href="https://www.facebook.com/pg/mariasdyeinstyle"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/explore/locations/330212585/marias-dye-in-style/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+		</div>
+		<div class="contact-info">
+			215.785.1234 <button class="appointment">BOOK APPOINTMENT</button>
+		</div>
+	</div>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

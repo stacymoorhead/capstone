@@ -141,7 +141,7 @@ add_action( 'widgets_init', 'dyeinstyle_widgets_init' );
 function dyeinstyle_scripts() {
 	//Enqueue Google Fonts: Muli and Grand Hotel
 	wp_enqueue_style( 'dyeinstyle-fonts', 'https://fonts.googleapis.com/css?family=Grand+Hotel|Muli:400,400i,700,800' );
-	
+
 	wp_enqueue_style( 'dyeinstyle-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'dyeinstyle-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -153,6 +153,14 @@ function dyeinstyle_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dyeinstyle_scripts' );
+
+// Load Font Awesome
+	add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
+	function enqueue_font_awesome() {
+	
+		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+	
+	}
 
 /**
  * Implement the Custom Header feature.

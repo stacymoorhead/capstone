@@ -56,11 +56,11 @@ gulp.task('javascript', function() {
 
 // Watch everything
 gulp.task('watch', function() {
-	browserSync.init({ 
+	/*browserSync.init({ 
 		open: 'external',
 		proxy: 'http://capstone-stacymoorhead.c9users.io/',
 		port: 8080
-	});
+	});*/
 	gulp.watch([root + '**/*.css', root + '**/*.scss' ], ['css']);
 	gulp.watch(js + '**/*.js', ['javascript']);
 	gulp.watch(img + 'RAW/**/*.{jpg,JPG,png}', ['images']);

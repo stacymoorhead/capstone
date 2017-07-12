@@ -10,6 +10,63 @@
     }
 }
 
+.info {
+	position: relative;
+	background: url('images/greyfloral.png') repeat;
+	width: 100%;
+	padding: .5em;
+	color: $color__red;
+	font-weight: 800;
+	font-size: .8em;
+	text-transform: uppercase;
+	display: block;
+	box-sizing: border-box;
+	
+	@include clearfix;
+	@media screen and (min-width: $query__small) {
+        padding: .5em 3em;
+    }
+}
+
+.social-top {
+	width: 100%;
+	display: none;
+	float: left;
+	clear: both;
+	text-align: center;
+	font-size: 1.4em;
+	letter-spacing: .5em;
+	
+	@media screen and (min-width: $query__mobile) {
+		display: block;
+		width: 35%;
+		clear: none;
+		text-align: left;
+		float: left;
+    }
+}
+
+.contact-info {
+	width: 100%;
+	display: block;	
+	position: relative;
+	float: left;
+	clear: both;
+	text-align: center;
+	letter-spacing: .15em;
+	
+	@media screen and (min-width: $query__mobile) {
+		width: 65%;
+		clear: none;
+		text-align: right;
+		float: left;
+    }
+}
+
+.site-branding {
+    width: 60%;
+}
+
 .site-title {
 	margin: 0;
 	padding: 0;
@@ -104,5 +161,3 @@
         width: 55%;
     }
 }
-
-@import "header-menu";

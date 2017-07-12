@@ -34,3 +34,85 @@
         background-color: rgba($color, $percentage);
     }
 }
+
+//Hover effect
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+//Buttons
+@mixin button($color_1, $color_2) {
+    font-family: $font__sans;
+    font-weight: 800;
+    text-transform: uppercase;
+	color: $color_1;
+	border: 2px solid $color_1;
+	transition: $transition;
+	&:link {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_1;
+	}
+	&:hover {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_2;
+		fill: $color_2;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:active {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_2;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_2;
+		outline: 5px auto $color_1;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:visited {
+		background-color: transparent;
+		border-color: $color_1;
+	}
+}
