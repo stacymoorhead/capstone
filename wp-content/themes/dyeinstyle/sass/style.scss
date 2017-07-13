@@ -47,14 +47,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 /*--------------------------------------------------------------
 # Bootstrap DISABLED
-
-@import "../gulp-dev/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 --------------------------------------------------------------*/
+@import "../gulp-dev/node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 
 /*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
+# Normalize DISABLED DUE TO BOOTSTRAP
 @import "normalize";
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Typography

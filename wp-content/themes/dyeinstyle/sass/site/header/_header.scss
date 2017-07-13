@@ -1,3 +1,11 @@
+.fixed {
+	width: 100%;
+	display: block;
+	clear: both;
+	position: fixed;
+	z-index: 999;
+}
+
 .site-header {
     position: relative;
     padding: 1em;
@@ -14,7 +22,7 @@
 	position: relative;
 	background: url('images/greyfloral.png') repeat;
 	width: 100%;
-	padding: .5em;
+	padding: .5em 1em;
 	color: $color__red;
 	font-weight: 800;
 	font-size: .8em;
@@ -29,11 +37,11 @@
 }
 
 .social-top {
-	width: 100%;
-	display: none;
+	width: 35%;
+	display: block;
 	float: left;
-	clear: both;
-	text-align: center;
+	clear: none;
+	text-align: left;
 	font-size: 1.4em;
 	letter-spacing: .5em;
 	
@@ -47,12 +55,12 @@
 }
 
 .contact-info {
-	width: 100%;
+	width: 65%;
 	display: block;	
 	position: relative;
 	float: left;
-	clear: both;
-	text-align: center;
+	clear: none;
+	text-align: right;
 	letter-spacing: .15em;
 	
 	@media screen and (min-width: $query__mobile) {
@@ -60,6 +68,11 @@
 		clear: none;
 		text-align: right;
 		float: left;
+    }
+    
+    span {
+    	display: inline-block;
+    	padding-top: 4px;
     }
 }
 
@@ -95,6 +108,7 @@
 	overflow: hidden;
 	z-index: 0;
 	background-color: black;
+	padding-top: 108px;
 	
 	img {
 		position: relative;
@@ -105,13 +119,33 @@
 }
 
 .logo-description {
-	position: absolute;
+	/*position: absolute;
 	top: 50px;
 	margin: 0 2em;
 	display: flex;
 	align-items: center;
 	@media screen and (min-width: $query__medium) {
     	margin: 0 15em;
+    }*/
+    position: absolute;
+    padding-top: 108px;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: $query__mobile) {
+		@include center(350px, 75px);
+    }    
+    @media screen and (min-width: $query__small) {
+		@include center(600px, 300px);
+    }	
+   
+	@media screen and (min-width: $query__large) {
+		@include center(1000px, 300px);
+		font-size: 1.2em;
+    }	
+    
+    @media screen and (min-width: $query__x-large) {
+		@include center(1200px, 300px);
+		font-size: 1.8em;
     }
 }
 
@@ -125,12 +159,15 @@
 }
 
 .site-description {
-	width: 70%;
+	width: 75%;
     font-weight: 100;
     font-size: 1.4em !important;
     line-height: 1.3em;
     color: white;
     text-shadow: 1px 1px 3px black;
+    @media screen and (min-width: $query__mobile) {
+		font-size: 1.2em !important;
+    }     
     
     @media screen and (min-width: $query__medium) {
     	font-size: 1.6em !important;

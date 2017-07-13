@@ -3,12 +3,13 @@ a {
 	transition: $transition;
 
 	&:visited {
-		color: $color__dark-red
+		color: $color__dark-red;
 	}
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color__dark-red;
+		text-decoration: none;
 	}
 	&:focus {
 		outline: thin dotted;

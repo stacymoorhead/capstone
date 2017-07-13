@@ -5,6 +5,7 @@ input[type="submit"] {
 	@include button($color__red, $color__red)
 	@include font-size(0.75);
 	line-height: 1;
+	letter-spacing: .1em;
 	padding: .6em 1em;
 	background: transparent;
 
@@ -22,7 +23,7 @@ input[type="submit"] {
 
 .appointment {
 	margin-left: 2em;
-	padding: .3em 1em;
+	padding: .5em 1em;
 	&:hover {
 		border-color: $color__dark-red;
 		color: $color__dark-red;
@@ -36,5 +37,28 @@ input[type="submit"] {
 	
 	@media screen and (max-width: $query__mobile) {
 		display: none;
+	}
+}
+
+.edit-link, .comment-edit-link, .comment-reply-link {
+	margin-left: 1em;
+	padding: .3em 1em;
+	&:hover {
+		border-color: $color__dark-red;
+		color: $color__dark-red;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__dark-red;
+		color: $color__dark-red;
+	}
+	
+	a {
+			font-size: .8em
+	}
+	
+	a:hover {
+		text-decoration: none;
 	}
 }

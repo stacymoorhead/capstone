@@ -21,31 +21,33 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dyeinstyle' ); ?></a>
-	<div class="info">
-		<div class="social-top">
-			<a href="https://www.facebook.com/pg/mariasdyeinstyle"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="https://www.instagram.com/explore/locations/330212585/marias-dye-in-style/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+	<div class="fixed">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dyeinstyle' ); ?></a>
+		<div class="info">
+			<div class="social-top">
+				<a href="https://www.facebook.com/pg/mariasdyeinstyle"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/explore/locations/330212585/marias-dye-in-style/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+			</div>
+			<div class="contact-info">
+				<span><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</span> <a href="get.mndbdy.ly/s1ud/7ZaMvFfNBr"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+			</div>
 		</div>
-		<div class="contact-info">
-			215.785.1234 <button class="appointment">BOOK APPOINTMENT</button>
-		</div>
-	</div>
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dyeinstyle' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<header id="masthead" class="site-header">
+			<div class="site-branding">
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			</div><!-- .site-branding -->
+	
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i> <?php esc_html_e( 'Menu', 'dyeinstyle' ); ?></button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'main-nav',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+			</nav><!-- #site-navigation -->
+		</header><!-- #masthead -->
+	</div><!-- .fixed -->	
 	<div class="header-image">
 		<?php the_header_image_tag(); //custom header image?> 
 		<div class="logo-description">

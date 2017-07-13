@@ -7,3 +7,23 @@
         padding: 2em;
     }
 }
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    
+    @media screen and (min-width: $query__large) {
+        width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.content-area {
+    width: 100%;
+    box-sizing: border-box;
+    
+    @media screen and (min-width: $query__large) {
+        width: 1000px;
+        margin: 0 auto;
+    }
+}

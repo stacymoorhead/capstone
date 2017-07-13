@@ -44,7 +44,11 @@ function dyeinstyle_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'dyeinstyle' ),
+		'main-nav' => esc_html__( 'Main Navigation', 'dyeinstyle' ),
+		'footer-social' => esc_html__( 'Footer Social', 'dyeinstyle' ),
+		'header-social' => esc_html__( 'Header Social', 'dyeinstyle' ),
+		'hours' => esc_html__( 'Hours', 'dyeinstyle' ),
+		
 	) );
 
 	/*
