@@ -12,6 +12,7 @@
     font-family: $font__sans;
     color: white;
     background-color: black;
+    @include clearfix;
     
     @media screen and (min-width: $query__small) {
         padding: 1em 2em;
@@ -77,7 +78,7 @@
 }
 
 .site-branding {
-    width: 60%;
+    width: 50%;
 }
 
 .site-title {

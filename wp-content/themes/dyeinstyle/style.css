@@ -8237,9 +8237,10 @@ a:hover, a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-	position: absolute;
+	float: right;
+	/*position: absolute;
 	right: 1em;
-	top: 1em;
+	top: 1em;*/
 }
 
 .menu-toggle {
@@ -8354,6 +8355,47 @@ a:hover, a:active {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		padding-top: 0;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.site-branding {
+		width: 50%;
+		float: left;
+		clear: none;
+	}
+	.main-navigation {
+		clear: none;
+		display: block;
+		float: right;
+		width: 50%;
+	}
+	.main-navigation ul {
+		width: 100%;
+		background-color: trans(#333333, 0.95);
+		background-color: rgba(51, 51, 51, 0.95);
+	}
+	.main-navigation ul ul {
+		display: block;
+		clear: both;
+	}
+	.main-navigation ul ul li {
+		display: block;
+		clear: both;
+		padding: 0 1em;
+	}
+	.main-navigation ul li {
+		display: block;
+		clear: both;
+		padding: 0 1em;
+	}
+	.main-navigation ul ul {
+		display: block;
+		position: relative;
+		clear: both;
+	}
+	.main-navigation ul ul li {
+		display: block;
 	}
 }
 
@@ -8535,6 +8577,15 @@ a:hover, a:active {
 	background-color: black;
 }
 
+.site-header:before, .site-header:after {
+	content: " ";
+	display: table;
+}
+
+.site-header:after {
+	clear: both;
+}
+
 @media screen and (min-width: 600px) {
 	.site-header {
 		padding: 1em 2em;
@@ -8614,7 +8665,7 @@ a:hover, a:active {
 }
 
 .site-branding {
-	width: 60%;
+	width: 50%;
 }
 
 .site-title {

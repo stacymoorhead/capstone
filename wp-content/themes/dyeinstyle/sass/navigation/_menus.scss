@@ -88,9 +88,10 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-	position: absolute;
+	float: right;
+	/*position: absolute;
 	right: 1em;
-	top: 1em;
+	top: 1em;*/
 }
 
 .menu-toggle {
@@ -161,5 +162,56 @@
 			padding-top: 0;
 		}
 		
+	}
+}
+
+@media screen and (max-width: $query__medium) {
+	.site-branding {
+	    width: 50% ;
+	    float: left;
+	    clear: none;
+	}
+	
+	.main-navigation {
+	    clear: none;
+	    display: block;
+	    float: right;
+	    width: 50%;
+	}
+	.main-navigation {
+		ul {
+			width: 100%;
+			@include transparent(bg, $color__dark-gray, .95);
+			
+			li {
+
+			}
+			ul {
+				display: block;
+				clear: both;
+				
+				li {
+					display: block;
+					clear: both;
+					padding: 0 1em;
+				}
+			}
+			li {
+				display: block;
+				clear: both;
+				padding: 0 1em;
+			}
+			
+			ul {
+				display: block;
+				position: relative;
+				clear: both;
+				
+				li {
+					display: block;
+				}
+			}
+
+		}
 	}
 }
