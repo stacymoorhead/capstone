@@ -172,28 +172,71 @@
 	    clear: none;
 	}
 	
+	.nav-menu {
+		position: absolute;
+	    top: 46px;
+	    right: 2em;
+	    width: 250px;
+	    padding: 1em 0;
+	    
+	    @media screen and (max-width: $query__mobile) {
+	    	right: 1em;
+	    }
+	}
+
 	.main-navigation {
 	    clear: none;
 	    display: block;
 	    float: right;
-	    width: 50%;
-	}
-	.main-navigation {
+	    width: 50%;		
 		ul {
-			width: 100%;
-			@include transparent(bg, $color__dark-gray, .95);
+			width: 250px;
+			@include transparent(bg, black, .95);
 			
 			li {
+				width: 250px;
+				a {
+					padding: .25em;
+   					font-size: .8em;
+   					color: $color__light-purple;
+				}
+				
+				ul {
+					width: 100%;
+					background: transparent;
+				}				
 
 			}
 			ul {
 				display: block;
+				width: 100%;
 				clear: both;
+				box-shadow: none;
+			    float: left;
+			    position: absolute;
+			    top: 100%;
+			    left: 0;
+			    z-index: 99999;
+			    opacity: 1;
+			    transition: none;
 				
 				li {
 					display: block;
 					clear: both;
 					padding: 0 1em;
+					width: 250px;
+					
+					ul, &:hover, &:focus {
+						left: 0;
+						opacity: 1;
+						transition: none; 
+					}
+					
+					&:hover > ul {
+						left: 0;
+						opacity: 1;
+						transition: none; 
+					}
 				}
 			}
 			li {

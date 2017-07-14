@@ -101,6 +101,10 @@
 			color: $color__light-purple;
 		}
 	}
+	
+	@media screen and (max-width: $query__mobile) {
+		font-size: 1.8em;
+	}
 }
 
 .header-image {
@@ -117,6 +121,10 @@
 		width: 100vw;
 		opacity: 0.55;
 	}
+	
+	@media screen and (max-width: $query__mobile) {
+		padding-top: 95px;
+	}
 }
 
 .logo-description {
@@ -128,12 +136,19 @@
 	@media screen and (min-width: $query__medium) {
     	margin: 0 15em;
     }*/
+    width: 100%;
+   	padding: 0 1em;
     position: absolute;
+    top: 0;
     padding-top: 108px;
     display: flex;
     align-items: center;
+
     @media screen and (min-width: $query__mobile) {
-		@include center(350px, 75px);
+		@include center(600px, 300px);
+
+		top: 50%;
+		left: 50%;
     }    
     @media screen and (min-width: $query__small) {
 		@include center(600px, 300px);
@@ -151,23 +166,32 @@
 }
 
 .custom-logo {
-	width: 25%;
+	width: 30%;
 	height: auto;
-	margin-right: 3em;
+	margin: 0 auto;
 	img {
+		width: 100%;
 		opacity: 1;
 	}
+	
+    @media screen and (min-width: $query__mobile) {
+		/*width: 25%;*/
+		margin-right: 3em;
+    }	
 }
 
 .site-description {
+	display: none;
 	width: 75%;
     font-weight: 100;
-    font-size: 1.4em !important;
+    font-size: 1em !important;
     line-height: 1.3em;
     color: white;
     text-shadow: 1px 1px 3px black;
     @media screen and (min-width: $query__mobile) {
+    	display: block;
 		font-size: 1.2em !important;
+		width: 60%;
     }     
     
     @media screen and (min-width: $query__medium) {

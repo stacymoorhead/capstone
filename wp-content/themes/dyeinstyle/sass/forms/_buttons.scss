@@ -62,3 +62,9 @@ input[type="submit"] {
 		text-decoration: none;
 	}
 }
+
+@media screen and (max-width: $query__mobile) {
+	.edit-link {
+		margin: 1em;
+	}
+}
