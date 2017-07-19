@@ -40,13 +40,13 @@ get_header(); ?>
 					  'post_status' => 'publish',
 					  
 					 );
-					 
+					  
 					$services = new WP_Query( $args );
 					if( $services->have_posts() ) :
 					      while( $services->have_posts() ) :
 					        $services->the_post();
 					        ?>
-					          <div class="service"><?php printf( '<figure>%1$s</figure> <h3>%2$s</h3>', get_the_post_thumbnail(), get_the_title() );  ?></div>
+					          <a href="<?php the_field('service_page_url') ?>"><div class="service"><?php printf( '<figure>%1$s</figure> <h3>%2$s</h3>', get_the_post_thumbnail(), get_the_title() );  ?></div></a>
 					        <?php
 					      endwhile;
 					      wp_reset_postdata();
@@ -59,7 +59,13 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
 get_sidebar();
+?>
+
+<?php 
+get_template_part( 'template-parts/content', 'instagram' ); 
+?>
+
+<?php	
 get_footer();

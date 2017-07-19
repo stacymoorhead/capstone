@@ -1,0 +1,792 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy instagram feed\n"
+"POT-Creation-Date: 2016-12-28 13:32+0530\n"
+"PO-Revision-Date: 2016-12-28 13:33+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress-plugin-lite\\wp-content"
+"\\plugins\\easy-instagram-feed\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress-plugin-lite\\wp-content"
+"\\plugins\\easy-instagram-feed\n"
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:85
+msgid "Easy Instagram Feed"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:106
+msgid "Sorry given field are not correct"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:115
+msgid "Settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:120
+msgid "Instagram Feed Plugin"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:128
+msgid "General Settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:130
+msgid "Design Customization"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:132
+msgid "Custom CSS and JS"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:134
+msgid "Display Your Feeds"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:136
+msgid "Get The Premium Version"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:138
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:315
+msgid "Show some love"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:140
+msgid "FAQ"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:154
+msgid ""
+"Add the shortcode <strong>[easyinstagramfeed]</strong> to display instagram "
+"feeds."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:250
+msgid "What you get in pro version"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:253
+msgid "Video type media support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:254
+msgid ""
+"In the pro verison you can show video type items in the instagram feed. "
+"LightBox pop up will play the video."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:257
+msgid "Hashtags support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:258
+msgid ""
+"Get feeds by the hashtags. Say if you set adidas and sports as the tags than "
+"you will recieves those media items in feed which have atleast both the tags."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:261
+msgid "Common hashtags feed support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:262
+msgid ""
+"By default Instagram shows all the feeds from the multiple hashtags. Right "
+"now instagram did not have a feature to show feeds common in the multiple "
+"hastags. The pro version does have a feature to display only those feeds "
+"common in the multiple hashtags."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:265
+msgid "User feed filtering by hashtag"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:266
+msgid ""
+"As you know that instagram has no phenomena which allow you to display user "
+"feed tagged by specific hash tags, so , we have added a feature to do it."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:269
+msgid "Lightbox support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:270
+msgid ""
+"By default the lightbox is active that if you click on any of the image / "
+"video , than you get the nice piece of lightBox  overlay. In this overlay "
+"window you can watch video, navigate to other images, share the items on "
+"insatragam  etc etc. You can also disable it if you dint want to use "
+"lightbox."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:273
+msgid "Socialise feeds"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:274
+msgid ""
+"Share the feed items on Instagram as well as other social services like "
+"Facebook, Twitter, Google Plus, LinkedIn, Pinterest, Reddit and Stumbleupon."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:277
+msgid "Configure caption"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:278
+msgid ""
+"Easy control over the media caption. You can hide, style, specify the limit "
+"of text to show by default."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:281
+msgid "Configure like and share icon"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:282
+msgid ""
+"You can add the like and share icons by selecting the checkbox. You can also "
+"change the icon colors."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:285
+msgid "Header support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:286
+msgid ""
+"Show you instagram profile picture along with the name. You can also change "
+"the text color in the header."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:291
+msgid "Pricing"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:292
+msgid ""
+"The pro version is priced at very reasonable 29 USD and entitles you to "
+"receive support and updates for 1 year. <br><br>If you need updates and "
+"support after one year, then simply renew the license. If not, then you may "
+"keep using the plugin. <br><br>You may use the plugin on any number of "
+"websites you want"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:293
+msgid "How to purchase"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:294
+msgid ""
+"If you are interested then you can buy the plugin <a target =\"_blank\" href="
+"\"http://webriti.com/instagram-feed/\"> here</a>. I hope you will also enjoy "
+"working with us."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:297
+msgid "Cheers"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:299
+msgid "Co-Founder, Webriti Themes and Plugins"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:318
+msgid "Like this plugin? Support us by"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:320
+msgid "Buy it"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:322
+msgid "Rate it"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:323
+msgid "Tweet it"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:342
+msgid "Common issues"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:347
+msgid "Feeds not displaying"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:349
+msgid ""
+"The heart of this plugin is javascript, so, its a very good chance that the "
+"plugin will face javascript conflicts with others themes and plugins. In "
+"this case, always check for the errors in the console, try to deactivate the "
+"plugin one by one and see whether you are still facing the same issue. "
+"Sometimes it has seen that the plugin did not work with the theme itself, "
+"again, the main issue is of javascript conflict, So, in this case, try with "
+"the others themes like twenty fourteen, twenty twelve etc. If nothing works "
+"then do let us know about the issue."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:351
+msgid ""
+"After taking all measures mentioned above, if you are still facing the "
+"issue, than check wither your access token is correct or not by using this "
+"link <b>https://api.instagram.com/v1/users/self/feed?access_token=ACCESS-"
+"TOKEN</b> Replace  ACCESS-TOKEN in the url with your access token . If you "
+"get the output as \"The access_token provided is invalid\" than definitely "
+"you are using the wrong access token. Get the correct access token by "
+"reauthenticating the plugin as shown in general settings."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:356
+msgid "How to display Instagram feed on post/page?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:358
+msgid ""
+"After plugin activation Go to \"Easy Instagram feed\" option panel, "
+"configure it and add the shortcode <b>[easyinstagramfeed]</b> in the "
+"WordPress Post/Pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:365
+msgid "What is the minimum requirement to run the shortcode?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:367
+msgid ""
+"User id and access token are mandatory. Note, you can use single access "
+"token for multiple user ids."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:374
+msgid "How to display different feeds on different pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:376
+msgid ""
+"Add different shortcodes on different pages ie if you want to show 2 user "
+"feeds on different pages than add <b><i>[easyinstagramfeed userid="
+"\"1591885187\"]</i></b> to one page and add <b><i>[easyinstagramfeed userid="
+"\"1631861081\"]</i></b> to another page."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:382
+msgid "How to get user ID?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:384
+msgid ""
+"Go to general settings and get the user from there or use the this third "
+"party <a target =\"_blank\" href=\"http://webriti.com/instagramuserid/"
+"instagramuserid.php\"> tool </a>"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:391
+msgid "How to display multiple accounts feeds on pages?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:393
+msgid ""
+"I am assuming that you have authorized the app with your Instagram account "
+"ie you have the access token. Add the shortcode <b><i>[easyinstagramfeed "
+"userid=\"1591885187,1631861081\"]</i></b> to wordpress page."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:398
+msgid "Facing other issues."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/easyfeed.php:400
+msgid "click here"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/custome_css_and_js.php:18
+msgid "Custom CSS"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/custome_css_and_js.php:19
+msgid "<strong>Note:</strong> Only enter CSS without style tag."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/custome_css_and_js.php:28
+msgid "Custom JavaScript"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/custome_css_and_js.php:29
+msgid "<strong>Note:</strong> Enter JS without script tag."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:111
+msgid "Customize feed area"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:116
+msgid "Width of feed area"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:120
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:131
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:199
+msgid "px"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:121
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:132
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:200
+msgid "%"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:127
+msgid "Height of feed area"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:138
+msgid "Background color of feed section"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:148
+msgid "Photos"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:150
+msgid "Order by"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:153
+msgid "Newest to Oldest"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:154
+msgid "Random"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:159
+msgid "Number of photos"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:162
+msgid ""
+"Specify number of photos to show initially. Maximum 33 media items returned "
+"in a single request. In case of multiple id and hashtag, you will get, this "
+"much number of media items for each ids/tags."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:166
+msgid "Number of columns"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:184
+msgid "Image resolution"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:187
+msgid "Thumbnail (150*150)"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:188
+msgid "Medium (306*306)"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:189
+msgid "Full Size (640*640)"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:195
+msgid "Padding around images"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:206
+msgid "Image overLay"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:211
+msgid "Border around image"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:216
+msgid "Image shadow"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:222
+msgid "Enable Pop-up Lightbox"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:225
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:239
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:245
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:246
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:256
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:262
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:267
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:268
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:278
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:288
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:294
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:301
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:47
+msgid "Available in pro version"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:235
+msgid "Header"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:237
+msgid "Show the header"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:243
+msgid "Header text color"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:252
+msgid "Caption"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:254
+msgid "Show caption"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:260
+msgid "Maximum text length"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:265
+msgid "Text color"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:271
+msgid "Text size"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:284
+msgid "Likes and comments"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:286
+msgid "Show number of likes"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:292
+msgid "Show number of comments"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:298
+msgid "Background color"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:310
+msgid "'Load More' button"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:312
+msgid "Show the 'Load More' button"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:318
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:348
+msgid "Button background color"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:324
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:354
+msgid "Button text color"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:330
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:360
+msgid "Button text"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:339
+msgid "'Follow on Instagram' button"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:341
+msgid "Show the follow button"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:367
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:53
+msgid "Save"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/customize.php:368
+msgid "Reset"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:5
+msgid "Display your Feed"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:7
+msgid ""
+"To show Instagram feeds on the pages or posts add the shortcode highlighted "
+"below in the editor. But for this configure the details in the option panel."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:10
+msgid ""
+"The plugin comes with the number of attributes so that you can configure "
+"your feeds by just assigning the appropriate value to it. For example, if "
+"you'd like to display Instagram feed in the fashion of 4 columns than all "
+"you need to do is just assign the value 4 to the cols attribute as shown "
+"below."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:11
+msgid ""
+"You can display as many different feeds as you like, on either the same page "
+"or on different pages, by just using the shortcode attributes below. For "
+"example:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:16
+msgid "See the table below for a full list of available shortcode attributes:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:20
+msgid "Shortcode option"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:21
+msgid "Example"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:22
+msgid "Description"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:29
+msgid ""
+"An Instagram User ID. Want to fetch feeds from multiple user accounts than "
+"specify their IDs and separate them by commas. Use this tool to know your <a "
+"href=\"http://webriti.com/instagramuserid/instagramuserid.php\" target="
+"\"_blank\">userid</a> . You can also get your id by authorizing this app in "
+"the General Settings of the Option Panel."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:34
+msgid ""
+"An Instagram user access token. Again you can get the token  by authorizing "
+"this app from the general settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:39
+msgid ""
+"The width of your feed in number. No need to add px or %. Default value is "
+"100."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:44
+msgid ""
+"The width unit of the feed. Allowed units are px or %. Default value if not "
+"specified is %."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:49
+msgid ""
+"The height of the feed. Just specify a number. The Default value is 100."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:54
+msgid "The height unit of feed. Use px or %."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:59
+msgid "The background color color of your feed area. Default value #fff."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:64
+msgid ""
+"Sort photos by order. It has two values <b>\"Newest to Oldest\"</b> and <b>"
+"\"Random\"</b>. Default order is <strong>Newest to Oldest</strong> if not "
+"specified."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:69
+msgid "Limit number of images to show."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:74
+msgid "Number of column of feed. The default value is 4."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:79
+msgid ""
+"Resolution of images, has three values <b>thumbnail</b> , <b>low_resolution</"
+"b> and <b>standard_resolution</b>. Default resolution is low_resolution if "
+"not specified. Thumbnail will render image of size 150 * 150, low resolution "
+"306 * 306 and standard 640px * 640px "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:84
+msgid "The image padding size in number. The default is 5."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:89
+#, php-format
+msgid "The image padding unit in % or px. The default is px."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:95
+msgid ""
+"Whether to show the \"overlay\" on feed. <b>yes</b> or <b>no</b>. The "
+"default value is <b>Yes</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:100
+msgid ""
+"Whether to show the \"Border\" on feed. <b>yes</b> or <b>no</b>. The default "
+"value is <b>Yes</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:105
+msgid ""
+"Whether to show the \"image shadow\" on feed. <b>yes</b> or <b>no</b>. The "
+"default value is <b>no</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:111
+msgid ""
+"Whether to show the 'Load More' button. <b>yes</b> or <b>no</b>. The default "
+"is <b>no</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:116
+msgid "The Load More button color. The default is #000."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:121
+msgid "The Load More button text color. The default is #fff."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:126
+msgid "The Load More button display text."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:131
+msgid ""
+"Whether to show the <b>Follow on Instagram</b> button. <b>yes</b> or <b>no</"
+"b>. The default value is no."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:136
+msgid "The follow on Instagram button color. The default color is #000."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:141
+msgid "The follow on Instagram button text color. The default is #fff."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:146
+msgid "The follow on Instagram button display text."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:149
+msgid "Available Attributes in pro version"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:157
+msgid ""
+"This is to specify which type of feed you want to display. If you want to "
+"show feed with hashtag then specify <b>hashtag</b> as a value of shortcode "
+"attribute <i>searchtype</i>. If you want feeds from specific user account "
+"than specify <b>user</b> as a value of shortcode attribute <i>searchtype</"
+"i>. <br> Note: In case of user feed  it is not mandatory to use specify "
+"searchtype value as user, it is the defautl value ie [easyinstagramfeed "
+"userid='your-user-id' searchtype='user'] is equivalent to [easyinstagramfeed "
+"userid='your-user-id']"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:163
+msgid ""
+"An Instagram Hashtag. Want to fetch feeds from multiple Hashtag than specify "
+"their Name and for multiple hashtag separate them by commas. Also no need to "
+"put # symbol before the hashtag name."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:168
+msgid ""
+"To disable popup set <strong>no</strong>. The default value is <b>yes</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:174
+msgid ""
+"Whether to show the caption on feed. <b> yes</b> or <b>no</b>. The default "
+"value is no."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:181
+msgid "The caption text length. The default is 10."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:187
+msgid "The caption text color. The default is #666."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:193
+msgid ""
+"The caption text size does not need to mention px it is by default include "
+"in. The default is 14."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:199
+msgid ""
+"Whether to show the header on feed. <b>yes</b> or <b>no</b>. The default "
+"value is yes."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:205
+msgid "The color of header text. The default is #e34f0e."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:211
+msgid ""
+"Whether to show the likes on feed. <b>yes</b> or <b>no</b>.  The default "
+"value is yes."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:217
+msgid ""
+"Whether to show the comments on feed. <b>yes</b> or <b>no</b>.  The default "
+"value is yes."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/display-feeds.php:224
+msgid "The likes and comments color. The default is #dd9494."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:31
+msgid "Authorize plugin to get access token."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:33
+msgid "Login to your account and authorize the app."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:37
+msgid "Your access token"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:42
+msgid "User ID"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:43
+msgid ""
+"Separate multiple Ids using commas. Click the link to know users id <a "
+"href='http://webriti.com/instagramuserid/instagramuserid.php' "
+"target='_blank'>link</a>"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress-plugin-lite\wp-content\plugins\easy-instagram-feed/lib/optionpanel/general-settings.php:46
+msgid "Hashtag"
+msgstr ""
