@@ -166,7 +166,7 @@
 }
 
 .custom-logo {
-	width: 30%;
+	width: 40%;
 	height: auto;
 	margin: 0 auto;
 	img {
@@ -183,13 +183,35 @@
 .site-description {
 	display: none;
 	width: 75%;
-    font-weight: 100;
+    font-weight: 400;
     font-size: 1em !important;
     line-height: 1.3em;
     color: white;
     text-shadow: 1px 1px 3px black;
     @media screen and (min-width: $query__mobile) {
     	display: block;
+		font-size: 1.2em !important;
+		width: 60%;
+    }     
+    
+    @media screen and (min-width: $query__medium) {
+    	font-size: 1.6em !important;
+    }
+}
+
+.site-heading {
+	box-sizing: border-box;
+	margin-left: .5em;
+    font-weight: 800;
+	text-align: right;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    
+    h1 {
+    	color: white;
+    	text-align: left;
+    }
+    @media screen and (min-width: $query__mobile) {
 		font-size: 1.2em !important;
 		width: 60%;
     }     

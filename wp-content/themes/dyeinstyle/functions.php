@@ -140,6 +140,60 @@ function dyeinstyle_widgets_init() {
 add_action( 'widgets_init', 'dyeinstyle_widgets_init' );
 
 /**
+ * Add buttons shortcode 
+ */
+ function button_shortcode( $atts, $content = null ) {
+	
+	// Extract shortcode attributes
+	extract( shortcode_atts( array(
+		'url'    => '',
+		'title'  => '',
+		'target' => '',
+		'text'   => '',
+		/*'color'  => 'green',*/
+	), $atts ) );
+
+	// Use text value for items without content
+	$content = $text ? $text : $content;
+
+	// Return button with link
+	if ( $url ) {
+
+		$link_attr = array(
+			'href'   => esc_url( $url ),
+			'title'  => esc_attr( $title ),
+			'target' => ( 'blank' == $target ) ? '_blank' : '',
+		);
+
+		$link_attrs_str = '';
+
+		foreach ( $link_attr as $key => $val ) {
+
+			if ( $val ) {
+
+				$link_attrs_str .= ' '. $key .'="'. $val .'"';
+
+			}
+
+		}
+
+
+		return '<a'. $link_attrs_str .'><button>'. do_shortcode( $content ) .'</button></a>';
+
+	}
+
+	// No link defined so return button as a span
+	else {
+
+		return '<button>'. do_shortcode( $content ) .'</button>';
+
+	}
+
+}
+add_shortcode( 'button', 'button_shortcode' );
+ 
+
+/**
  * Enqueue scripts and styles.
  */
 function dyeinstyle_scripts() {

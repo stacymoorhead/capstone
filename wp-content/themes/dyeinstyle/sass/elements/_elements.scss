@@ -12,7 +12,15 @@ body {
 	background: url("images/greyfloral_2X.png") repeat fixed $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+p {
+	margin-bottom: 1em;
+}
+
 blockquote, q {
+	font-style: italic;
+	font-size: .9em;
+	line-height: 1.4em;
+	margin-bottom: 1em;
 	quotes: "" "";
 
 	&:before,
@@ -21,11 +29,24 @@ blockquote, q {
 	}
 }
 
+cite {
+	font-style: italic;
+	&:before {
+		content:"—";
+	}
+}
+
 hr {
-	background-color: $color__background-hr;
+	background-color: $color__gray;
 	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	height: 2px;
+	
+	width: 50px;
+	margin: 1em auto;
+}
+
+strong {
+	font-weight: 800;
 }
 
 @import "lists";

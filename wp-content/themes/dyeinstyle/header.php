@@ -49,14 +49,43 @@
 		</header><!-- #masthead -->
 	</div><!-- .fixed -->	
 	<div class="header-image">
-		<?php the_header_image_tag(); //custom header image?> 
+		<?php if ( is_front_page() || is_home() ) {
+			the_header_image_tag();
+		
+		/*} elseif ( is_front_page()){
+			the_header_image_tag();
+		
+		} elseif ( is_home()){
+			the_header_image_tag();*/
+		
+		} else {
+			the_post_thumbnail();
+		} ?>
+		
 		<div class="logo-description">
 			<div class="custom-logo"><?php the_custom_logo(); ?></div>
 			<?php $description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<div class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></div>
+				$title = the_title( '<div class="site-heading"><h1>', '</h1></div>' );
+				if ( is_front_page() && is_home() ) {
+					if ( $description || is_customize_preview() ) : ?>
+						<div class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></div>
+					<?php
+					endif; 
+					
+				} elseif ( is_front_page()){
+					if ( $description || is_customize_preview() ) : ?>
+						<div class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></div>
+					<?php
+					endif; 
+				
+				} elseif ( is_home()){ ?>
+					<div class="site-heading"><h1>News &amp; Updates</h1></div>
 				<?php
-				endif; ?>
+				} else { ?>
+					<?php echo $title; /* WPCS: xss ok. */ ?>
+				
+				<?php
+				} ?>
 		</div>		
 	</div><!-- .header-image -->
 	<div class="divider"></div>

@@ -8,14 +8,15 @@
  */
 
 ?>
-
+	
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php  ?>
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+		if (! is_singular() ) :
+			/*the_title( '<h1 class="entry-title">', '</h1>' ); DELETE WHEN SURE YOU DON'T NEED
 			echo ('<hr>');
-		else :
+		else :*/
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			echo ('<hr>');
 		endif;
@@ -29,6 +30,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+	<section class="post-content">
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -54,4 +56,16 @@
 	<footer class="entry-footer">
 		<?php dyeinstyle_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<?php
+		dyeinstyle_post_navigation();
+
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || get_comments_number() ) :
+				comments_template();
+		endif;		
+	?>
+	</section><!-- .post-content -->
+	<?php
+		get_sidebar();
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->

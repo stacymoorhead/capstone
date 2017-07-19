@@ -34,14 +34,25 @@
 	}
 }
 
+.tags-links {
+	font-size: 80%;
+	font-weight: 800;
+
+	color: black;
+	
+	a {
+		text-decoration: none;
+	}	
+}
+
 .entry-title {
-	font-family: $font__cursive;
-	font-weight: 400;
-	letter-spacing: 0;
-	text-transform: none;
+	font-family: $font__sans;
+	font-weight: 700;
+	/*letter-spacing: 0;
+	text-transform: none;*/
 	margin: .125em 0 .25em 0;
 	font-size: 2.2em;
-	color: black;
+	color: $color__dark-purple;
 	text-align: center;
 
 	@media screen and (min-width: $query__medium) {
@@ -50,7 +61,7 @@
 
 	a {
 		text-decoration: none;
-		color: black;
+		color: $color__dark-purple;
 		
 		&:focus, &:hover {
 			color: $color__dark-red;
@@ -68,15 +79,24 @@
 
 .entry-meta, .comments-link {
 	font-size: 75%;
-	font-weight: 700;
-	text-transform: uppercase;
 	color: black;
 	
 	a {
 		font-weight: 800;
-		text-transform: uppercase;
 		text-decoration: none;
+		color: black;
+		
+		&:hover {
+			color: $color__dark-red;
+		}
 	}	
+	
+	button a {
+		color: $color__red;
+		&:hover {
+			color: $color__dark-red;
+		}
+	}
 }
 
 .byline {

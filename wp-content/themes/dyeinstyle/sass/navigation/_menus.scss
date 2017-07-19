@@ -184,19 +184,21 @@
 	    }
 	}
 
+	
 	.main-navigation {
 	    clear: none;
 	    display: block;
 	    float: right;
-	    width: 50%;		
+	    width: 50%;	
+	    
 		ul {
 			width: 250px;
 			@include transparent(bg, black, .95);
-			
+
 			li {
 				width: 250px;
 				a {
-					padding: .25em;
+					padding: .5em 0;
    					font-size: .8em;
    					color: $color__light-purple;
 				}

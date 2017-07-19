@@ -2,7 +2,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include button($color__red, $color__red)
+	@include button($color__red, $color__red);
 	@include font-size(0.75);
 	line-height: 1;
 	letter-spacing: .1em;
@@ -10,14 +10,14 @@ input[type="submit"] {
 	background: transparent;
 
 	&:hover {
-		border-color: white;
-		color: white;
-	}
+		border-color: $color__dark-red;
+		color: $color__dark-red;
+	}	
 
 	&:active,
 	&:focus {
-		border-color: white;
-		color: white;
+		border-color: $color__dark-red;
+		color: $color__dark-red;
 	}
 }
 

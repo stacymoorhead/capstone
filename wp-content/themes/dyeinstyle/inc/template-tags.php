@@ -32,7 +32,7 @@ function dyeinstyle_posted_on() {
 
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( 'by %s', 'post author', 'dyeinstyle' ),
+		esc_html_x( 'Written by %s', 'post author', 'dyeinstyle' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -69,7 +69,7 @@ function dyeinstyle_entry_footer() {
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'dyeinstyle' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'dyeinstyle' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'dyeinstyle' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -107,4 +107,18 @@ endif;
 		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'dyeinstyle' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 	}	
  }
+ 
+ /**
+ * Post navigation (previous / next post) for single posts.
+ */
+function dyeinstyle_post_navigation() {
+	the_post_navigation( array(
+		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'dyeinstyle' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Next post:', 'dyeinstyle' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'dyeinstyle' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Previous post:', 'dyeinstyle' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+	) );
+}
 
