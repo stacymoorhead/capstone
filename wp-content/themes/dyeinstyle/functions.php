@@ -177,7 +177,6 @@ add_action( 'widgets_init', 'dyeinstyle_widgets_init' );
 
 		}
 
-
 		return '<a'. $link_attrs_str .'><button>'. do_shortcode( $content ) .'</button></a>';
 
 	}

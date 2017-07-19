@@ -17,7 +17,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
+			<?php/*
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
@@ -28,7 +28,34 @@ get_header(); ?>
 				endif;
 
 			endwhile; // End of the loop.
-			?>
+			*/?>
+			
+			<section class="services-icons">
+				<h2>Services</h2>
+				<hr>
+				<div class="icon-boxes">
+					<?php
+					$args = array(
+					  'post_type'   => 'services',
+					  'post_status' => 'publish',
+					  
+					 );
+					 
+					$services = new WP_Query( $args );
+					if( $services->have_posts() ) :
+					      while( $services->have_posts() ) :
+					        $services->the_post();
+					        ?>
+					          <div class="service"><?php printf( '<figure>%1$s</figure> <h3>%2$s</h3>', get_the_post_thumbnail(), get_the_title() );  ?></div>
+					        <?php
+					      endwhile;
+					      wp_reset_postdata();
+					else :
+					  esc_html_e( 'No services to display!', 'text-domain' );
+					endif;
+					?>
+				</div><!-- .icon-boxes -->
+			</section><!-- .services-icons -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
