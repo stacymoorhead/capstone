@@ -89,4 +89,4 @@
 		</div>		
 	</div><!-- .header-image -->
 	<div class="divider"></div>
-	<div id="content" class="site-content">
+	<div id="content" class="content-container">
