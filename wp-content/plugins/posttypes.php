@@ -55,7 +55,7 @@ function custom_posttypes() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'thumbnail', 'service_page_url' )
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'service_page_url' )
 	);
     register_post_type('services', $args);
 }
@@ -74,4 +74,20 @@ function my_rewrite_flush() {
     flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
+
+//Set order posts appear on home page
+function set_custom_post_types_admin_order($wp_query) {
+  if (is_admin()) {
+
+    // Get the post type from the query
+    $post_type = $wp_query->query['post_type'];
+
+    if ( $post_type == 'POST_TYPE') {
+
+      // 'order' value can be ASC or DESC
+      $wp_query->set('order', 'ASC');
+    }
+  }
+}
+add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
 
