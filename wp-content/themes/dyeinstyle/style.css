@@ -8758,14 +8758,14 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .content-container {
 	margin-top: -4px;
-	padding: 1em 0 0 0;
+	padding: 1em 0;
 	background-color: trans(white, 0.5);
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 600px) {
 	.content-container {
-		padding: 2em 0 0 0;
+		padding: 2em 0 1em 0;
 		margin-bottom: 0;
 	}
 }
@@ -9411,7 +9411,14 @@ article {
 
 @media screen and (min-width: 1025px) {
 	.footer-container {
-		width: 800px;
+		padding: 0 10em;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 1800px) {
+	.footer-container {
+		padding: 0 15em;
 		margin: 0 auto;
 	}
 }
@@ -9527,6 +9534,9 @@ article {
 @media screen and (min-width: 900px) {
 	.site-info {
 		margin: 1em 2em;
+		width: 100%;
+		clear: both;
+		float: left;
 	}
 }
 

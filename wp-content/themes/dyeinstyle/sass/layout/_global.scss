@@ -1,10 +1,10 @@
 .content-container {
     margin-top: -4px ;
-    padding: 1em 0 0 0;
+    padding: 1em 0 ;
     @include transparent(bg, white, .5);
     
     @media screen and (min-width: $query__small) {
-        padding: 2em 0 0 0;
+        padding: 2em 0 1em 0;
         margin-bottom: 0;
     }
 }

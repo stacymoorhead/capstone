@@ -51,9 +51,14 @@
     display: block;
 
     @media screen and (min-width: $query__large) {
-        width: 800px;
+        padding: 0 10em;
         margin: 0 auto;
     }    
+    
+    @media screen and (min-width: $query__x-large) {
+        padding: 0 15em;
+        margin: 0 auto;
+    }   
     
     @media screen and (min-width: $query__mobile) {
         display: flex;
@@ -136,6 +141,9 @@
     
     @media screen and (min-width: $query__medium) {
         margin: 1em 2em;
+        width: 100%;
+        clear: both;
+        float: left;
     }
 }
 

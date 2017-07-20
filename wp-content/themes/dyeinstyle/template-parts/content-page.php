@@ -29,7 +29,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'dyeinstyle' ),
+							__( 'Edit <button class="screen-reader-text">%s</button>', 'dyeinstyle' ),
 							array(
 								'span' => array(
 									'class' => array(),
@@ -38,8 +38,8 @@
 						),
 						get_the_title()
 					),
-					'<span class="edit-link">',
-					'</span>'
+					'<button class="edit-link">',
+					'</button>'
 				);
 			?>
 		</footer><!-- .entry-footer -->
