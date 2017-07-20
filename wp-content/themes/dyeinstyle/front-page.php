@@ -60,5 +60,29 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php 
-get_template_part( 'template-parts/content', 'instagram' ); 
-get_footer();
+get_template_part( 'template-parts/content', 'instagram' ); ?>
+<section class="news">
+	<h2>Recent Posts</h2>
+	<hr class="purple">
+	<div class="news-container">
+	
+	<?php
+	$recent_posts_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 2));
+	while ($recent_posts_query->have_posts()) {
+		$recent_posts_query->the_post();
+	?>
+	
+	<div class="news-item">
+	<?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+
+	
+	<?php the_excerpt(); ?>
+	</div><!-- .news-item -->
+	
+	<?php
+	}
+	?>
+
+	</div><!-- news-container -->
+</section><!-- .news -->
+<?php get_footer();

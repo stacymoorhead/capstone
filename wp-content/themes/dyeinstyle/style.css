@@ -7889,6 +7889,10 @@ hr {
 	margin: 1em auto;
 }
 
+.purple {
+	background-color: #d2c7e2;
+}
+
 strong {
 	font-weight: 800;
 }
@@ -8755,11 +8759,14 @@ a:hover, a:active {
 .content-container {
 	margin-top: -4px;
 	padding: 1em 0 0 0;
+	background-color: trans(white, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 600px) {
 	.content-container {
 		padding: 2em 0 0 0;
+		margin-bottom: 0;
 	}
 }
 
@@ -8966,9 +8973,31 @@ a:hover, a:active {
 	}
 }
 
-.header-image {
+.header-image-front {
 	position: relative;
 	max-height: 60vh;
+	overflow: hidden;
+	z-index: 0;
+	background-color: black;
+	padding-top: 108px;
+}
+
+.header-image-front img {
+	position: relative;
+	display: block;
+	width: 100vw;
+	opacity: 0.55;
+}
+
+@media screen and (max-width: 500px) {
+	.header-image-front {
+		padding-top: 95px;
+	}
+}
+
+.header-image {
+	position: relative;
+	max-height: 30vh;
 	overflow: hidden;
 	z-index: 0;
 	background-color: black;
@@ -9062,9 +9091,28 @@ a:hover, a:active {
 	}
 }
 
-.custom-logo {
-	width: 40%;
+.custom-logo-home {
 	height: auto;
+	width: 30%;
+	margin: 0 auto;
+}
+
+.custom-logo-home img {
+	width: 100%;
+	opacity: 1;
+}
+
+@media screen and (min-width: 500px) {
+	.custom-logo-home {
+		width: auto;
+		margin-right: 3em;
+	}
+}
+
+.custom-logo {
+	display: none;
+	height: auto;
+	width: 20%;
 	margin: 0 auto;
 }
 
@@ -9075,7 +9123,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 500px) {
 	.custom-logo {
-		/*width: 25%;*/
+		display: block;
 		margin-right: 3em;
 	}
 }
@@ -9106,11 +9154,12 @@ a:hover, a:active {
 
 .site-heading {
 	box-sizing: border-box;
-	margin-left: .5em;
+	margin: 0 auto;
 	font-weight: 800;
-	text-align: right;
+	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 3px black;
+	font-size: .7em;
 }
 
 .site-heading h1 {
@@ -9120,14 +9169,15 @@ a:hover, a:active {
 
 @media screen and (min-width: 500px) {
 	.site-heading {
-		font-size: 1.2em !important;
-		width: 60%;
+		margin-left: .5em;
+		text-align: right;
+		font-size: 1em !important;
 	}
 }
 
 @media screen and (min-width: 900px) {
 	.site-heading {
-		font-size: 1.6em !important;
+		font-size: 1.2em !important;
 	}
 }
 
@@ -9307,6 +9357,9 @@ article {
 --------------------------------------------------------------*/
 .site-footer {
 	position: relative;
+	width: 100%;
+	float: left;
+	clear: both;
 	padding: 1em;
 	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #bbbdbf;
@@ -9316,6 +9369,7 @@ article {
 @media screen and (min-width: 600px) {
 	.site-footer {
 		padding: 1em 2em;
+		margin-top: 0;
 	}
 }
 
@@ -9350,20 +9404,28 @@ article {
 .footer-container {
 	width: 100%;
 	box-sizing: border-box;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	float: left;
+	clear: both;
+	display: block;
 }
 
 @media screen and (min-width: 1025px) {
 	.footer-container {
 		width: 800px;
 		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.footer-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 	}
 }
 
@@ -9374,6 +9436,7 @@ article {
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
+	text-align: center;
 }
 
 .hours {
@@ -9392,7 +9455,7 @@ article {
 	font-size: .8em;
 	display: block;
 	clear: both;
-	text-align: left;
+	text-align: center;
 }
 
 .hours li a {
@@ -9417,6 +9480,7 @@ article {
 }
 
 .footer-logo img {
+	display: block;
 	width: auto;
 	height: 100px;
 	margin: 0 0 1em 0;
@@ -9466,6 +9530,16 @@ article {
 	}
 }
 
+.divider-footer {
+	position: relative;
+	z-index: 100;
+	margin: -4px 0;
+	padding: 0;
+	height: 8px;
+	background: url("images/divider.svg") repeat-x;
+	background-size: auto 8px;
+}
+
 /*--------------------------------------------------------------
 ## Front Page
 --------------------------------------------------------------*/
@@ -9500,10 +9574,50 @@ article {
 .icon-boxes img {
 	width: 175px;
 	height: auto;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+	.icon-boxes {
+		display: block;
+	}
 }
 
 .service {
 	margin: 0 .5em;
+	padding: 1em;
+	transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+	.service {
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+}
+
+.service figure {
+	border-radius: 50%;
+}
+
+.service figure:hover {
+	background: #d2c7e2;
+	transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+	.service figure {
+		margin: 0 auto;
+		clear: both;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		width: 100%;
+	}
 }
 
 .insta-feed {
@@ -9513,16 +9627,115 @@ article {
 	position: relative;
 }
 
+.news {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1em;
+	margin: 0;
+	color: #bbbdbf;
+	background-color: trans(black, 0.75);
+	background-color: rgba(0, 0, 0, 0.75);
+	display: block;
+	float: left;
+	clear: both;
+}
+
+.news h2 {
+	font-family: "Grand Hotel", Georgia, Cambria, cursive;
+	color: white;
+	letter-spacing: 0;
+	font-weight: 400;
+	text-transform: none;
+	font-size: 4em;
+	text-align: center;
+}
+
+.news h3 {
+	color: white;
+	font-size: 1.2em;
+}
+
+@media screen and (min-width: 900px) {
+	.news {
+		padding: 2em;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.news {
+		float: none;
+		clear: none;
+	}
+}
+
+.news-container {
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	clear: both;
+	margin: 2em auto;
+	position: relative;
+}
+
+@media screen and (min-width: 900px) {
+	.news-container {
+		width: 800px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.news-container {
+		width: 1025px;
+	}
+}
+
+.news-item {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	clear: both;
+}
+
+.news-item a {
+	color: white;
+}
+
+.news-item a:hover, .news-item a:active, .news-item a:focus {
+	color: #d2c7e2;
+}
+
+@media screen and (min-width: 500px) {
+	.news-item {
+		display: block;
+		float: left;
+		clear: none;
+		width: 33%;
+		margin: 0 1em;
+	}
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
+	/*margin: 0 0 1.5em;*/
+	margin: 0;
 	/* Make sure select elements fit in widgets. */
 }
 
 .widget select {
 	max-width: 100%;
+}
+
+.widget ul:last-child {
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------

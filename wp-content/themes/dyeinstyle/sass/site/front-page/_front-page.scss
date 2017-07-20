@@ -26,11 +26,38 @@
     img {
         width: 175px;
         height: auto;
+        margin: 0 auto;
+    }
+    
+    @media screen and (max-width: $query__mobile) {
+        display: block;
     }
 }
 
 .service {
     margin: 0 .5em;
+    padding: 1em;
+    transition: $transition;
+    
+    @media screen and (max-width: $query__mobile) {
+        align-items: center;
+    }
+    
+    figure {
+        border-radius: 50%;
+        &:hover {
+            background: $color__light-purple;
+            transition: $transition;
+        }
+        
+        @media screen and (max-width: $query__mobile) {
+            margin: 0 auto;
+            clear: both;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }    
+    }    
 }
 
 .insta-feed {
@@ -38,4 +65,83 @@
     background: black;
     clear: both;
     position: relative;
+}
+
+.news {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    margin: 0;
+    color: $color__gray;
+    @include transparent(bg, black, .75);
+    display: block;
+    float: left;
+    clear: both;
+    
+    h2 {
+        font-family: $font__cursive;
+        color: white;
+        letter-spacing: 0;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 4em;
+        text-align: center;
+    }
+    
+    h3 {
+        color: white;
+        font-size: 1.2em;
+    }
+    
+    @media screen and (min-width: $query__medium) {
+        padding: 2em;
+    }
+    
+        @media screen and (min-width: $query__mobile) {
+        float: none;
+        clear: none;
+    }
+}
+
+.news-container {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    clear: both;
+    margin: 2em auto;
+    position: relative;
+    
+     @media screen and (min-width: $query__medium) {
+         width: 800px;
+         display: flex;
+        justify-content: space-between;
+     }
+     
+     @media screen and (min-width: $query__large) {
+         width: 1025px;
+     }
+}
+
+
+.news-item {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    clear: both;
+    a {
+        color: white;
+        
+        &:hover, &:active, &:focus {
+            color: $color__light-purple;
+        }
+    }  
+
+    @media screen and (min-width: $query__mobile) {
+        display: block;
+        float: left;
+        clear: none;
+        width: 33%;
+        margin: 0 1em;
+    }
 }

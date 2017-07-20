@@ -107,9 +107,29 @@
 	}
 }
 
-.header-image {
+.header-image-front {
 	position: relative;
 	max-height: 60vh;
+	overflow: hidden;
+	z-index: 0;
+	background-color: black;
+	padding-top: 108px;
+	
+	img {
+		position: relative;
+		display:block;
+		width: 100vw;
+		opacity: 0.55;
+	}
+	
+	@media screen and (max-width: $query__mobile) {
+		padding-top: 95px;
+	}
+}
+
+.header-image {
+	position: relative;
+	max-height: 30vh;
 	overflow: hidden;
 	z-index: 0;
 	background-color: black;
@@ -165,9 +185,9 @@
     }
 }
 
-.custom-logo {
-	width: 40%;
+.custom-logo-home {
 	height: auto;
+	width: 30%;
 	margin: 0 auto;
 	img {
 		width: 100%;
@@ -175,7 +195,23 @@
 	}
 	
     @media screen and (min-width: $query__mobile) {
-		/*width: 25%;*/
+    	width: auto;
+		margin-right: 3em;
+    }	
+}
+
+.custom-logo {
+	display: none;
+	height: auto;
+	width: 20%;
+	margin: 0 auto;
+	img {
+		width: 100%;
+		opacity: 1;
+	}
+	
+    @media screen and (min-width: $query__mobile) {
+    	display: block;
 		margin-right: 3em;
     }	
 }
@@ -201,23 +237,25 @@
 
 .site-heading {
 	box-sizing: border-box;
-	margin-left: .5em;
+	margin: 0 auto;
     font-weight: 800;
-	text-align: right;
+	text-align: center;
     color: white;
     text-shadow: 1px 1px 3px black;
-    
+    font-size: .7em;
     h1 {
     	color: white;
     	text-align: left;
     }
     @media screen and (min-width: $query__mobile) {
-		font-size: 1.2em !important;
-		width: 60%;
+    	margin-left: .5em;
+    	text-align: right;
+		font-size: 1em !important;
+
     }     
     
     @media screen and (min-width: $query__medium) {
-    	font-size: 1.6em !important;
+    	font-size: 1.2em !important;
     }
 }
 

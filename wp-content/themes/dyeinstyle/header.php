@@ -48,45 +48,55 @@
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 	</div><!-- .fixed -->	
-	<div class="header-image">
-		<?php if ( is_front_page() || is_home() ) {
-			the_header_image_tag();
-		
-		/*} elseif ( is_front_page()){
-			the_header_image_tag();
-		
-		} elseif ( is_home()){
-			the_header_image_tag();*/
-		
-		} else {
-			the_post_thumbnail();
-		} ?>
-		
+	
+	<?php if ( is_front_page() ) { ?>
+	<div class="header-image-front">	
+		<?php the_header_image_tag(); ?>
 		<div class="logo-description">
-			<div class="custom-logo"><?php the_custom_logo(); ?></div>
-			<?php $description = get_bloginfo( 'description', 'display' );
-				$title = the_title( '<div class="site-heading"><h1>', '</h1></div>' );
-				if ( is_front_page() && is_home() ) {
-					if ( $description || is_customize_preview() ) : ?>
+			<div class="custom-logo-home">
+				<?php the_custom_logo();?>
+			</div><!-- .custom-logo -->		
+				<?php $description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
 						<div class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></div>
-					<?php
-					endif; 
-					
-				} elseif ( is_front_page()){
-					if ( $description || is_customize_preview() ) : ?>
-						<div class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></div>
-					<?php
-					endif; 
-				
-				} elseif ( is_home()){ ?>
-					<div class="site-heading"><h1>News &amp; Updates</h1></div>
 				<?php
-				} else { ?>
-					<?php echo $title; /* WPCS: xss ok. */ ?>
-				
-				<?php
-				} ?>
-		</div>		
+				endif; ?>
+			
+		</div><!-- .logo-desription -->	
 	</div><!-- .header-image -->
+	
+	<?php } elseif (is_home() ) { ?>
+	<div class="header-image">	
+		<?php the_header_image_tag(); ?>
+		<div class="logo-description">
+			<div class="custom-logo">
+				<?php the_custom_logo(); ?>
+			</div><!-- .custom-logo -->		
+			<div class="site-heading">
+				<h1>News &amp; Info</h1>
+			</div><!-- .site-heading -->
+		</div><!-- .logo-desription -->	
+	</div><!-- .header-image -->
+	
+	<?php } else { ?>
+	<div class="header-image">	
+		<?php if (has_post_thumbnail() ) {
+			the_post_thumbnail(); 
+		} else {
+			the_header_image_tag();
+		} ?>
+		<div class="logo-description">
+			<div class="custom-logo">
+				<?php the_custom_logo(); ?>
+			</div><!-- .custom-logo -->		
+				<?php $title = the_title( '<div class="site-heading"><h1>', '</h1></div>' );
+					echo $title; /* WPCS: xss ok. */
+				?>
+		</div><!-- .logo-desription -->		
+	</div><!-- .header-image -->
+	<?php } ?>
+		
+		
+
 	<div class="divider"></div>
 	<div id="content" class="content-container">
