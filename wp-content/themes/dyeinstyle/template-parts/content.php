@@ -31,18 +31,7 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dyeinstyle' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+			the_excerpt();
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dyeinstyle' ),
@@ -50,6 +39,20 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+
+		<div class="continue-reading">
+			<?php
+			$read_more_link = sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;<?span>', 'dyeinstyle' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			);
+			?>
+					
+			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
+				<button><?php echo $read_more_link; ?></button>
+			</a>
+		</div><!-- .continue-reading -->
 
 	<footer class="entry-footer">
 		<?php dyeinstyle_entry_footer(); ?>

@@ -25,7 +25,7 @@
 				<h2>Find us on:</h2>
 				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'footer-social',
+						'theme_location' => 'social',
 					) );
 				?>
 			</nav>	

@@ -43,7 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Bootstrap DISABLED
+# Bootstrap
 --------------------------------------------------------------*/
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8758,14 +8758,14 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .content-container {
 	margin-top: -4px;
-	padding: 1em 0;
+	padding: 1em 0 0 0;
 	background-color: trans(white, 0.5);
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 600px) {
 	.content-container {
-		padding: 2em 0 1em 0;
+		padding: 2em 0 0 0;
 		margin-bottom: 0;
 	}
 }
@@ -8906,6 +8906,16 @@ a:hover, a:active {
 	text-align: left;
 	font-size: 1.4em;
 	letter-spacing: .5em;
+}
+
+.social-top ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.social-top ul li {
+	display: inline;
 }
 
 @media screen and (min-width: 500px) {
@@ -9112,7 +9122,7 @@ a:hover, a:active {
 .custom-logo {
 	display: none;
 	height: auto;
-	width: 20%;
+	width: 15%;
 	margin: 0 auto;
 }
 
@@ -9241,7 +9251,7 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
-.cat-links:focus, .cat-links:hover {
+.cat-links a:focus, .cat-links a:hover {
 	background-color: #d2c7e2;
 	transition: all 0.5s ease-in-out;
 }
@@ -9257,10 +9267,10 @@ a:hover, a:active {
 }
 
 .entry-title {
-	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-	font-weight: 700;
-	/*letter-spacing: 0;
-	text-transform: none;*/
+	font-family: "Grand Hotel", Georgia, Cambria, cursive;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
 	margin: .125em 0 .25em 0;
 	font-size: 2.2em;
 	color: #836393;
@@ -9341,15 +9351,328 @@ article {
 	margin: 0 0 1.5em;
 }
 
+.continue-reading {
+	margin-bottom: 1em;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comments-area {
+	width: 100%;
+	margin: 1em 0 0 0;
+	padding: 1.5em 0;
+	border-top: 1px solid #cccccc;
+	background-color: trans(black, 0.75);
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.comments-title, .comment-reply-title {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	font-weight: 800;
+	color: white;
+}
+
+.comment-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.comment-list ol {
+	list-style-type: none;
+}
+
+.comment-body {
+	color: #bbbdbf;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 2em;
+	background-color: trans(white, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.comment-body h1, .comment-body h2, .comment-body h3, .comment-body h4, .comment-body h5, .comment-body h6 {
+	color: #d2c7e2;
+}
+
+.comment-meta {
+	position: relative;
+	margin-left: 70px;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 80%;
+}
+
+.comment-meta a,
+.comment-form a {
+	text-decoration: none;
+	border: none;
+	color: white;
+}
+
+.comment-meta a:hover, .comment-meta a:focus,
+.comment-form a:hover,
+.comment-form a:focus {
+	text-decoration: underline;
+}
+
+.comment .avatar {
+	position: absolute;
+	top: -5px;
+	left: -70px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+.children {
+	margin-left: 1em;
+	padding-left: 0;
+}
+
+@media screen and (min-width: 900px) {
+	.children {
+		margin-left: 2em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.no-sidebar .children {
+		margin-left: 2em;
+	}
+	.no-sidebar .children .comment-meta {
+		margin-left: 80px;
+		font-size: 90%;
+	}
+	.no-sidebar .children .comment .avatar {
+		top: -7px;
+		left: -80px;
+		width: 60px;
+		height: 60px;
+	}
+	.no-sidebar .children .comment-content {
+		margin-left: 80px;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.no-sidebar .children {
+		margin-left: 3em;
+	}
+	.no-sidebar .comment-meta {
+		margin-left: 90px;
+	}
+	.no-sidebar .comment .avatar {
+		top: -8px;
+		left: -90px;
+		width: 70px;
+		height: 70px;
+	}
+	.no-sidebar .comment-content {
+		margin-left: 90px;
+	}
+}
+
+.comment-metadata {
+	margin-top: 0 0 2em 0;
+	padding-bottom: .5em;
+	font-size: .8em;
+	line-height: 1em;
+}
+
+.comment-metadata a {
+	color: white;
+	margin: 0;
+}
+
+.comment-metadata a:hover, .comment-metadata a:focus {
+	border-color: #c3c3c3;
+}
+
+.comment-metadata span {
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: white;
+	border: 2px solid white;
+	transition: all 0.5s ease-in-out;
+	margin-left: 1em;
+	padding: .3em .5em;
+	letter-spacing: .1em;
+}
+
+.comment-metadata span:link {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+}
+
+.comment-metadata span:hover {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	fill: white;
+	text-decoration: none;
+}
+
+.comment-metadata span:hover svg {
+	fill: white;
+	left: 5px;
+}
+
+.comment-metadata span:active {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	box-shadow: none;
+}
+
+.comment-metadata span:active svg {
+	fill: white;
+	left: 5px;
+}
+
+.comment-metadata span:focus, .comment-metadata span:active:focus {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	outline: 5px auto white;
+}
+
+.comment-metadata span:focus, .comment-metadata span:active:focus svg {
+	fill: white;
+	left: 5px;
+}
+
+.comment-metadata span:visited {
+	background-color: transparent;
+	border-color: white;
+}
+
+.comment-metadata span:hover {
+	border-color: #8f1622;
+	color: #8f1622;
+}
+
+.comment-metadata span:active, .comment-metadata span:focus {
+	border-color: #8f1622;
+	color: #8f1622;
+}
+
+.comment-metadata span a {
+	font-size: .8em;
+}
+
+.comment-metadata span a:hover {
+	text-decoration: none;
+}
+
+.comment-author {
+	font-size: 1.4em;
+	line-height: 1.3em;
+	margin: 1em 0;
+}
+
+.says {
+	font-size: 80%;
+}
+
+.reply {
+	width: 70px;
+	text-align: center;
+	clear: left;
+	position: relative;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: white;
+	border: 2px solid white;
+	transition: all 0.5s ease-in-out;
+}
+
+.reply:link {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+}
+
+.reply:hover {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	fill: white;
+	text-decoration: none;
+}
+
+.reply:hover svg {
+	fill: white;
+	left: 5px;
+}
+
+.reply:active {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	box-shadow: none;
+}
+
+.reply:active svg {
+	fill: white;
+	left: 5px;
+}
+
+.reply:focus, .reply:active:focus {
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	outline: 5px auto white;
+}
+
+.reply:focus, .reply:active:focus svg {
+	fill: white;
+	left: 5px;
+}
+
+.reply:visited {
+	background-color: transparent;
+	border-color: white;
+}
+
+.reply:hover {
+	border-color: #8f1622;
+	color: #8f1622;
+}
+
+.reply:active, .reply:focus {
+	border-color: #8f1622;
+	color: #8f1622;
+}
+
+.reply a {
+	color: white;
+	font-size: .8em;
+	margin-left: 0;
+	letter-spacing: .1em;
+}
+
+.reply a:hover {
+	text-decoration: none;
+}
+
+.comment-content ol {
+	list-style-type: decimal;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
 
-.bypostauthor {
-	display: block;
+.comment-respond textarea {
+	border: none;
+	border-radius: 0;
+	background-color: trans(white, 0.75);
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 /*--------------------------------------------------------------
@@ -9612,7 +9935,8 @@ article {
 }
 
 .service figure:hover {
-	background: #d2c7e2;
+	background-color: trans(#d2c7e2, 0.5);
+	background-color: rgba(210, 199, 226, 0.5);
 	transition: all 0.5s ease-in-out;
 }
 
@@ -9729,6 +10053,10 @@ article {
 		width: 33%;
 		margin: 0 1em;
 	}
+}
+
+.continue-reading {
+	font-size: .8em;
 }
 
 /*--------------------------------------------------------------

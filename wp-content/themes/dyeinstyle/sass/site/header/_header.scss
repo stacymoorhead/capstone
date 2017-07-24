@@ -46,6 +46,16 @@
 	font-size: 1.4em;
 	letter-spacing: .5em;
 	
+	ul {
+	    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+        	display: inline;
+        }
+	}
+	
 	@media screen and (min-width: $query__mobile) {
 		display: block;
 		width: 35%;
@@ -203,7 +213,7 @@
 .custom-logo {
 	display: none;
 	height: auto;
-	width: 20%;
+	width: 15%;
 	margin: 0 auto;
 	img {
 		width: 100%;

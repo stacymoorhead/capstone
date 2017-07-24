@@ -26,12 +26,14 @@
 	a {
 
 		text-decoration: none;
+		
+		&:focus, &:hover {
+			background-color: $color__light-purple;
+			transition: $transition;
+		}
 	}	
 	
-	&:focus, &:hover {
-		background-color: $color__light-purple;
-		transition: $transition;
-	}
+
 }
 
 .tags-links {
@@ -46,10 +48,10 @@
 }
 
 .entry-title {
-	font-family: $font__sans;
-	font-weight: 700;
-	/*letter-spacing: 0;
-	text-transform: none;*/
+	font-family: $font__cursive;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
 	margin: .125em 0 .25em 0;
 	font-size: 2.2em;
 	color: $color__dark-purple;
@@ -126,4 +128,8 @@ article {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.continue-reading {
+	margin-bottom: 1em;
 }

@@ -25,8 +25,13 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dyeinstyle' ); ?></a>
 		<div class="info">
 			<div class="social-top">
-				<a href="https://www.facebook.com/pg/mariasdyeinstyle"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="https://www.instagram.com/explore/locations/330212585/marias-dye-in-style/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<nav class="">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'social',
+						) );
+					?>
+				</nav>	
 			</div>
 			<div class="contact-info">
 				<span><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</span> <a href="get.mndbdy.ly/s1ud/7ZaMvFfNBr"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
@@ -74,6 +79,20 @@
 			</div><!-- .custom-logo -->		
 			<div class="site-heading">
 				<h1>News &amp; Info</h1>
+			</div><!-- .site-heading -->
+		</div><!-- .logo-desription -->	
+	</div><!-- .header-image -->
+	
+	<?php } elseif (is_archive() ) { ?>
+	<div class="header-image">	
+		<?php the_header_image_tag(); ?>
+		<div class="logo-description">
+			<div class="custom-logo">
+				<?php the_custom_logo(); ?>
+			</div><!-- .custom-logo -->		
+			<div class="site-heading">
+				<?php the_archive_title( '<h1>', '</h1>' ); 
+				the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 			</div><!-- .site-heading -->
 		</div><!-- .logo-desription -->	
 	</div><!-- .header-image -->

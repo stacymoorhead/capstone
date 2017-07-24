@@ -46,7 +46,7 @@
     figure {
         border-radius: 50%;
         &:hover {
-            background: $color__light-purple;
+            @include transparent(bg, $color__light-purple, .5)
             transition: $transition;
         }
         
@@ -144,4 +144,7 @@
         width: 33%;
         margin: 0 1em;
     }
+}
+.continue-reading {
+    font-size: .8em;
 }
