@@ -32,6 +32,11 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			
+				:last-child {
+				    margin: 0;
+				}
+
+			
 			.entry-header {
 				width: 100%;
 				flex: 1 0 100%;
@@ -62,6 +67,7 @@
 .content-area {
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 2em;
     
     @media screen and (min-width: $query__large) {
         width: 1000px;

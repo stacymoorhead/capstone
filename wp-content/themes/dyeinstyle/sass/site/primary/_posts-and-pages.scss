@@ -133,3 +133,17 @@ article {
 .continue-reading {
 	margin-bottom: 1em;
 }
+
+.home-archive-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home-archive-posts {
+	width: 65%;
+}
+
+.home-archive-sidebar {
+	width: 32%;
+}

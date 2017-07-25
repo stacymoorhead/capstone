@@ -8163,10 +8163,16 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 400;
+	color: #bbbdbf;
+	border: 2px solid #bbbdbf;
+	transition: all 0.5s ease-in-out;
+	font-size: .8em;
+	line-height: 1;
+	padding: .45em 1em;
+	background: transparent;
+	box-sizing: border-box;
 }
 
 input[type="text"]:focus,
@@ -8798,6 +8804,9 @@ a:hover, a:active {
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
 	}
+	.has-sidebar .hentry :last-child {
+		margin: 0;
+	}
 	.has-sidebar .hentry .entry-header {
 		width: 100%;
 		-webkit-box-flex: 1;
@@ -8827,6 +8836,7 @@ a:hover, a:active {
 .content-area {
 	width: 100%;
 	box-sizing: border-box;
+	padding-bottom: 2em;
 }
 
 @media screen and (min-width: 1025px) {
@@ -9353,6 +9363,25 @@ article {
 
 .continue-reading {
 	margin-bottom: 1em;
+}
+
+.home-archive-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.home-archive-posts {
+	width: 65%;
+}
+
+.home-archive-sidebar {
+	width: 32%;
 }
 
 /*--------------------------------------------------------------
@@ -10062,18 +10091,72 @@ article {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	margin-top: 1.5em;
+}
+
+@media screen and (min-width: 500px) {
+	.widget-area {
+		margin-top: 0;
+	}
+}
+
 .widget {
-	/*margin: 0 0 1.5em;*/
-	margin: 0;
+	margin: 0 0 1em 0;
+	padding: 1em;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	background-color: trans(white, 0.65);
+	background-color: rgba(255, 255, 255, 0.65);
 	/* Make sure select elements fit in widgets. */
 }
 
-.widget select {
-	max-width: 100%;
+.widget ul,
+.widget ol {
+	padding: .7em 0 0;
+	margin-bottom: 0;
+	list-style-type: none;
 }
 
-.widget ul:last-child {
-	margin-bottom: 0;
+.widget ul li,
+.widget ol li {
+	display: block;
+	border-top: 1px dotted #bbbdbf;
+	padding: .5em 0;
+}
+
+.widget ul li ul,
+.widget ul li ol,
+.widget ol li ul,
+.widget ol li ol {
+	margin-left: .5em;
+}
+
+@media screen and (min-width: 30em) {
+	.widget ul li ul,
+	.widget ul li ol,
+	.widget ol li ul,
+	.widget ol li ol {
+		margin-left: 1em;
+	}
+}
+
+.widget a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.widget select {
+	width: 100%;
+	height: 2.5em;
+	padding: 10px;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	border: 1px solid #ccc;
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.4em;
 }
 
 /*--------------------------------------------------------------
