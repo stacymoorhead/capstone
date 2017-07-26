@@ -34,7 +34,7 @@
 				</nav>	
 			</div>
 			<div class="contact-info">
-				<span><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</span> <a href="get.mndbdy.ly/s1ud/7ZaMvFfNBr"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+				<span><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</span> <a href="https://clients.mindbodyonline.com/asp/su1.asp?fl=true&tabID=2"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
 			</div>
 		</div>
 		<header id="masthead" class="site-header">

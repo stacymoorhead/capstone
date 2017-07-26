@@ -134,16 +134,27 @@ article {
 	margin-bottom: 1em;
 }
 
-.home-archive-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.has-sidebar {
+
+	.home-archive-content {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	}
+	
+	.home-archive-posts {
+		width: 70%;
+	}
+	
+	.home-archive-sidebar {
+		width: 27%;
+	}
+	
+}	
+
+.column-2 {
+	td {
+		text-align: right !important;
+	}
 }
 
-.home-archive-posts {
-	width: 65%;
-}
-
-.home-archive-sidebar {
-	width: 32%;
-}

@@ -1,7 +1,7 @@
 .comments-area {
 	width: 100%;
 	margin: 1em 0 0 0;
-	padding: 1.5em 0;
+	padding: 1.5em 1em;
 	border-top: 1px solid hsl(0, 0%, 80%);
 	@include transparent(bg, black, .75)
 }
@@ -184,32 +184,27 @@
 }
 
 .reply {
-	width: 70px;
-	text-align:center;
-	clear: left;
-	position: relative;
-	@include button(white, white);
-	&:hover {
-		border-color: $color__dark-red;
-		color: $color__dark-red;
-	}
-	
-	&:active,
-	&:focus {
-		border-color: $color__dark-red;
-		color: $color__dark-red;
-	}
-		
+	text-align:right;
 	a {
 		color: white;
 		font-size: .8em;
 		margin-left: 0;
 		letter-spacing: .1em;
+		
+		@include button(white, white);
+		&:hover {
+			border-color: $color__light-purple;
+			color: $color__light-purple;
+			text-decoration: none;
+		}
+		
+		&:active,
+		&:focus {
+			border-color: $color__dark-purple;
+			color: $color__dark-purple;
+		}
 	}
-	
-	a:hover {
-		text-decoration: none;
-	}
+
 }
 
 
@@ -226,10 +221,44 @@
 }
 
 .comment-respond {
+	color: $color__gray;
     textarea {
     	border: none;
     	border-radius: 0;
         @include transparent(bg, white, .75);
     }
+    
+    label {
+    	color: white;
+    }
+    
+    button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+	    color: white;
+		@include font-size(0.75);
+		border-color: white;
+		line-height: 1;
+		letter-spacing: .1em;
+		padding: .6em 1em;
+		background: transparent;
+	
+		&:hover {
+			border-color: $color__light-purple;
+			color: $color__light-purple;
+		}	
+	
+		&:active,
+		&:focus {
+			border-color: $color__dark-purple;
+			color: $color__dark-purple;
+		}
+    }
+    
+    input[type="text"], input[type="email"], input[type="url"] {
+    	width: 100% !important;
+    }
 }
+
 

@@ -22,6 +22,7 @@
     display: flex;
     justify-content: space-between;
     wrap: true;
+    flex-direction: row-reverse;
     
     img {
         width: 175px;
@@ -111,6 +112,8 @@
     clear: both;
     margin: 2em auto;
     position: relative;
+    @include clearfix;
+    
     
      @media screen and (min-width: $query__medium) {
          width: 800px;
@@ -137,7 +140,7 @@
         }
     }  
 
-    @media screen and (min-width: $query__mobile) {
+    @media screen and (min-width: $query__medium) {
         display: block;
         float: left;
         clear: none;
@@ -146,5 +149,7 @@
     }
 }
 .continue-reading {
+    margin-top: 1em;
     font-size: .8em;
+    text-align: center;
 }

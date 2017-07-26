@@ -31,7 +31,17 @@ textarea {
 }
 
 select {
-	border: 1px solid $color__border-input;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    font-weight: 400;
+    color: $color__gray;
+    border: 2px solid $color__gray;
+    transition: all 0.5s ease-in-out;
+    font-size: .8em;
+    line-height: 1;
+    padding: .6em;
+    background: transparent;
+    box-sizing: border-box;
+    border-radius: 0;
 }
 
 textarea {

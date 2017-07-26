@@ -206,7 +206,13 @@
 				ul {
 					width: 100%;
 					background: transparent;
-				}				
+				}	
+				
+				&:has-children {
+			    	:after {
+			    		content: '&#9662;';
+			    	}
+			    } 
 
 			}
 			ul {
@@ -221,7 +227,8 @@
 			    z-index: 99999;
 			    opacity: 1;
 			    transition: none;
-				
+			    
+
 				li {
 					display: block;
 					clear: both;

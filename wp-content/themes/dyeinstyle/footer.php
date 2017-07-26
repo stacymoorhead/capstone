@@ -21,14 +21,15 @@
 				<p>Bristol, Pennsylvania</p>
 				<p><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</p>
 			</div>
-			<nav class="footer-social">
+			<div class="footer-social">
 				<h2>Find us on:</h2>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'social',
 					) );
 				?>
-			</nav>	
+				<a href="https://clients.mindbodyonline.com/asp/su1.asp?fl=true&tabID=2"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+			</div>	
 			<div class="hours">
 				<h2>Hours</h2>
 				<?php

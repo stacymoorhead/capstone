@@ -24,6 +24,7 @@ along with this program. If not, write to the Free Software Foundation, Inc.,
 */
 
 function custom_posttypes() {
+	//Services Icons
     $labels = array(
 		'name'               => 'Services',
 		'singular_name'      => 'Service',
@@ -58,8 +59,45 @@ function custom_posttypes() {
 		'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'service_page_url' )
 	);
     register_post_type('services', $args);
-}
+    
+    //People
+    $labels = array(
+		'name'               => 'Staff',
+		'singular_name'      => 'Staff Member',
+		'menu_name'          => 'Staff' ,
+		'name_admin_bar'     => 'Staff Member',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Staff Member' ,
+		'new_item'           => 'New Staff Member',
+		'edit_item'          => 'Edit Staff Member' ,
+		'view_item'          => 'View Staff Member' ,
+		'all_items'          => 'All Staff',
+		'search_items'       => 'Search Staff',
+		'parent_item_colon'  => 'Parent Staff:',
+		'not_found'          => 'No staff found.',
+		'not_found_in_trash' => 'No staff found in Trash.' 
+	);
 
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'menu_position'      => 5,
+		'menu_icon'          => 'dashicons-id-alt',
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'staff' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies'		 => array( 'category', 'post_tag' )
+
+	);
+    register_post_type('staff', $args);
+}
 add_action('init', 'custom_posttypes');
 
 function my_rewrite_flush() {

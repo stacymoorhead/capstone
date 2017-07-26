@@ -7781,13 +7781,13 @@ h6 {
 	font-size: 1.2em;
 }
 
-.services-icons h2 {
+article h2 {
 	font-family: "Grand Hotel", Georgia, Cambria, cursive;
-	font-size: 4em;
-	font-weight: 400;
-	text-transform: none;
+	color: #836393;
 	letter-spacing: 0;
+	text-transform: none;
 	text-align: center;
+	font-weight: 400;
 }
 
 p {
@@ -8097,6 +8097,10 @@ input[type="submit"]:focus {
 	color: #8f1622;
 }
 
+.form-submit {
+	text-align: center;
+}
+
 .appointment {
 	margin-left: 2em;
 	padding: .5em 1em;
@@ -8116,6 +8120,75 @@ input[type="submit"]:focus {
 	.appointment {
 		display: none;
 	}
+}
+
+.appointment-footer {
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #d2c7e2;
+	border: 2px solid #d2c7e2;
+	transition: all 0.5s ease-in-out;
+	margin-top: 2em;
+	padding: .6em 1em;
+}
+
+.appointment-footer:link {
+	background-color: transparent;
+	border-color: #d2c7e2;
+	color: #d2c7e2;
+}
+
+.appointment-footer:hover {
+	background-color: transparent;
+	border-color: #d2c7e2;
+	color: #d2c7e2;
+	fill: #d2c7e2;
+	text-decoration: none;
+}
+
+.appointment-footer:hover svg {
+	fill: #d2c7e2;
+	left: 5px;
+}
+
+.appointment-footer:active {
+	background-color: transparent;
+	border-color: #d2c7e2;
+	color: #d2c7e2;
+	box-shadow: none;
+}
+
+.appointment-footer:active svg {
+	fill: #d2c7e2;
+	left: 5px;
+}
+
+.appointment-footer:focus, .appointment-footer:active:focus {
+	background-color: transparent;
+	border-color: #d2c7e2;
+	color: #d2c7e2;
+	outline: 5px auto #d2c7e2;
+}
+
+.appointment-footer:focus, .appointment-footer:active:focus svg {
+	fill: #d2c7e2;
+	left: 5px;
+}
+
+.appointment-footer:visited {
+	background-color: transparent;
+	border-color: #d2c7e2;
+}
+
+.appointment-footer:hover {
+	border-color: #836393;
+	color: #836393;
+}
+
+.appointment-footer:active, .appointment-footer:focus {
+	border-color: #836393;
+	color: #836393;
 }
 
 .edit-link, .comment-edit-link, .comment-reply-link {
@@ -8195,7 +8268,17 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #ccc;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 400;
+	color: #bbbdbf;
+	border: 2px solid #bbbdbf;
+	transition: all 0.5s ease-in-out;
+	font-size: .8em;
+	line-height: 1;
+	padding: .6em;
+	background: transparent;
+	box-sizing: border-box;
+	border-radius: 0;
 }
 
 textarea {
@@ -8488,6 +8571,9 @@ a:hover, a:active {
 	.main-navigation ul li ul {
 		width: 100%;
 		background: transparent;
+	}
+	.main-navigation ul li:has-children :after {
+		content: '&#9662;';
 	}
 	.main-navigation ul ul {
 		display: block;
@@ -8793,19 +8879,15 @@ a:hover, a:active {
 	margin: 0 auto;
 }
 
+.hentry :last-child {
+	margin: 0 auto;
+}
+
 @media screen and (min-width: 900px) {
 	.has-sidebar .hentry {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
-	}
-	.has-sidebar .hentry :last-child {
-		margin: 0;
+		/*display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;*/
 	}
 	.has-sidebar .hentry .entry-header {
 		width: 100%;
@@ -8995,7 +9077,7 @@ a:hover, a:active {
 
 .header-image-front {
 	position: relative;
-	max-height: 60vh;
+	max-height: 550px;
 	overflow: hidden;
 	z-index: 0;
 	background-color: black;
@@ -9017,7 +9099,7 @@ a:hover, a:active {
 
 .header-image {
 	position: relative;
-	max-height: 30vh;
+	max-height: 400px;
 	overflow: hidden;
 	z-index: 0;
 	background-color: black;
@@ -9365,7 +9447,7 @@ article {
 	margin-bottom: 1em;
 }
 
-.home-archive-content {
+.has-sidebar .home-archive-content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -9376,12 +9458,16 @@ article {
 	        justify-content: space-between;
 }
 
-.home-archive-posts {
-	width: 65%;
+.has-sidebar .home-archive-posts {
+	width: 70%;
 }
 
-.home-archive-sidebar {
-	width: 32%;
+.has-sidebar .home-archive-sidebar {
+	width: 27%;
+}
+
+.column-2 td {
+	text-align: right !important;
 }
 
 /*--------------------------------------------------------------
@@ -9390,7 +9476,7 @@ article {
 .comments-area {
 	width: 100%;
 	margin: 1em 0 0 0;
-	padding: 1.5em 0;
+	padding: 1.5em 1em;
 	border-top: 1px solid #cccccc;
 	background-color: trans(black, 0.75);
 	background-color: rgba(0, 0, 0, 0.75);
@@ -9608,10 +9694,14 @@ article {
 }
 
 .reply {
-	width: 70px;
-	text-align: center;
-	clear: left;
-	position: relative;
+	text-align: right;
+}
+
+.reply a {
+	color: white;
+	font-size: .8em;
+	margin-left: 0;
+	letter-spacing: .1em;
 	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-weight: 800;
 	text-transform: uppercase;
@@ -9620,13 +9710,13 @@ article {
 	transition: all 0.5s ease-in-out;
 }
 
-.reply:link {
+.reply a:link {
 	background-color: transparent;
 	border-color: white;
 	color: white;
 }
 
-.reply:hover {
+.reply a:hover {
 	background-color: transparent;
 	border-color: white;
 	color: white;
@@ -9634,59 +9724,49 @@ article {
 	text-decoration: none;
 }
 
-.reply:hover svg {
+.reply a:hover svg {
 	fill: white;
 	left: 5px;
 }
 
-.reply:active {
+.reply a:active {
 	background-color: transparent;
 	border-color: white;
 	color: white;
 	box-shadow: none;
 }
 
-.reply:active svg {
+.reply a:active svg {
 	fill: white;
 	left: 5px;
 }
 
-.reply:focus, .reply:active:focus {
+.reply a:focus, .reply a:active:focus {
 	background-color: transparent;
 	border-color: white;
 	color: white;
 	outline: 5px auto white;
 }
 
-.reply:focus, .reply:active:focus svg {
+.reply a:focus, .reply a:active:focus svg {
 	fill: white;
 	left: 5px;
 }
 
-.reply:visited {
+.reply a:visited {
 	background-color: transparent;
 	border-color: white;
 }
 
-.reply:hover {
-	border-color: #8f1622;
-	color: #8f1622;
-}
-
-.reply:active, .reply:focus {
-	border-color: #8f1622;
-	color: #8f1622;
-}
-
-.reply a {
-	color: white;
-	font-size: .8em;
-	margin-left: 0;
-	letter-spacing: .1em;
-}
-
 .reply a:hover {
+	border-color: #d2c7e2;
+	color: #d2c7e2;
 	text-decoration: none;
+}
+
+.reply a:active, .reply a:focus {
+	border-color: #836393;
+	color: #836393;
 }
 
 .comment-content ol {
@@ -9697,11 +9777,56 @@ article {
 	word-wrap: break-word;
 }
 
+.comment-respond {
+	color: #bbbdbf;
+}
+
 .comment-respond textarea {
 	border: none;
 	border-radius: 0;
 	background-color: trans(white, 0.75);
 	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.comment-respond label {
+	color: white;
+}
+
+.comment-respond button,
+.comment-respond input[type="button"],
+.comment-respond input[type="reset"],
+.comment-respond input[type="submit"] {
+	color: white;
+	font-size: 12px;
+	/*font-size: $sizeValue * 1rem;*/
+	border-color: white;
+	line-height: 1;
+	letter-spacing: .1em;
+	padding: .6em 1em;
+	background: transparent;
+}
+
+.comment-respond button:hover,
+.comment-respond input[type="button"]:hover,
+.comment-respond input[type="reset"]:hover,
+.comment-respond input[type="submit"]:hover {
+	border-color: #d2c7e2;
+	color: #d2c7e2;
+}
+
+.comment-respond button:active, .comment-respond button:focus,
+.comment-respond input[type="button"]:active,
+.comment-respond input[type="button"]:focus,
+.comment-respond input[type="reset"]:active,
+.comment-respond input[type="reset"]:focus,
+.comment-respond input[type="submit"]:active,
+.comment-respond input[type="submit"]:focus {
+	border-color: #836393;
+	color: #836393;
+}
+
+.comment-respond input[type="text"], .comment-respond input[type="email"], .comment-respond input[type="url"] {
+	width: 100% !important;
 }
 
 /*--------------------------------------------------------------
@@ -9931,6 +10056,10 @@ article {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	wrap: true;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
 }
 
 .icon-boxes img {
@@ -10041,6 +10170,15 @@ article {
 	position: relative;
 }
 
+.news-container:before, .news-container:after {
+	content: " ";
+	display: table;
+}
+
+.news-container:after {
+	clear: both;
+}
+
 @media screen and (min-width: 900px) {
 	.news-container {
 		width: 800px;
@@ -10074,7 +10212,7 @@ article {
 	color: #d2c7e2;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
 	.news-item {
 		display: block;
 		float: left;
@@ -10085,7 +10223,9 @@ article {
 }
 
 .continue-reading {
+	margin-top: 1em;
 	font-size: .8em;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -10105,6 +10245,7 @@ article {
 	margin: 0 0 1em 0;
 	padding: 1em;
 	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: .8em;
 	background-color: trans(white, 0.65);
 	background-color: rgba(255, 255, 255, 0.65);
 	/* Make sure select elements fit in widgets. */
@@ -10120,8 +10261,8 @@ article {
 .widget ul li,
 .widget ol li {
 	display: block;
-	border-top: 1px dotted #bbbdbf;
-	padding: .5em 0;
+	/*border-top: 1px dotted $color__gray;
+			padding: .5em 0;*/
 }
 
 .widget ul li ul,
@@ -10146,11 +10287,21 @@ article {
 }
 
 .widget select {
-	width: 100%;
-	height: 2.5em;
-	padding: 10px;
 	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-	border: 1px solid #ccc;
+	font-weight: 400;
+	color: #bbbdbf;
+	border: 2px solid #bbbdbf;
+	transition: all 0.5s ease-in-out;
+	font-size: .8em;
+	line-height: 1;
+	padding: .6em;
+	width: 100%;
+	background: transparent;
+	box-sizing: border-box;
+}
+
+input[type="search"] {
+	padding: .6em;
 }
 
 .widget-title {
