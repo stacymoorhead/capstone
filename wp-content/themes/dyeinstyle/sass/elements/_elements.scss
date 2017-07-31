@@ -31,6 +31,8 @@ blockquote, q {
 
 cite {
 	font-style: italic;
+	margin: 0 1.5em !important;
+    font-size: .9em;
 	&:before {
 		content:"—";
 	}

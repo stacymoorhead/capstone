@@ -121,6 +121,7 @@
 
 .footer-social {
     order: 3;
+    text-align: center;
     ul {
         list-style-type: none;
         display: flex;
@@ -138,12 +139,14 @@
 .site-info {
     text-align: center;
     margin: 1em;
+    font-size: .8em;
+    float: left;
     
     @media screen and (min-width: $query__medium) {
         margin: 1em 2em;
         width: 100%;
         clear: both;
-        float: left;
+        
     }
 }
 

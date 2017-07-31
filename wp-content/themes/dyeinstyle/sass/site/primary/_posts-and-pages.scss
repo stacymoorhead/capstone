@@ -158,3 +158,43 @@ article {
 	}
 }
 
+.staff {
+	column-count: 1;
+    column-gap: 1em;
+    box-sizing: border-box;
+    
+    @media screen and (min-width: $query__mobile) {
+    	column-count: 2;
+    }
+	
+
+	h3 {
+		font-family: $font__cursive;
+   		color: $color__dark-purple;
+    	text-align: center;
+    	font-weight: 400;
+    	text-transform: none;
+    	letter-spacing: 0;
+	}
+	
+	h4 {
+		font-size: 1em;
+   		color: $color__light-purple;
+    	text-align: center;
+    	font-weight: 800;
+    	text-transform: uppercase;
+	}
+	
+	p {
+		margin: 0;
+	}
+	
+	article {
+		display: inline-block;
+    	margin: 0 0 1em;
+   		width: 100%;
+		padding: 1em;
+		box-sizing: border-box;
+	}
+}
+

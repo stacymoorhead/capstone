@@ -67,3 +67,53 @@ input[type="search"] {
 	margin-bottom: .5em;
 	font-size: 1.4em;
 }
+
+#about-sidebar {
+	h2 {
+		color: $color__dark-purple;
+	}
+	p {
+		margin: 1em 0 0 0 !important;
+		font-size: 1em;
+		color: $color__medium-gray;
+	}
+	
+	strong {
+		color: $color__dark-purple;
+	}
+	
+	padding-bottom: 0;
+}
+
+.hours {
+	.widget {
+		font-size: 1em;
+		background: none;
+	}
+	
+	p {
+		font-size: .8em;
+	}
+	
+	li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.contact-info {
+    li {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	}
+	
+	.widget {
+		font-size: 1em;
+		background: none;		
+	}
+	
+	p {
+		margin: 0;
+	}
+}

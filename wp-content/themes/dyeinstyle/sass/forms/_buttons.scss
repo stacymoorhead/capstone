@@ -1,3 +1,8 @@
+.button {
+	text-align: center;
+	margin-top: 1em;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -87,4 +92,9 @@ input[type="submit"] {
 	.edit-link {
 		margin: 1em;
 	}
+}
+
+.staff-edit-link {
+	margin: 0;
+	padding: .3em 1em;
 }

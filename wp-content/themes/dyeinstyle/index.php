@@ -49,7 +49,7 @@ get_header(); ?>
 			
 					endif; ?>
 
-				</div><!-- .archive-content -->
+				</div><!-- .home-archive-posts -->
 				<div class="home-archive-sidebar">
 					<?php get_sidebar(); ?>
 				</div><!-- .archive-sidebar -->

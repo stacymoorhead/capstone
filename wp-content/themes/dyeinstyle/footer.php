@@ -31,29 +31,13 @@
 				<a href="https://clients.mindbodyonline.com/asp/su1.asp?fl=true&tabID=2"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
 			</div>	
 			<div class="hours">
-				<h2>Hours</h2>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'hours',
-					) );
-				?>
-				<nav class="hours">
-					
-				</nav>
+				<?php get_sidebar( 'footer-hours'); ?>
 			</div>
 		</div>	
 	</footer><!-- #colophon -->
 	<div class="site-info">
-		<!--<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dyeinstyle' ) ); ?>"><?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'dyeinstyle' ), 'WordPress' );
-		?></a>
-		<span class="sep"> | </span>-->
-		<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'dyeinstyle' ), 'dyeinstyle', '<a href="http://www.stacylauren.com">Stacy Lauren Designs</a> &copy; Copyright' );
-			echo date("Y");
-		?>
+		<p>Website design by <a href="http://www.stacylauren.com">Stacy Lauren Designs</a> &copy; <?php echo date(" Y"); ?> Copyright Maria&rsquo;s Dye in Style.</p>
+		<p>Website not viewing properly? You may need to upgrade your <a href="http://whatbrowser.org/">browser</a>. This site is best viewed in a <a href="http://browsehappy.com/">modern browser</a>.</p>	
 		</div><!-- .site-info -->
 </div><!-- #page -->
 

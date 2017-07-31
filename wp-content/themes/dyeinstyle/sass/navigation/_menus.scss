@@ -206,13 +206,12 @@
 				ul {
 					width: 100%;
 					background: transparent;
+					&:has-children {
+						&:after {
+							content:"&#9662;";
+						}
+					}	
 				}	
-				
-				&:has-children {
-			    	:after {
-			    		content: '&#9662;';
-			    	}
-			    } 
 
 			}
 			ul {

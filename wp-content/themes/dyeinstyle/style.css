@@ -7875,6 +7875,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 cite {
 	font-style: italic;
+	margin: 0 1.5em !important;
+	font-size: .9em;
 }
 
 cite:before {
@@ -7982,6 +7984,11 @@ td:last-child {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+.button {
+	text-align: center;
+	margin-top: 1em;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -8218,6 +8225,11 @@ input[type="submit"]:focus {
 	.edit-link {
 		margin: 1em;
 	}
+}
+
+.staff-edit-link {
+	margin: 0;
+	padding: .3em 1em;
 }
 
 input[type="text"],
@@ -8572,8 +8584,8 @@ a:hover, a:active {
 		width: 100%;
 		background: transparent;
 	}
-	.main-navigation ul li:has-children :after {
-		content: '&#9662;';
+	.main-navigation ul li ul:has-children:after {
+		content: "&#9662;";
 	}
 	.main-navigation ul ul {
 		display: block;
@@ -9071,7 +9083,7 @@ a:hover, a:active {
 
 @media screen and (max-width: 500px) {
 	.site-title {
-		font-size: 1.8em;
+		font-size: 1.6em;
 	}
 }
 
@@ -9468,6 +9480,50 @@ article {
 
 .column-2 td {
 	text-align: right !important;
+}
+
+.staff {
+	-webkit-column-count: 1;
+	        column-count: 1;
+	-webkit-column-gap: 1em;
+	        column-gap: 1em;
+	box-sizing: border-box;
+}
+
+@media screen and (min-width: 500px) {
+	.staff {
+		-webkit-column-count: 2;
+		        column-count: 2;
+	}
+}
+
+.staff h3 {
+	font-family: "Grand Hotel", Georgia, Cambria, cursive;
+	color: #836393;
+	text-align: center;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+.staff h4 {
+	font-size: 1em;
+	color: #d2c7e2;
+	text-align: center;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.staff p {
+	margin: 0;
+}
+
+.staff article {
+	display: inline-block;
+	margin: 0 0 1em;
+	width: 100%;
+	padding: 1em;
+	box-sizing: border-box;
 }
 
 /*--------------------------------------------------------------
@@ -9984,6 +10040,7 @@ article {
 	-webkit-box-ordinal-group: 4;
 	    -ms-flex-order: 3;
 	        order: 3;
+	text-align: center;
 }
 
 .footer-social ul {
@@ -10006,6 +10063,8 @@ article {
 .site-info {
 	text-align: center;
 	margin: 1em;
+	font-size: .8em;
+	float: left;
 }
 
 @media screen and (min-width: 900px) {
@@ -10013,7 +10072,6 @@ article {
 		margin: 1em 2em;
 		width: 100%;
 		clear: both;
-		float: left;
 	}
 }
 
@@ -10041,7 +10099,7 @@ article {
 
 .services-icons h3 {
 	font-size: 1em;
-	color: #666666;
+	color: #9c9c9c;
 	text-align: center;
 	font-weight: 800;
 }
@@ -10308,6 +10366,53 @@ input[type="search"] {
 	margin-top: 0;
 	margin-bottom: .5em;
 	font-size: 1.4em;
+}
+
+#about-sidebar {
+	padding-bottom: 0;
+}
+
+#about-sidebar h2 {
+	color: #836393;
+}
+
+#about-sidebar p {
+	margin: 1em 0 0 0 !important;
+	font-size: 1em;
+	color: #9c9c9c;
+}
+
+#about-sidebar strong {
+	color: #836393;
+}
+
+.hours .widget {
+	font-size: 1em;
+	background: none;
+}
+
+.hours p {
+	font-size: .8em;
+}
+
+.hours li {
+	margin: 0;
+	padding: 0;
+}
+
+.contact-info li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.contact-info .widget {
+	font-size: 1em;
+	background: none;
+}
+
+.contact-info p {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
