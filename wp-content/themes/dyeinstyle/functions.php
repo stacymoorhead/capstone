@@ -239,6 +239,17 @@ add_action( 'wp_enqueue_scripts', 'dyeinstyle_scripts' );
 		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 	
 	}
+	
+// Bootstrap Navigation
+function wpt_register_js() {
+    wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'jquery'); 
+    wp_enqueue_script('jquery.bootstrap.min');
+}
+add_action( 'init', 'wpt_register_js' );
+
+
+// Register custom navigation walker
+    require_once('wp-bootstrap-navwalker.php');
 
 /**
  * Implement the Custom Header feature.

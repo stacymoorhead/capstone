@@ -8345,6 +8345,7 @@ a:hover, a:active {
 	margin: 0;
 	padding-left: 0;
 	text-align: center;
+	width: 100%;
 }
 
 .navbar ul ul, .navbar-default ul ul, .main-navigation ul ul {
@@ -8393,6 +8394,8 @@ a:hover, a:active {
 .navbar li, .navbar-default li, .main-navigation li {
 	float: left;
 	position: relative;
+	text-align: center;
+	width: 100%;
 }
 
 .navbar li:hover > a,
@@ -8420,7 +8423,7 @@ a:hover, a:active {
 	}
 	.navbar ul, .navbar-default ul, .main-navigation ul {
 		display: block;
-		clear: none;
+		clear: none !important;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -8430,6 +8433,8 @@ a:hover, a:active {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		padding-top: 0;
+		text-align: left;
+		width: auto;
 	}
 	.navbar ul ul, .navbar-default ul ul, .main-navigation ul ul {
 		-webkit-box-orient: vertical;
@@ -8446,10 +8451,14 @@ a:hover, a:active {
 	}
 	.navbar ul ul li, .navbar-default ul ul li, .main-navigation ul ul li {
 		padding-left: 0;
+		text-align: left;
 	}
 	.navbar ul ul li a, .navbar-default ul ul li a, .main-navigation ul ul li a {
 		width: 218px;
 		background: none;
+	}
+	.navbar ul li, .navbar-default ul li, .main-navigation ul li {
+		width: auto;
 	}
 	.navbar ul li a, .navbar-default ul li a, .main-navigation ul li a {
 		padding: .4em 1em;
@@ -8468,6 +8477,16 @@ a:hover, a:active {
 .main-navigation .current-menu-ancestor > a {
 	background-color: trans(#333333, 0.95);
 	background-color: rgba(51, 51, 51, 0.95);
+}
+
+@media screen and (min-width: 768px) {
+	.navbar ul li:hover > ul, .navbar ul li.focus > ul, .navbar-default ul li:hover > ul, .navbar-default ul li.focus > ul, .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+		left: auto;
+		opacity: 1;
+		width: 218px;
+		position: absolute;
+		top: 35px;
+	}
 }
 
 .navbar-header {
@@ -8497,6 +8516,7 @@ a:hover, a:active {
 
 .collapse, .navbar-collapse, .navbar-ex1-collapse, .navbar-collapse.collapse {
 	box-sizing: border-box;
+	box-shadow: none;
 }
 
 @media screen and (min-width: 900px) {
@@ -8529,6 +8549,11 @@ a:hover, a:active {
 	background-image: none;
 	border: none;
 	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-toggle:active {
+	background: transparent;
+	border: none;
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {

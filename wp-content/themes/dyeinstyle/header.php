@@ -39,18 +39,32 @@
 			</div>
 		</div>
 		<header id="masthead" class="site-header">
-			<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			</div><!-- .site-branding -->
-	
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i> <?php esc_html_e( 'Menu', 'dyeinstyle' ); ?></button>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'main-nav',
-						'menu_id'        => 'primary-menu',
-					) );
+			<nav class="navbar navbar-default main-navigation" role="navigation"> 
+			<!-- Brand and toggle get grouped for better mobile display --> 
+			  <div class="navbar-header"> 
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+			      <span class="sr-only">Toggle navigation</span> 
+			      <span class="icon-bar"></span> 
+			      <span class="icon-bar"></span> 
+			      <span class="icon-bar"></span> 
+			    </button> 
+			  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			  </div> 
+			  <!-- Collect the nav links, forms, and other content for toggling --> 
+			  <div class="collapse navbar-collapse navbar-ex1-collapse"> 
+			    <?php /* Primary navigation */
+				wp_nav_menu( array(
+				  'menu' => 'top_menu',
+				  'depth' => 2,
+				  'container' => false,
+				  'menu_class' => 'nav',
+				  'theme_location' => 'main-nav',
+				  'menu_id'        => 'primary-menu',
+				  //Process nav menu using our custom nav walker
+				  'walker' => new wp_bootstrap_navwalker())
+				);
 				?>
+			  </div>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 	</div><!-- .fixed -->	
