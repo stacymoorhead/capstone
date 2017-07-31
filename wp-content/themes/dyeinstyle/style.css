@@ -9686,8 +9686,8 @@ article {
 
 @media screen and (min-width: 500px) {
 	.staff {
-		-webkit-column-count: 2;
-		        column-count: 2;
+		-webkit-column-count: 3;
+		        column-count: 3;
 	}
 }
 
