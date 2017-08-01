@@ -846,3 +846,25 @@
 [01-Aug-2017 19:00:07 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
 [01-Aug-2017 19:00:07 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
 [01-Aug-2017 19:00:07 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 20:04:54 UTC] PHP Notice:  Undefined index: template in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/public/class-wp-fb-reviews-widget.php on line 80
+[01-Aug-2017 20:04:54 UTC] PHP Stack trace:
+[01-Aug-2017 20:04:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 20:04:54 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin-ajax.php:91
+[01-Aug-2017 20:04:54 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 20:04:54 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 20:04:54 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 20:04:54 UTC] PHP   6. wp_ajax_save_widget() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 20:04:54 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977}() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
+[01-Aug-2017 20:04:54 UTC] PHP   8. WP_Widget->update_callback() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
+[01-Aug-2017 20:04:54 UTC] PHP   9. wprev_Widget->update() /home/ubuntu/workspace/wp-includes/class-wp-widget.php:456
+[01-Aug-2017 20:05:06 UTC] PHP Notice:  Undefined index: template in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/public/class-wp-fb-reviews-widget.php on line 80
+[01-Aug-2017 20:05:06 UTC] PHP Stack trace:
+[01-Aug-2017 20:05:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 20:05:06 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin-ajax.php:91
+[01-Aug-2017 20:05:06 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 20:05:06 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 20:05:06 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 20:05:06 UTC] PHP   6. wp_ajax_save_widget() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 20:05:06 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977}() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
+[01-Aug-2017 20:05:06 UTC] PHP   8. WP_Widget->update_callback() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
+[01-Aug-2017 20:05:06 UTC] PHP   9. wprev_Widget->update() /home/ubuntu/workspace/wp-includes/class-wp-widget.php:456

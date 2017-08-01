@@ -10324,6 +10324,18 @@ article {
 	text-align: center;
 }
 
+.reviews {
+	margin: 1em 1em 0 1em;
+	width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+	.reviews {
+		max-width: 1080px;
+		margin: 1em auto 0 auto;
+	}
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
