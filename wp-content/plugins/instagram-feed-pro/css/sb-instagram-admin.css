@@ -628,7 +628,10 @@
 }
 .sbi-welcome .sbi-feature-section-content li{
 	list-style: disc;
-  list-style-position: inside;
+	list-style-position: outside;
+	font-size: 14px;
+	line-height: 1.5;
+	margin-left: 20px;
 }
 .sbi-welcome .sbi-footnote{
 	font-size: 12px;

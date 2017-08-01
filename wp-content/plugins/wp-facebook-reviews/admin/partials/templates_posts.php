@@ -122,7 +122,7 @@
 			$min_rating = "";
 			$min_words = "";
 			$max_words = "";			
-			$rtype = "";
+			$rtype = '["fb"]';
 			$rpage = "";
 			$showreviewsbyid="";
 			$sliderautoplay = "";

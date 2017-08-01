@@ -92,3 +92,35 @@
 	}
 	
 } 
+
+.pagination {
+
+	font-family: $font__sans;
+	width: 100%;
+
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	a,
+	span {
+		padding: .3em 1em;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: white;
+			background: $color__red;
+		}
+	}
+
+	.current {
+		font-weight: 700;
+		color: $color__red;
+	}
+}

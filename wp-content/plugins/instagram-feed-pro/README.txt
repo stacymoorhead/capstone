@@ -3,8 +3,8 @@ Contributors: smashballoon
 Support Website: http://smashballoon/instagram-feed/
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 2.5.1
-Version: 2.5.1
+Stable tag: 2.6.1
+Version: 2.6.1
 License: Non-distributable, Not for resale
 
 Display beautifully clean, customizable, and responsive feeds from multiple Instagram accounts
@@ -39,6 +39,16 @@ Display Instagram photos from any non-private Instagram accounts, either in the 
 5. You can display multiple Instagram feeds by using shortcode options, for example: `[instagram-feed id=YOUR_USER_ID_HERE cols=3 width=50 widthunit=%]`
 
 == Changelog ==
+= 2.6.1 =
+* Fix: Fixed an issue with videos in slideshow posts
+
+= 2.6 =
+* New: Instagram "Slideshow" posts are now supported. When viewing a slideshow post in the popup lightbox you can now scroll through to view the other images.
+* Tweak: The lightbox navigation arrows have been moved outside of the image area to make room for slideshow posts and closer emulate the lightbox on Instagram
+* Tweak: Font Awesome stylesheet handle has been renamed so it will only be loaded once if Custom Facebook Feed is also active
+* Tweak: Removed query string at the end of the Font Awesome css file when being included on the page
+* Fix: Undeclared variables in the JavaScript file now declared for strict mode compatibility
+
 = 2.5.1 =
 * Fix: Feed cache was being assigned to the header cache under certain conditions causing the header to show as "undefined"
 * Fix: Php notice when saving moderation mode settings without any blocked users

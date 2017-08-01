@@ -345,3 +345,504 @@
 [31-Jul-2017 14:21:46 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
 [31-Jul-2017 14:21:46 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
 [31-Jul-2017 14:21:46 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:47:18 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:47:18 UTC] PHP Stack trace:
+[01-Aug-2017 18:47:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:47:18 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:47:18 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:47:18 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:47:29 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:47:29 UTC] PHP Stack trace:
+[01-Aug-2017 18:47:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:47:29 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:47:29 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:47:29 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:47:29 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:48:17 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:48:17 UTC] PHP Stack trace:
+[01-Aug-2017 18:48:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:48:17 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:48:17 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:48:17 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:48:17 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:50:04 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:50:04 UTC] PHP Stack trace:
+[01-Aug-2017 18:50:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:50:04 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:50:04 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:50:04 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:50:04 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:50:20 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:50:20 UTC] PHP Stack trace:
+[01-Aug-2017 18:50:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:50:20 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:50:20 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:50:20 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:50:20 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:50:38 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:50:38 UTC] PHP Stack trace:
+[01-Aug-2017 18:50:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:50:38 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:50:38 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:50:38 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:50:38 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:14 UTC] PHP Fatal error:  Call to undefined function dyeinstyle_fonts_url() in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:51:14 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:51:14 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:51:14 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:51:14 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:14 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:14 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:34 UTC] PHP Warning:  Missing argument 1 for dyeinstyle_resource_hints(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:51:34 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:51:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:51:34 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:51:34 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:34 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:34 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:34 UTC] PHP   7. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:34 UTC] PHP Warning:  Missing argument 2 for dyeinstyle_resource_hints(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:51:34 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:51:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:51:34 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:51:34 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:34 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:34 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:34 UTC] PHP   7. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:34 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:51:34 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:51:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:51:34 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:51:34 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:34 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:34 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:34 UTC] PHP   7. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:34 UTC] PHP   8. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:51:34 UTC] PHP   9. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:51:34 UTC] PHP  10. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:51:34 UTC] PHP  11. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:51:34 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 108
+[01-Aug-2017 18:51:34 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/edit.php:0
+[01-Aug-2017 18:51:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/edit.php:10
+[01-Aug-2017 18:51:34 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:51:34 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:34 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:34 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:34 UTC] PHP   7. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:36 UTC] PHP Warning:  Missing argument 1 for dyeinstyle_resource_hints(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:51:36 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:51:36 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:51:36 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:36 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:36 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:36 UTC] PHP   6. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:36 UTC] PHP Warning:  Missing argument 2 for dyeinstyle_resource_hints(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:51:36 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:51:36 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:51:36 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:36 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:36 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:36 UTC] PHP   6. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:36 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:51:36 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:51:36 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:51:36 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:36 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:36 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:36 UTC] PHP   6. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:51:36 UTC] PHP   7. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:51:36 UTC] PHP   8. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:51:36 UTC] PHP   9. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:51:36 UTC] PHP  10. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:51:36 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 108
+[01-Aug-2017 18:51:36 UTC] PHP Stack trace:
+[01-Aug-2017 18:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:51:36 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:51:36 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:51:36 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:51:36 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:51:36 UTC] PHP   6. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:53:33 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:53:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:53:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:53:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:53:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:53:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:53:33 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:53:33 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:53:33 UTC] PHP   7. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:53:33 UTC] PHP   8. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:53:33 UTC] PHP   9. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:53:33 UTC] PHP  10. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:53:34 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:53:34 UTC] PHP Stack trace:
+[01-Aug-2017 18:53:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:53:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:53:34 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:53:34 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:53:34 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:53:34 UTC] PHP   6. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:53:34 UTC] PHP   7. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:53:34 UTC] PHP   8. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:53:34 UTC] PHP   9. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:54:36 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:54:36 UTC] PHP Stack trace:
+[01-Aug-2017 18:54:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:54:36 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:54:36 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:54:36 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:54:36 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:54:36 UTC] PHP   6. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:54:36 UTC] PHP   7. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:54:36 UTC] PHP   8. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:54:36 UTC] PHP   9. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:55:35 UTC] PHP Parse error:  syntax error, unexpected ''dyeinstyle-fonts'' (T_CONSTANT_ENCAPSED_STRING), expecting '&' or variable (T_VARIABLE) in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:55:35 UTC] PHP Stack trace:
+[01-Aug-2017 18:55:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:55:35 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:55:35 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:55:35 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:55:39 UTC] PHP Parse error:  syntax error, unexpected ''dyeinstyle-fonts'' (T_CONSTANT_ENCAPSED_STRING), expecting '&' or variable (T_VARIABLE) in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:55:39 UTC] PHP Stack trace:
+[01-Aug-2017 18:55:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:55:39 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:55:39 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:55:39 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:55:39 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:55:39 UTC] PHP Parse error:  syntax error, unexpected ''dyeinstyle-fonts'' (T_CONSTANT_ENCAPSED_STRING), expecting '&' or variable (T_VARIABLE) in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:55:39 UTC] PHP Stack trace:
+[01-Aug-2017 18:55:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:55:39 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:55:39 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:55:39 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 86
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined variable: relation_type in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 86
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   7. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   8. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:56:47 UTC] PHP   9. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:56:47 UTC] PHP  10. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:56:47 UTC] PHP  11. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined offset: 0 in /home/ubuntu/workspace/wp-includes/plugin.php on line 888
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   7. add_action() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   8. add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:399
+[01-Aug-2017 18:56:47 UTC] PHP   9. WP_Hook->add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:111
+[01-Aug-2017 18:56:47 UTC] PHP  10. _wp_filter_build_unique_id() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:80
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined offset: 0 in /home/ubuntu/workspace/wp-includes/plugin.php on line 906
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   7. add_action() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   8. add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:399
+[01-Aug-2017 18:56:47 UTC] PHP   9. WP_Hook->add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:111
+[01-Aug-2017 18:56:47 UTC] PHP  10. _wp_filter_build_unique_id() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:80
+[01-Aug-2017 18:56:47 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   6. do_action() /home/ubuntu/workspace/wp-settings.php:432
+[01-Aug-2017 18:56:47 UTC] PHP   7. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:56:47 UTC] PHP   8. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:56:47 UTC] PHP   9. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 86
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined variable: relation_type in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 86
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   6. dyeinstyle_resource_hints() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   7. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:56:47 UTC] PHP   8. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:56:47 UTC] PHP   9. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:56:47 UTC] PHP  10. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined offset: 0 in /home/ubuntu/workspace/wp-includes/plugin.php on line 888
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   6. add_action() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   7. add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:399
+[01-Aug-2017 18:56:47 UTC] PHP   8. WP_Hook->add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:111
+[01-Aug-2017 18:56:47 UTC] PHP   9. _wp_filter_build_unique_id() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:80
+[01-Aug-2017 18:56:47 UTC] PHP Notice:  Undefined offset: 0 in /home/ubuntu/workspace/wp-includes/plugin.php on line 906
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:56:47 UTC] PHP   6. add_action() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:86
+[01-Aug-2017 18:56:47 UTC] PHP   7. add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:399
+[01-Aug-2017 18:56:47 UTC] PHP   8. WP_Hook->add_filter() /home/ubuntu/workspace/wp-includes/plugin.php:111
+[01-Aug-2017 18:56:47 UTC] PHP   9. _wp_filter_build_unique_id() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:80
+[01-Aug-2017 18:56:47 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:56:47 UTC] PHP Stack trace:
+[01-Aug-2017 18:56:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:56:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:56:47 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:56:47 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:56:47 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-settings.php:432
+[01-Aug-2017 18:56:47 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:56:47 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:56:47 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:57:33 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:57:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:57:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:57:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:57:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:57:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:57:33 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:57:33 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 18:57:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:57:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:57:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:57:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:57:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Missing argument 1 for dyeinstyle_fonts_url(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:58:31 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:58:31 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:58:31 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:58:31 UTC] PHP   7. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Missing argument 2 for dyeinstyle_fonts_url(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:58:31 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:58:31 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:58:31 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:58:31 UTC] PHP   7. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:58:31 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:58:31 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:58:31 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:58:31 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:58:31 UTC] PHP   7. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:58:31 UTC] PHP   9. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:58:31 UTC] PHP  10. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:58:31 UTC] PHP  11. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:58:31 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 108
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 18:58:31 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:58:31 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:58:31 UTC] PHP   6. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:58:31 UTC] PHP   7. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'dyeinstyle_resource_hints' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   9. apply_filters() /home/ubuntu/workspace/wp-includes/general-template.php:2876
+[01-Aug-2017 18:58:31 UTC] PHP  10. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/plugin.php:203
+[01-Aug-2017 18:58:31 UTC] PHP  11. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/wp-includes/general-template.php on line 2878
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'dyeinstyle_resource_hints' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   9. apply_filters() /home/ubuntu/workspace/wp-includes/general-template.php:2876
+[01-Aug-2017 18:58:31 UTC] PHP  10. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/plugin.php:203
+[01-Aug-2017 18:58:31 UTC] PHP  11. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/wp-includes/general-template.php on line 2878
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'dyeinstyle_resource_hints' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   9. apply_filters() /home/ubuntu/workspace/wp-includes/general-template.php:2876
+[01-Aug-2017 18:58:31 UTC] PHP  10. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/plugin.php:203
+[01-Aug-2017 18:58:31 UTC] PHP  11. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/wp-includes/general-template.php on line 2878
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'dyeinstyle_resource_hints' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   9. apply_filters() /home/ubuntu/workspace/wp-includes/general-template.php:2876
+[01-Aug-2017 18:58:31 UTC] PHP  10. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/plugin.php:203
+[01-Aug-2017 18:58:31 UTC] PHP  11. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/wp-includes/general-template.php on line 2878
+[01-Aug-2017 18:58:31 UTC] PHP Stack trace:
+[01-Aug-2017 18:58:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 18:58:31 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[01-Aug-2017 18:58:31 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:472
+[01-Aug-2017 18:58:31 UTC] PHP   4. do_action() /home/ubuntu/workspace/wp-admin/admin-header.php:111
+[01-Aug-2017 18:58:31 UTC] PHP   5. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[01-Aug-2017 18:58:31 UTC] PHP   6. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[01-Aug-2017 18:58:31 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:58:31 UTC] PHP   8. wp_resource_hints() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[01-Aug-2017 18:59:33 UTC] PHP Warning:  Missing argument 1 for dyeinstyle_fonts_url(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:59:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:59:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:59:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:59:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:59:33 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:59:33 UTC] PHP   6. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:59:33 UTC] PHP Warning:  Missing argument 2 for dyeinstyle_fonts_url(), called in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89 and defined in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 100
+[01-Aug-2017 18:59:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:59:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:59:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:59:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:59:33 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:59:33 UTC] PHP   6. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:59:33 UTC] PHP Notice:  wp_style_is was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/ubuntu/workspace/wp-includes/functions.php on line 4139
+[01-Aug-2017 18:59:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:59:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:59:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:59:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:59:33 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:59:33 UTC] PHP   6. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 18:59:33 UTC] PHP   7. wp_style_is() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:101
+[01-Aug-2017 18:59:33 UTC] PHP   8. _wp_scripts_maybe_doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-styles.php:202
+[01-Aug-2017 18:59:33 UTC] PHP   9. _doing_it_wrong() /home/ubuntu/workspace/wp-includes/functions.wp-scripts.php:47
+[01-Aug-2017 18:59:33 UTC] PHP  10. trigger_error() /home/ubuntu/workspace/wp-includes/functions.php:4139
+[01-Aug-2017 18:59:33 UTC] PHP Notice:  Undefined variable: urls in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 108
+[01-Aug-2017 18:59:33 UTC] PHP Stack trace:
+[01-Aug-2017 18:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 18:59:33 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 18:59:33 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 18:59:33 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 18:59:33 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:424
+[01-Aug-2017 18:59:33 UTC] PHP   6. dyeinstyle_fonts_url() /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php:89
+[01-Aug-2017 19:00:02 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 19:00:02 UTC] PHP Stack trace:
+[01-Aug-2017 19:00:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 19:00:02 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 19:00:02 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 19:00:02 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 19:00:02 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 19:00:02 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 19:00:02 UTC] PHP Stack trace:
+[01-Aug-2017 19:00:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[01-Aug-2017 19:00:02 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[01-Aug-2017 19:00:02 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 19:00:02 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[01-Aug-2017 19:00:07 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/functions.php on line 89
+[01-Aug-2017 19:00:07 UTC] PHP Stack trace:
+[01-Aug-2017 19:00:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[01-Aug-2017 19:00:07 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/post.php:12
+[01-Aug-2017 19:00:07 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-admin/admin.php:31
+[01-Aug-2017 19:00:07 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[01-Aug-2017 19:00:07 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:92

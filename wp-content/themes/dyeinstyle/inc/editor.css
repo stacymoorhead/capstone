@@ -1,0 +1,360 @@
+/**
+* Theme: Dyn in Style
+* Editor styles for TinyMCE
+*/
+
+html {
+    padding: 0 2em;
+}
+
+body {
+    max-width: 1080px;
+    margin: 0 auto;
+    color: black;
+    font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 14.4px;
+	/*font-size: $sizeValue * 1rem;*/
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .075em;
+	color: black;
+}
+
+h1 {
+	font-size: 2.6em;
+}
+
+h2 {
+	font-size: 2.2em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+h5 {
+	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
+}
+
+article h2 {
+	font-family: "Grand Hotel", Georgia, Cambria, cursive;
+	color: #836393;
+	letter-spacing: 0;
+	text-transform: none;
+	text-align: center;
+	font-weight: 400;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	/*font-size: $sizeValue * 1rem;*/
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	/*font-size: $sizeValue * 1rem;*/
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: url("images/greyfloral_2X.png") repeat fixed #fff;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+blockquote, q {
+	font-style: italic;
+	font-size: .9em;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+	quotes: "" "";
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+
+cite {
+	font-style: italic;
+	margin: 0 1.5em !important;
+	font-size: .9em;
+}
+
+cite:before {
+	content: "—";
+}
+
+hr {
+	background-color: #bbbdbf;
+	border: 0;
+	height: 2px;
+	width: 50px;
+	margin: 1em auto;
+}
+
+.purple {
+	background-color: #d2c7e2;
+}
+
+strong {
+	font-weight: 800;
+}
+
+ul, ol {
+	margin: 0 0 1em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ul ul {
+	list-style: circle;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: .5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1em 1em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+thread th {
+	border-bottom: 2px solid #d2c7e2;
+	padding-bottom: .5em;
+}
+
+td,
+th {
+	vertical-align: top;
+}
+
+th {
+	padding: .4em;
+	text-align: left;
+	color: black;
+}
+
+tr {
+	border-bottom: 1px solid #d2c7e2;
+}
+
+td {
+	padding: .4em;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+a {
+	color: #be1e2d;
+	transition: all 0.5s ease-in-out;
+}
+
+a:visited {
+	color: #8f1622;
+}
+
+a:hover, a:focus, a:active {
+	color: #8f1622;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+	font-size: .8em;
+	color: #bbbdbf;
+}
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33333%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66667%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28571%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11111%;
+}
+
+.gallery-caption {
+	display: block;
+}

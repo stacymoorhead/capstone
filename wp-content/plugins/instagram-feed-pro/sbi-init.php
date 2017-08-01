@@ -27,7 +27,7 @@ function display_sb_instagram_feed($atts, $content = null) {
 	$sb_instagram_settings = get_option('sb_instagram_settings');
 	$sb_instagram_settings['sb_instagram_disable_font'] = isset($sb_instagram_settings['sb_instagram_disable_font']) ? $sb_instagram_settings['sb_instagram_disable_font'] : false;
 
-	if( !$sb_instagram_settings['sb_instagram_disable_font'] ) wp_enqueue_style( 'sbi-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '4.6.3' );
+	if( !$sb_instagram_settings['sb_instagram_disable_font'] ) wp_enqueue_style( 'sb-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 
 	/******************* SHORTCODE OPTIONS ********************/
 
@@ -899,6 +899,21 @@ function sb_instagram_scripts_enqueue() {
     //Pass option to JS file
     wp_localize_script('sb_instagram_scripts', 'sb_instagram_js_options', $data);
 }
+
+if ( ! function_exists( 'sb_remove_style_version' ) ) {
+	function sb_remove_style_version( $src, $handle ){
+
+		if ( $handle === 'sb-font-awesome' ) {
+			$parts = explode( '?ver', $src );
+			return $parts[0];
+		} else {
+			return $src;
+		}
+
+	}
+	add_filter( 'style_loader_src', 'sb_remove_style_version', 15, 2 );
+}
+
 
 //Custom CSS
 add_action( 'wp_head', 'sb_instagram_custom_css' );

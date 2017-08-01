@@ -88,14 +88,26 @@ if(!sbi_js_exists){
                         return b.start(a(c.currentTarget)), !1
                     })
                 }, b.prototype.build = function() {
-                    var b = this;
+                    var b = this,
+                        sbLbCarouselDestroy = function() {
+                            jQuery('#sbi_lightbox .sbi_lb_lightbox-image').remove();
+                            if (jQuery('#sbi_lightbox .sbi_owl-carousel').length)  {
+                                jQuery('#sbi_lightbox .sbi_owl-carousel').data('sbi_owlCarousel').destroy();
+                                jQuery('#sbi_lightbox .sbi_owl-item').remove();
+                            }
+                            jQuery('#sbi_lightbox').find('.fa-clone').remove();
+                        };
                     a("<div id='sbi_lightboxOverlay' class='sbi_lightboxOverlay'></div>" +
                         "<div id='sbi_lightbox' class='sbi_lightbox'>" +
                         "<div class='sbi_lb-outerContainer'>" +
+                        "<div class='sbi_lb-nav'><a class='sbi_lb-prev' href='#' ><span></span></a><a class='sbi_lb-next' href='#' ><span></span></a></div>" +
                         "<div class='sbi_lb-container-wrapper'>" +
                         "<div class='sbi_lb-container'><video class='sbi_video' src='' poster='' controls></video>" +
+                        "<div class='sbi_lb-image-wrap-outer'>" +
+                        "<div class='sbi_lb-image-wrap'>" +
                         "<img class='sbi_lb-image' src='' />" +
-                        "<div class='sbi_lb-nav'><a class='sbi_lb-prev' href='#' ><span></span></a><a class='sbi_lb-next' href='#' ><span></span></a></div>" +
+                        "</div>" +
+                        "</div>" +
                         "<div class='sbi_lb-loader'><span class='fa-spin'></span></div>" +
                         "</div>" +
                         "<div class='sbi_lb-dataContainer'>" +
@@ -114,25 +126,32 @@ if(!sbi_js_exists){
                                 jQuery('#sbi_lightboxOverlay, #sbi_lightbox').fadeOut();
                                 //Pause video
                                 if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
+                                sbLbCarouselDestroy();
                             }
                         }
                     }), this.$lightbox.hide(),
                         jQuery('#sbi_lightboxOverlay').on("click", function(c) {
+                            sbLbCarouselDestroy();
                             if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                             return "sbi_lightbox" === a(c.target).attr("id") && b.end(), !1
                         }), this.$lightbox.find(".sbi_lb-prev").on("click", function() {
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         return b.changeImage(0 === b.currentImageIndex ? b.album.length - 1 : b.currentImageIndex - 1), !1
                     }), this.$lightbox.find(".sbi_lb-container").on("swiperight", function() {
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         return b.changeImage(0 === b.currentImageIndex ? b.album.length - 1 : b.currentImageIndex - 1), !1
                     }), this.$lightbox.find(".sbi_lb-next").on("click", function() {
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         return b.changeImage(b.currentImageIndex === b.album.length - 1 ? 0 : b.currentImageIndex + 1), !1
                     }), this.$lightbox.find(".sbi_lb-container").on("swipeleft", function() {
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         return b.changeImage(b.currentImageIndex === b.album.length - 1 ? 0 : b.currentImageIndex + 1), !1
                     }), this.$lightbox.find(".sbi_lb-loader, .sbi_lb-close").on("click", function() {
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         return b.end(), !1
                     })
@@ -142,6 +161,10 @@ if(!sbi_js_exists){
                         //Get the options for this feed
                         var sbiFeedOptions = a.closest('.sbi').attr('data-options');
                         sbiFeedOptions = jQuery.parseJSON(sbiFeedOptions);
+                        var carouselData = jQuery.parseJSON(a.attr("data-carousel"));
+                        if (!carouselData) {
+                            carouselData = {};
+                        }
 
                         d.album.push({
                             link: a.attr("href"),
@@ -152,8 +175,10 @@ if(!sbi_js_exists){
                             user: a.attr("data-user"),
                             avatar: a.attr("data-avatar"),
                             lightboxcomments: sbiFeedOptions.lightboxcomments,
-                            numcomments: sbiFeedOptions.numcomments
-                        })
+                            numcomments: sbiFeedOptions.numcomments,
+                            carousel: carouselData
+                        });
+
                     }
                     var d = this,
                         e = a(window);
@@ -185,15 +210,17 @@ if(!sbi_js_exists){
                     e.onload = function() {
 
                         //If this feed has lightbox comments enabled then add room for the sidebar
-                        var sbi_lb_comments_width = 0;
-                        //console.log(this, self);
-                        //console.log($('#sbi_' + this.album[0].id).closest('.sbi').attr('data-sbi-lb-comments') === 'true');
+                        var sbi_lb_comments_width = 0,
+                            sbiNavArrowsWidth = 0;
                         if((jQuery('.sbi').attr('data-sbi-lb-comments') === 'true') && window.innerWidth > 640) {
                             sbi_lb_comments_width = 300;
                         }
+                        if(window.innerWidth < (740 + sbi_lb_comments_width) && window.innerWidth > 640) {
+                            sbiNavArrowsWidth = 100;
+                        }
 
-                        var f, g, h, i, j, k, l;
-                        d.attr("src", c.album[b].link), f = a(e), d.width(e.width), d.height(e.height), c.options.fitImagesInViewport && (l = a(window).width(), k = a(window).height(), j = l - c.containerLeftPadding - c.containerRightPadding - 20 - sbi_lb_comments_width, i = k - c.containerTopPadding - c.containerBottomPadding - 150, (e.width > j || e.height > i) && (e.width / j > e.height / i ? (h = j, g = parseInt(e.height / (e.width / h), 10), d.width(h), d.height(g)) : (g = i, h = parseInt(e.width / (e.height / g), 10), d.width(h), d.height(g)))), c.sizeContainer(d.width(), d.height())
+                            var f, g, h, i, j, k, l;
+                        d.attr("src", c.album[b].link), f = a(e), d.width(e.width), d.height(e.height), c.options.fitImagesInViewport && (l = a(window).width(), k = a(window).height(), j = l - c.containerLeftPadding - c.containerRightPadding - 20 - sbi_lb_comments_width - sbiNavArrowsWidth, i = k - c.containerTopPadding - c.containerBottomPadding - 150, (e.width > j || e.height > i) && (e.width / j > e.height / i ? (h = j, g = parseInt(e.height / (e.width / h), 10), d.width(h), d.height(g)) : (g = i, h = parseInt(e.width / (e.height / g), 10), d.width(h), d.height(g)))), c.sizeContainer(d.width(), d.height())
                     }, e.src = this.album[b].link, this.currentImageIndex = b
                 }, b.prototype.sizeOverlay = function() {
                     this.$overlay.width(a(window).width()).height(a(document).height())
@@ -224,7 +251,7 @@ if(!sbi_js_exists){
                     var b = this;
 
                     /** NEW PHOTO ACTION **/
-                    //Switch video when either a new popup or navigating to new one
+                        //Switch video when either a new popup or navigating to new one
                     if( sbi_supports_video() ){
                         jQuery('#sbi_lightbox').removeClass('sbi_video_lightbox');
                         if( this.album[this.currentImageIndex].video.length ){
@@ -246,14 +273,65 @@ if(!sbi_js_exists){
                     jQuery('#sbi_lightbox #sbi_linkedin_icon').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&url='+this.album[this.currentImageIndex].url+'&title='+this.album[this.currentImageIndex].title);
                     jQuery('#sbi_lightbox #sbi_pinterest_icon').attr('href', 'https://pinterest.com/pin/create/button/?url='+this.album[this.currentImageIndex].url+'&media='+this.album[this.currentImageIndex].link+'&description='+this.album[this.currentImageIndex].title);
                     jQuery('#sbi_lightbox #sbi_email_icon').attr('href', 'mailto:?subject=Instagram&body='+this.album[this.currentImageIndex].title+' '+this.album[this.currentImageIndex].url);
-                    //console.log(sb_instagram_js_options.sbiPageCommentCache);
 
-                    //**lightboxcomments and numcomments**
-                    //console.log( (this.album[this.currentImageIndex].lightboxcomments === 'true' || this.album[this.currentImageIndex].lightboxcomments === true), 'lightboxcomments' );
-                    //console.log( (this.album[this.currentImageIndex].lightboxcomments === true), 'lightboxcomments' );
-                    //console.log( this.album[this.currentImageIndex].numcomments );
-                    //**lightboxcomments and numcomments**
+                    // carousel in lightbox
+                    if( this.album[this.currentImageIndex].carousel !== '' && typeof this.album[this.currentImageIndex].carousel[0] !== 'undefined' ) {
+                        var wrapEl = jQuery('.sbi_lb-image-wrap'),
+                            styles = jQuery('.sbi_lb-image').attr('style') + 'opacity: 1 !important';
+                        jQuery.each(this.album[this.currentImageIndex].carousel,function(index,value) {
+                            if (index > 0) {
+                                if (value.type === 'image') {
+                                    wrapEl.append('<img class="sbi_lb-image sbi_lb_lightbox-image" src="'+value.media+'" style="'+styles+'" />');
+                                } else if (sbi_supports_video() && value.type === 'video') {
+                                    //jQuery('#sbi_lightbox').removeClass('sbi_video_lightbox');
+                                    //jQuery('#sbi_lightbox').addClass('sbi_video_lightbox');
+                                    wrapEl.append( '<video class="sbi_video sbi_lb_lightbox-image sbi_lb_lightbox-carousel-video" src="'+value.media+'" style="'+styles+'" poster="https://scontent.cdninstagram.com/t51.2885-15/e15/p640x640/20181114_812255828938867_6688886963329564672_n.jpg" controls="" autoplay="autoplay"></video>');
+                                }
+                            }
+                        });
+                        jQuery('.sbi_lb-image-wrap-outer').prepend('<i class="fa fa-clone" aria-hidden="true"></i>');
 
+                        wrapEl.sbi_owlCarousel({
+                            items: 1,
+                            navigation: true,
+                            navigationText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+                            pagination: true,
+                            autoPlay: false,
+                            stopOnHover: true,
+                            itemsDesktop: 1,
+                            itemsDesktopSmall: 1,
+                            itemsTablet: 1,
+                            itemsTabletSmall: 1,
+                            itemsMobile: 1,
+                            afterAction:function(el) {
+
+                                var $owlCarousel = jQuery(el).closest('.sbi_owl-carousel'),
+                                    $listItem = $owlCarousel.find('.sbi_owl-page.active'),
+                                    currentActiveIndex = $owlCarousel.find('.sbi_owl-page').index($listItem),
+                                    $maybeVideo = $owlCarousel.find('.sbi_owl-item:eq('+currentActiveIndex+')').find('video');
+
+                                $owlCarousel.find('video').get(0).pause();
+
+                                if ($maybeVideo.length) {
+                                    $maybeVideo.get(0).play();
+                                }
+
+                            }
+                        });
+
+                        var $navElementsWrapper = wrapEl.find('.sbi_owl-buttons');
+                        if (window.width > 640) {
+                            $navElementsWrapper.addClass('onhover').hide();
+                            wrapEl.on({
+                                mouseenter: function () {
+                                    $navElementsWrapper.fadeIn();
+                                },
+                                mouseleave: function () {
+                                    $navElementsWrapper.fadeOut();
+                                }
+                            });
+                        }
+                    }
                     //start by removing any existing comments
                     jQuery('.sbi_lb-commentBox').remove();
                     // check to see if comments are enabled for this feed
@@ -456,7 +534,14 @@ if(!sbi_js_exists){
                 }, b.prototype.disableKeyboardNav = function() {
                     a(document).off(".keyboard")
                 }, b.prototype.keyboardAction = function(a) {
-
+                    var sbLbCarouselDestroy = function() {
+                        jQuery('#sbi_lightbox .sbi_lb_lightbox-image').remove();
+                        if (jQuery('#sbi_lightbox .sbi_owl-carousel').length)  {
+                            jQuery('#sbi_lightbox .sbi_owl-carousel').data('sbi_owlCarousel').destroy();
+                            jQuery('#sbi_lightbox .sbi_owl-item').remove();
+                        }
+                        jQuery('#sbi_lightbox').find('.fa-clone').remove();
+                    };
                     var KEYCODE_ESC        = 27;
                     var KEYCODE_LEFTARROW  = 37;
                     var KEYCODE_RIGHTARROW = 39;
@@ -470,10 +555,10 @@ if(!sbi_js_exists){
                     } else if (key === 'p' || keycode === KEYCODE_LEFTARROW) {
                         if (this.currentImageIndex !== 0) {
                             this.changeImage(this.currentImageIndex - 1);
-                        } else if (this.options.wrapAround && this.album.length > 1) {
+                                                    } else if (this.options.wrapAround && this.album.length > 1) {
                             this.changeImage(this.album.length - 1);
                         }
-
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         jQuery('#sbi_lightbox iframe').attr('src', '');
 
@@ -483,7 +568,7 @@ if(!sbi_js_exists){
                         } else if (this.options.wrapAround && this.album.length > 1) {
                             this.changeImage(0);
                         }
-
+                        sbLbCarouselDestroy();
                         if( sbi_supports_video() ) jQuery('#sbi_lightbox video.sbi_video')[0].pause();
                         jQuery('#sbi_lightbox iframe').attr('src', '');
 
@@ -679,9 +764,6 @@ if(!sbi_js_exists){
         },
         updateDisplay: function () {
             // clear off all hide/show styling
-            //console.log(modMode.selectedHide);
-            //console.log(modMode.selectedShow);
-            //console.log(modMode.selectedUsers);
             modMode.$self.find('.sbi_photo').css('outline','').find('.sbi_mod_post_status').remove();
             // get the blocked users and start looping through items to compare
             var blockedUsers = modMode.selectedUsers;
@@ -923,8 +1005,6 @@ if(!sbi_js_exists){
                     var imagesArrCount = 0;
 
                     var $self = jQuery(var_this),
-                        $target = $self.find('#sbi_images'),
-                        $loadBtn = $self.find("#sbi_load .sbi_load_btn"),
                         imgRes = 'standard_resolution',
                         cols = parseInt( var_this.getAttribute('data-cols') ),
                         //Convert styles JSON string to an object
@@ -933,11 +1013,8 @@ if(!sbi_js_exists){
                         getType = feedOptions.type,
                         sortby = 'none',
                         hovercolorstyles = '',
-                        hovertextstyles = '',
-                        img_full = '',
                         num = var_this.getAttribute('data-num'),
                         user_id = var_this.getAttribute('data-id'),
-                        posts_arr = [],
                         $header = '',
                         disablelightbox = feedOptions.disablelightbox,
                         captionlinks = feedOptions.captionlinks,
@@ -949,7 +1026,6 @@ if(!sbi_js_exists){
                         excludeWords = feedOptions.excludewords.replace(/ /g,'').split(","), //Explode into an array
                         whiteList = feedOptions.sbiWhiteList.replace(/ /g,''),
                         whiteListIds = feedOptions.sbiWhiteListIds.replace(/ /g,'').split(","), //Explode into an array
-                        sbiCacheExists = feedOptions.sbiCacheExists,
                         sbiHeaderCache = feedOptions.sbiHeaderCache,
                         media = feedOptions.media;
 
@@ -963,11 +1039,8 @@ if(!sbi_js_exists){
                         hidePhotos[i] = hidePhotos[i].replace(/sbi_/g, '');
                     }
 
-                    if(feedOptions.disablecache == 'true' || jQuery('.sbi_moderation_mode').length > 0){
-                        feedOptions.disablecache = true;
-                    } else {
-                        feedOptions.disablecache = false;
-                    }
+                    feedOptions.disablecache = (feedOptions.disablecache == 'true' || jQuery('.sbi_moderation_mode').length > 0);
+
                     // add a class to the lightbox if comments are enabled
                     if(feedOptions.lightboxcomments == 'true' ) {
                         if(!jQuery('.sbi_lightbox').hasClass('sbi_lb-comments-enabled')) {
@@ -979,7 +1052,6 @@ if(!sbi_js_exists){
                     if( feedOptions.showlikes == 'false' || feedOptions.showlikes == '' ) showlikes = 'display: none;';
                     if( feedOptions.sortby !== '' ) sortby = feedOptions.sortby;
                     if( feedOptions.hovercolor !== '0,0,0' ) hovercolorstyles = 'style="background: rgba('+feedOptions.hovercolor+',0.85)"';
-                    /*if( feedOptions.hovertextcolor !== '0,0,0' )*/ hovertextstyles = 'style="color: rgba('+feedOptions.hovertextcolor+',1)"';
 
                     switch( var_this.getAttribute('data-res') ) {
                         case 'auto':
@@ -1019,29 +1091,26 @@ if(!sbi_js_exists){
                             imgRes = 'standard_resolution';
                     }
 
-
                     //Split comma separated hashtags into array
+                    var looparray = [''];
                     if(getType == 'hashtag'){
                         var hashtags_arr = feedOptions.hashtag.replace(/ /g,'').split(",");
-                        var looparray = hashtags_arr;
+                            looparray = hashtags_arr;
                     } else if(getType == 'user'){
                         var ids_arr = user_id.replace(/ /g,'').split(",");
-                        var looparray = ids_arr;
+                            looparray = ids_arr;
                     } else if(getType == 'location'){
                         var locations_arr = feedOptions.location.replace(/ /g,'').split(",");
-                        var looparray = locations_arr;
+                            looparray = locations_arr;
                     } else if(getType == 'coordinates'){
                         var coords_arr = feedOptions.coordinates.replace(/ /g,'').split("),(");
-                        var looparray = coords_arr;
+                            looparray = coords_arr;
                     } else if(getType == 'single') {
                         var single_arr = feedOptions.single.replace(/sbi_/g, '');
                         single_arr = single_arr.replace(/ /g,'').split(",");
 
-                        var looparray = single_arr;
-                    } else {
-                        var looparray = [''];
+                            looparray = single_arr;
                     }
-
 
                     //START FEED
                     var apiURLs = [],
@@ -1058,13 +1127,12 @@ if(!sbi_js_exists){
                             //If the entry is coords
                             //Split the lat and long into pieces and place in the URL
                             entry = entry.replace(/[()]/g, '');
-                            entryArr = entry.split(",");
-                            var lat = entryArr[0];
-                            var lng = entryArr[1];
-                            if( typeof entryArr[2] === 'undefined' ){
-                                var dis = '1000';
-                            } else {
-                                var dis = entryArr[2];
+                            var entryArr = entry.split(","),
+                                lat = entryArr[0],
+                                lng = entryArr[1],
+                                dis = '1000';
+                            if( typeof entryArr[2] !== 'undefined' ){
+                                dis = entryArr[2];
                             }
                             apiCall = "https://api.instagram.com/v1/media/search?lat="+lat+"&lng="+lng+"&distance="+dis+"&access_token=" + sb_instagram_js_options.sb_instagram_at+"&count=33&max_timestamp=";
 
@@ -1094,14 +1162,14 @@ if(!sbi_js_exists){
 
                     if( includeWords.length > 0 ){
                         jQuery.each( includeWords, function( index, word ) {
-                            sbi_include_word = word.replace(/ /g,"").replace(/#/g,"");
+                            var sbi_include_word = word.replace(/ /g,"").replace(/#/g,"");
                             sbi_cache_string_include += sbi_include_word.substring(0, 3);
                         });
                     }
 
                     if( excludeWords.length > 0 ){
                         jQuery.each( excludeWords, function( index, word ) {
-                            sbi_exclude_word = word.replace(/ /g,"").replace(/#/g,"");
+                            var sbi_exclude_word = word.replace(/ /g,"").replace(/#/g,"");
                             sbi_cache_string_exclude += sbi_exclude_word.substring(0, 3);
                         });
                     }
@@ -1167,7 +1235,7 @@ if(!sbi_js_exists){
                     //1. Does the transient/cache exist in the db?
                     if( ( window.sbiCacheStatuses[feedOptions.feedIndex].feed === true || window.sbiCacheStatuses[feedOptions.feedIndex].header === true || sbiTransientNames.comments === 'need' ) && !feedOptions.disablecache && typeof feedOptions.tryFetch === 'undefined'){
                         //Use ajax to get the cache
-                        images = sbiGetCache(sbiTransientNames, sbiSettings, $self, 'all', apiURLs);
+                        var images = sbiGetCache(sbiTransientNames, sbiSettings, $self, 'all', apiURLs);
                         sbiTransientNames.comments = 'no';
                     }
 
@@ -1204,8 +1272,7 @@ if(!sbi_js_exists){
                     function sbiBuildFeed(images, transientName, sbiSettings, $self){
 
                         //VARS:
-                        var $target = $self.find('#sbi_images'),
-                            $loadBtn = $self.find("#sbi_load .sbi_load_btn"),
+                        var $loadBtn = $self.find("#sbi_load .sbi_load_btn"),
                             num = parseInt(sbiSettings.num),
                             cols = parseInt(sbiSettings.cols),
                             hovercolorstyles = '',
@@ -1214,7 +1281,6 @@ if(!sbi_js_exists){
                             disablelightbox = sbiSettings.disablelightbox,
                             captionlinks = sbiSettings.captionlinks,
                             itemCount = 0,
-                            user_id = sbiSettings.user_id,
                             imgRes = sbiSettings.imgRes,
                             getType = feedOptions.type,
                             hidePhotos = sbiSettings.hidePhotos, //Contains the IDs of the photos which need to be hidden
@@ -1235,8 +1301,6 @@ if(!sbi_js_exists){
                             imagepaddingunit = feedOptions.imagepaddingunit,
                             looparray = sbiSettings.looparray,
                             headerstyle = feedOptions.headerstyle,
-                            showfollowers = feedOptions.showfollowers,
-                            showbio = feedOptions.showbio,
                             headerstyle = feedOptions.headerstyle,
                             headerprimarycolor = feedOptions.headerprimarycolor,
                             headersecondarycolor = feedOptions.headersecondarycolor,
@@ -1292,8 +1356,8 @@ if(!sbi_js_exists){
                                 modIndex = 'noclass';
                             }
 
-                            var url = window.location.href,
-                                modIndex = modIndex.substring(0,10);
+                            var url = window.location.href;
+                            modIndex = modIndex.substring(0,10);
                             if (url.indexOf('sbi_moderation_mode=true') == -1) {
                                 if (url.indexOf('?') > -1) {
                                     url += '&sbi_moderation_mode=true&sbi_moderation_index='+modIndex;
@@ -1331,7 +1395,7 @@ if(!sbi_js_exists){
                         if( feedOptions.showlikes == 'false' || feedOptions.showlikes == '' ) showlikes = 'display: none;';
                         if( feedOptions.sortby !== '' ) sortby = feedOptions.sortby;
                         if( feedOptions.hovercolor !== '0,0,0' ) hovercolorstyles = 'style="background: rgba('+feedOptions.hovercolor+',0.85)"';
-                        /*if( feedOptions.hovertextcolor !== '0,0,0' )*/ hovertextstyles = 'style="color: rgba('+feedOptions.hovertextcolor+',1)"';
+                        if( feedOptions.hovertextcolor !== '0,0,0' ) hovertextstyles = 'style="color: rgba('+feedOptions.hovertextcolor+',1)"';
 
                         var imagesArrCountOrig = imagesArrCount,
                             removePhotoIndexes = []; //This is used to keep track of the indexes of the photos which should be removed so that they can be removed from imagesArr after the loop below has finished and then resultantly not cached.
@@ -1588,13 +1652,32 @@ if(!sbi_js_exists){
 
                             //FILTER:
                             //Video
+                            var data_video = 'data-video=""';
                             if( item.type == 'video' ){
-                                var data_video = 'data-video="'+item.videos.standard_resolution.url + '"';
-                            } else {
-                                var data_video = 'data-video=""';
+                                data_video = 'data-video="'+item.videos.standard_resolution.url + '"';
+                            }
+
+                            var data_carousel = 'data-carousel=""';
+                            if ( item.type === 'carousel' && typeof item.carousel_media !== 'undefined') {
+                                var data_carousel_object = {};
+                                jQuery.each(item.carousel_media,function(index,value) {
+                                    if (typeof value.images !== 'undefined') {
+                                        data_carousel_object[index] = {
+                                            'type' : 'image',
+                                            'media' : value.images.standard_resolution.url
+                                        };
+                                    } else if (typeof value.videos !== 'undefined') {
+                                        data_carousel_object[index] = {
+                                            'type' : 'video',
+                                            'media' : value.videos.standard_resolution.url
+                                        };
+                                    }
+                                });
+                                data_carousel = "data-carousel='"+JSON.stringify(data_carousel_object).replace(/'/g, "\\'")+"'";
                             }
 
                             //Image res
+                            var data_image = item.images.standard_resolution.url;
                             switch( imgRes ){
                                 case 'thumbnail':
                                     data_image = item.images.thumbnail.url;
@@ -1602,20 +1685,16 @@ if(!sbi_js_exists){
                                 case 'low_resolution':
                                     data_image = item.images.low_resolution.url;
                                     break;
-                                default:
-                                    data_image = item.images.standard_resolution.url;
                             }
                             data_image = data_image.split("?ig_cache_key")[0];
 
                             //Date
                             var date = new Date(item.created_time*1000);
                             //Create time for sorting
-                            var time = date.getTime();
                             var created_time_raw = item.created_time;
                             //Create pretty date for display
-                            m = date.getMonth();
-                            d = date.getDate();
-                            y = date.getFullYear();
+                            var m = date.getMonth();
+                            var d = date.getDate();
                             var month_names = new Array ( );
                             month_names[month_names.length] = "Jan";
                             month_names[month_names.length] = "Feb";
@@ -1632,12 +1711,11 @@ if(!sbi_js_exists){
                             var itemDate = d + ' ' + month_names[m];
 
                             //Caption
+                            var captionText = '';
                             if(item.caption != null && item.caption != ''){
                                 //Replace double quotes in the captions with the HTML symbol
                                 var captionText = item.caption.text.replace(/"/g, "&quot;");
                                 captionText = captionText.replace(/\n/g, "<br/>");
-                            } else {
-                                var captionText = '';
                             }
 
                             //Hover display info
@@ -1663,52 +1741,46 @@ if(!sbi_js_exists){
                                 var locationName = '';
                             }
 
+                            var sbiCaptionHTML = '';
                             if(showHoverCaption){
-                                var sbiCaptionHTML = '<p class="sbi_caption" '+hovertextstyles+'>'+ captionText.substring(0, feedOptions.captionlength);
+                                sbiCaptionHTML = '<p class="sbi_caption" '+hovertextstyles+'>'+ captionText.substring(0, feedOptions.captionlength);
                                 if( captionText.length > parseInt(feedOptions.captionlength) ) sbiCaptionHTML += '...';
                                 sbiCaptionHTML += '</p>';
-                            } else {
-                                var sbiCaptionHTML = '';
                             }
 
+                            var sbiMetaHTML = '';
                             if(showHoverLikes){
-                                var sbiMetaHTML = '<div class="sbi_meta" style="color: #'+feedOptions.likescolor+';"><span class="sbi_likes" '+hovertextstyles+'><i class="fa fa-heart" '+hovertextstyles+'></i>'+commaSeparateNumber(item.likes.count)+'</span><span class="sbi_comments" '+hovertextstyles+'><i class="fa fa-comment" '+hovertextstyles+'></i>'+commaSeparateNumber(item.comments.count)+'</span></div>';
-                            } else {
-                                var sbiMetaHTML = '';
+                                sbiMetaHTML = '<div class="sbi_meta" style="color: #'+feedOptions.likescolor+';"><span class="sbi_likes" '+hovertextstyles+'><i class="fa fa-heart" '+hovertextstyles+'></i>'+commaSeparateNumber(item.likes.count)+'</span><span class="sbi_comments" '+hovertextstyles+'><i class="fa fa-comment" '+hovertextstyles+'></i>'+commaSeparateNumber(item.comments.count)+'</span></div>';
                             }
 
+                            var sbiUsernameHTML = '';
                             if(showHoverUsername){
-                                var sbiUsernameHTML = '<p class="sbi_username"><a href="https://instagram.com/'+item.user.username+'" target="_blank" '+hovertextstyles+'>'+item.user.username+'</a></p>';
-                            } else {
-                                var sbiUsernameHTML = '';
+                                sbiUsernameHTML = '<p class="sbi_username"><a href="https://instagram.com/'+item.user.username+'" target="_blank" '+hovertextstyles+'>'+item.user.username+'</a></p>';
                             }
 
+                            var sbiIconHTML = '';
                             if(showHoverIcon){
-                                var sbiIconHTML = '<i class="fa fa-arrows-alt"></i>';
-                            } else {
-                                var sbiIconHTML = '';
+                                sbiIconHTML = '<i class="fa fa-arrows-alt"></i>';
                             }
 
+                            var sbiDateHTML = '';
                             if(showHoverDate){
-                                var sbiDateHTML = '<span class="sbi_date"><i class="fa fa-clock-o"></i>'+itemDate + '</span>';
-                            } else {
-                                var sbiDateHTML = '';
+                                sbiDateHTML = '<span class="sbi_date"><i class="fa fa-clock-o"></i>'+itemDate + '</span>';
                             }
 
+                            var sbiInstagramHTML = '';
                             if(showHoverInstagram){
-                                var sbiInstagramHTML = '<a class="sbi_instagram_link" href="'+item.link+'" target="_blank" title="Instagram" '+hovertextstyles+'><i class="fa fa-instagram"></i></a>';
-                            } else {
-                                var sbiInstagramHTML = '';
+                                sbiInstagramHTML = '<a class="sbi_instagram_link" href="'+item.link+'" target="_blank" title="Instagram" '+hovertextstyles+'><i class="fa fa-instagram"></i></a>';
                             }
 
                             // var sbiHoverEffect = 'sbi_' + feedOptions.hovereffect;
                             var sbiHoverEffect = 'sbi_fade';
 
                             //If it's a carousel feed then set the image padding directly on the sbi_item as the inherit in the CSS file doesn't work
-                            (carousel == true) ? carouselPadding = ' style="padding: '+imagepadding+imagepaddingunit+' !important;"' : carouselPadding = '';
+                            var carouselPadding = (carousel == true) ? ' style="padding: '+imagepadding+imagepaddingunit+' !important;"' : '';
 
                             //TEMPLATE:
-                            imagesHTML += '<div class="sbi_item sbi_type_'+item.type+' sbi_new '+sbiHoverEffect+'" id="sbi_'+item.id+'" data-date="'+created_time_raw+'"'+carouselPadding+'><div class="sbi_photo_wrap"><i class="fa fa-play sbi_playbtn"></i><div class="sbi_link" '+hovercolorstyles+'><div class="sbi_hover_top">'+sbiUsernameHTML+sbiCaptionHTML+'</div>'+sbiInstagramHTML+'<div class="sbi_hover_bottom" '+hovertextstyles+'><p>'+sbiDateHTML+locationName+'</p>'+sbiMetaHTML+'</div><a class="sbi_link_area" href="'+item.images.standard_resolution.url+'" data-lightbox-sbi="'+$self.attr('data-sbi-index')+'" data-title="'+captionText+'" '+data_video+' data-id="sbi_'+item.id+'" data-user="'+item.user.username+'" data-url="'+item.link+'" data-avatar="'+item.user.profile_picture+'"><i class="fa fa-play sbi_playbtn" '+hovertextstyles+'></i><span class="sbi_lightbox_link" '+hovertextstyles+'>'+sbiIconHTML+'</span></a></div><a class="sbi_photo" href="'+item.link+'" target="_blank"><img src="'+data_image+'" alt="'+captionText+'" width="200" height="200" /></a></div><div class="sbi_info"><p class="sbi_caption_wrap" '+sbiSettings.showcaption+'><span class="sbi_caption" style="color: #'+feedOptions.captioncolor+'; font-size: '+feedOptions.captionsize+'px;">'+captionText+'</span><span class="sbi_expand"> <a href="#"><span class="sbi_more">...</span></a></span></p><div class="sbi_meta" style="color: #'+feedOptions.likescolor+'; '+sbiSettings.showlikes+'"><span class="sbi_likes" style="font-size: '+feedOptions.likessize+'px;"><i class="fa fa-heart" style="font-size: '+feedOptions.likessize+'px;"></i>'+commaSeparateNumber(item.likes.count)+'</span><span class="sbi_comments" style="font-size: '+feedOptions.likessize+'px;"><i class="fa fa-comment" style="font-size: '+feedOptions.likessize+'px;"></i>'+commaSeparateNumber(item.comments.count)+'</span></div></div>';
+                            imagesHTML += '<div class="sbi_item sbi_type_'+item.type+' sbi_new '+sbiHoverEffect+'" id="sbi_'+item.id+'" data-date="'+created_time_raw+'"'+carouselPadding+'><div class="sbi_photo_wrap"><i class="fa fa-play sbi_playbtn"></i><div class="sbi_link" '+hovercolorstyles+'><div class="sbi_hover_top">'+sbiUsernameHTML+sbiCaptionHTML+'</div>'+sbiInstagramHTML+'<div class="sbi_hover_bottom" '+hovertextstyles+'><p>'+sbiDateHTML+locationName+'</p>'+sbiMetaHTML+'</div><a class="sbi_link_area" href="'+item.images.standard_resolution.url+'" data-lightbox-sbi="'+$self.attr('data-sbi-index')+'" data-title="'+captionText+'" '+data_video+data_carousel+' data-id="sbi_'+item.id+'" data-user="'+item.user.username+'" data-url="'+item.link+'" data-avatar="'+item.user.profile_picture+'"><i class="fa fa-play sbi_playbtn" '+hovertextstyles+'></i><span class="sbi_lightbox_link" '+hovertextstyles+'>'+sbiIconHTML+'</span></a></div><a class="sbi_photo" href="'+item.link+'" target="_blank"><img src="'+data_image+'" alt="'+captionText+'" width="200" height="200" /></a></div><div class="sbi_info"><p class="sbi_caption_wrap" '+sbiSettings.showcaption+'><span class="sbi_caption" style="color: #'+feedOptions.captioncolor+'; font-size: '+feedOptions.captionsize+'px;">'+captionText+'</span><span class="sbi_expand"> <a href="#"><span class="sbi_more">...</span></a></span></p><div class="sbi_meta" style="color: #'+feedOptions.likescolor+'; '+sbiSettings.showlikes+'"><span class="sbi_likes" style="font-size: '+feedOptions.likessize+'px;"><i class="fa fa-heart" style="font-size: '+feedOptions.likessize+'px;"></i>'+commaSeparateNumber(item.likes.count)+'</span><span class="sbi_comments" style="font-size: '+feedOptions.likessize+'px;"><i class="fa fa-comment" style="font-size: '+feedOptions.likessize+'px;"></i>'+commaSeparateNumber(item.comments.count)+'</span></div></div>';
 
                             if(modMode.status === true) {
                                 imagesHTML += modMode.addModHtml(item.user.username);
@@ -1723,7 +1795,6 @@ if(!sbi_js_exists){
                             imagesArr.data.splice(itemNumber, 1);
                         });
 
-                        var numberOfPhotosDisplayed = $self.find('.sbi_item').length + (imagesHTML.match(/sbi_item /g) || []).length;
                         if( (imagesArrCount - imagesArrCountOrig) < num ) photosAvailable += imagesArrCount - imagesArrCountOrig;
 
                         //CACHE all of the photos in the imagesArr using ajax call to db after the photos have been displayed
@@ -1731,7 +1802,7 @@ if(!sbi_js_exists){
                         var numWhiteListIds = feedOptions.sbiWhiteListIds.replace(/ /g,'').split(",").length;
                         if( ((imagesArrCount - imagesArrCountOrig) < num) && (photosAvailable < num) /*&& (numberOfPhotosDisplayed < num)*/ && (apiRequests < maxRequests) && !noMoreData && (imagesArrCount < numWhiteListIds || feedOptions.sbiWhiteList === '') ){ //Also check here whether next_url is available. If it's not then don't try to get more photos.
                             //Get more photos
-                            sbiFetchURL = imagesArr.pagination.next_url;
+                            var sbiFetchURL = imagesArr.pagination.next_url;
 
                             window.sbiCacheStatuses[feedOptions.feedIndex].feed = 'fetched';
 
@@ -1764,8 +1835,7 @@ if(!sbi_js_exists){
                             $self.find('.sbi_item').each(function(){
 
                                 var $self = jQuery(this),
-                                    $sbi_link_area = $self.find('.sbi_link_area'),
-                                    linkHref = $sbi_link_area.attr('href');
+                                    $sbi_link_area = $self.find('.sbi_link_area');
 
                                 //Change lightbox image to be full size
                                 var $sbi_lightbox = jQuery('#sbi_lightbox');
@@ -1798,8 +1868,7 @@ if(!sbi_js_exists){
                                 //Click function
                                 $self.find('.sbi_expand a').unbind('click').bind('click', function(e){
                                     e.preventDefault();
-                                    var $expand = jQuery(this),
-                                        $more = $expand.find('.sbi_more');
+                                    var $expand = jQuery(this);
                                     if ( $self.hasClass('sbi_caption_full') ){
                                         $post_text.html( short_text );
                                         $self.removeClass('sbi_caption_full');
@@ -2090,12 +2159,14 @@ if(!sbi_js_exists){
                                     if( !carouselautoplay ) carouseltime = false;
 
                                     //Set defaults for responsive breakpoints
-                                    var itemsDesktop = false; itemsDesktopSmall = false; itemsTablet = false; itemsTabletSmall = [639,2]; itemsMobile = [480,1];
+                                    var itemsDesktop = false,
+                                        itemsDesktopSmall = false,
+                                        itemsTablet = false,
+                                        itemsTabletSmall = false,
+                                        itemsMobile = false;
 
                                     //Disable mobile layout
-                                    if( $self.hasClass('sbi_disable_mobile') ){
-                                        itemsTabletSmall = false; itemsMobile = false;
-                                    } else {
+                                    if( !$self.hasClass('sbi_disable_mobile') ) {
                                         var sbiWindowWidth = jQuery(window).width();
                                         if( sbiWindowWidth < 640 && (parseInt(cols) > 2 && parseInt(cols) < 7 ) ) itemsTabletSmall = [639,2];
                                         if( sbiWindowWidth < 640 && (parseInt(cols) > 6 && parseInt(cols) < 11 ) ) itemsTabletSmall = [639,4];
@@ -2176,7 +2247,7 @@ if(!sbi_js_exists){
                         $header += '<h3 '+headerStyles+'>'+data.data.username+'</h3>';
 
                         //Compile and add the header info
-                        $headerInfo = '<p class="sbi_bio_info" ';
+                        var $headerInfo = '<p class="sbi_bio_info" ';
                         if(feedOptions.headerstyle == 'boxed'){
                             $headerInfo += 'style="color: #' + feedOptions.headerprimarycolor + ';"';
                         } else {
@@ -2196,7 +2267,7 @@ if(!sbi_js_exists){
                         $header += '</a>';
                         if(feedOptions.headerstyle == 'boxed') {
                             $header += '<div class="sbi_header_bar" style="background: #'+feedOptions.headersecondarycolor+'">';
-                            if(feedOptions.showbio != 'false') $header += $headerInfo
+                            if(feedOptions.showbio != 'false') $header += $headerInfo;
                             $header += '<a class="sbi_header_follow_btn" href="https://instagram.com/'+data.data.username+'" target="_blank" style="color: #'+feedOptions.headercolor+'; background: #'+feedOptions.headerprimarycolor+';"><i class="sbi_new_logo"></i><span></span></div></div>';
                         }
 
@@ -2222,7 +2293,6 @@ if(!sbi_js_exists){
                     function sbiFetchData(next_url, transientName, sbiSettings, $self) {
                         apiURLs = next_url;
                         var urlCount = apiURLs.length,
-                            feedOptions = sbiSettings.feedOptions,
                             getType = sbiSettings.getType;
 
                         //If the apiURLs array is empty then this means that there's no more next_urls and so hide the load more button
@@ -2372,8 +2442,6 @@ if(!sbi_js_exists){
 
                             } // End sbiImagesReady()
 
-
-
                         }
 
                     } //End sbiFetchData()
@@ -2387,7 +2455,7 @@ if(!sbi_js_exists){
                         if (typeof transientName === 'object') {
                             transientData = JSON.stringify(transientName);
                         }
-                        getCacheOpts = {
+                        var getCacheOpts = {
                             url: sbiajaxurl,
                             type: 'POST',
                             async: true,
@@ -2477,7 +2545,7 @@ if(!sbi_js_exists){
         jsonstring = encodeURI(jsonstring);
 
         if (jsonstring.indexOf('%7B%22') === 0) {
-            setCacheOpts = {
+            var setCacheOpts = {
                 url: sbiajaxurl,
                 type: 'POST',
                 async: true,

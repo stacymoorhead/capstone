@@ -3,7 +3,7 @@
 Plugin Name: Instagram Feed Pro Personal
 Plugin URI: http://smashballoon.com/instagram-feed
 Description: Add a customizable Instagram feed to your website
-Version: 2.5.1
+Version: 2.6.1
 Author: Smash Balloon
 Author URI: http://smashballoon.com/
 */
@@ -26,7 +26,7 @@ if ( function_exists('display_instagram') ){
 }
 
 // set_site_transient( 'update_plugins', null );
-define( 'SBIVER', '2.5.1' );
+define( 'SBIVER', '2.6.1' );
 define( 'SBI_STORE_URL', 'http://smashballoon.com/' );
 define( 'SBI_PLUGIN_NAME', 'Instagram Feed Pro Personal' ); //Update #
 

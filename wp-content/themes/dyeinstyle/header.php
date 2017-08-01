@@ -44,9 +44,9 @@
 			  <div class="navbar-header"> 
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
 			      <span class="sr-only">Toggle navigation</span> 
-			      <span class="icon-bar"></span> 
-			      <span class="icon-bar"></span> 
-			      <span class="icon-bar"></span> 
+			      <span class="icon-bar top-bar"></span> 
+			      <span class="icon-bar middle-bar"></span> 
+			      <span class="icon-bar bottom-bar"></span> 
 			    </button> 
 			  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			  </div> 

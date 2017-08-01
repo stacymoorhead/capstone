@@ -39,6 +39,13 @@
 			$sorttable = "created_time_stamp ";
 			$sortdir = "DESC";
 		}
+		$rtype = "Facebook";
+		if($currentform[0]->rtype=='["fb"]'){
+			$rtype = "Facebook";
+		}
+		if($currentform[0]->rtype=='["google"]'){
+			$rtype = "Google";
+		}
 
 		$reviewsperpage= $currentform[0]->display_num*$currentform[0]->display_num_rows;
 		$tablelimit = $reviewsperpage;
@@ -47,11 +54,12 @@
 			$tablelimit = $tablelimit*$currentform[0]->numslides;
 		}
 		
+
 			$totalreviews = $wpdb->get_results(
 				$wpdb->prepare("SELECT * FROM ".$table_name."
-				WHERE id>%d AND review_length >= %d
+				WHERE id>%d AND review_length >= %d AND type = %s
 				ORDER BY ".$sorttable." ".$sortdir." 
-				LIMIT ".$tablelimit." ", "0","$rlength")
+				LIMIT ".$tablelimit." ", "0","$rlength","$rtype")
 			);
 
 			

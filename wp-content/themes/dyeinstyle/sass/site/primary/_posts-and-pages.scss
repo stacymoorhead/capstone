@@ -1,5 +1,31 @@
 .sticky {
 	display: block;
+	position: relative;
+}
+
+.sticky::before {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    background: #f8f8f8;
+    top: 0;
+    left: 0;
+    border-width: 0 0 2em 2em;
+    border-color: $color__light-purple #f8f8f8 $color__light-purple #f8f8f8;
+    border-style: solid;
+    /*box-shadow: 2px 2px 1px $color__gray;*/
+}
+
+.secondary-image {
+	margin-bottom: 1em;
+}
+
+.secondary-image-landing {
+	max-height: 200px;
+	overflow: hidden;
+	margin-bottom: 1em;
 }
 
 .hentry {
@@ -135,21 +161,37 @@ article {
 }
 
 .has-sidebar {
-
 	.home-archive-content {
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
+		display: block;
+		width: 90%;
+		box-sizing: border-box;
+		margin: 0 auto;
 	}
 	
-	.home-archive-posts {
-		width: 70%;
+	.home-archive-posts, .home-archive-sidebar {
+		width: 100%;
+		box-sizing: border-box;
 	}
 	
 	.home-archive-sidebar {
-		width: 27%;
+		text-align:center;
 	}
 	
+	@media screen and (min-width: $query__mobile) {
+		.home-archive-content {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: space-between;
+		}
+		
+		.home-archive-posts {
+			width: 70%;
+		}
+		
+		.home-archive-sidebar {
+			width: 27%;
+		}
+	}
 }	
 
 .column-2 {

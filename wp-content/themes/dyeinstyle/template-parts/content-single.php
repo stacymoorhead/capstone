@@ -12,6 +12,13 @@
 	<section class="home-archive-content">
 		<div class="home-archive-posts">	
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<figure class="secondary-image">
+					<?php 
+					if (class_exists('MultiPostThumbnails')) : 
+					MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image');
+					endif;
+					 ?>
+				 </figure><!-- .secondary-image -->
 				<header class="entry-header">
 					<?php  ?>
 					<?php

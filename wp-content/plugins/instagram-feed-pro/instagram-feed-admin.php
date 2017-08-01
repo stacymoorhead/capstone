@@ -56,7 +56,29 @@ function sbi_welcome_screen_new_content() { ?>
             <a href="?page=sbi-welcome-started" class="nav-tab"><?php _e('Getting Started'); ?></a>
         </h2>
 
-        <p class="about-description"><?php _e("Let's take a look at some of the new features and improvements in version 2.4."); ?></p>
+        <p class="about-description"><?php _e("Let's take a look at what's new in version 2.6."); ?></p>
+
+        <div class="changelog">
+            <h3><?php _e('Support for "Slideshow" posts'); ?></h3>
+            <div class="feature-section">
+                <div class="sbi-feature-section-media">
+                    <img src="<?php echo plugins_url( 'img/welcome-slideshow.jpg' , __FILE__ ) ?>">
+                </div>
+                
+                <div class="sbi-feature-section-content">
+                    <p><?php _e('In this update we added support for Instagram "Slideshow" posts. When viewing a slideshow post in the popup lightbox you can now scroll through to view the other images.'); ?></p>
+
+                    <h4><?php _e("Other Changes"); ?></h4>
+                    <ul>
+                        <li><?php _e("The lightbox navigation arrows have been moved outside of the image area to make room for slideshow posts and closer emulate the lightbox on Instagram."); ?></li>
+                        <li><?php _e("Some improvements have been made to the way that the plugin's icon font is included in the page."); ?></li>
+                        <li><?php _e('Fixed some JavaScript issues when running in "Strict" mode.'); ?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="about-description"><?php _e("Here are some other features that were recently added:"); ?></p>
 
         <div class="changelog">
             <h3><?php _e("Visual Moderation Mode"); ?></h3>
@@ -256,7 +278,7 @@ function sbi_welcome_header(){ ?>
         </a>
         <h1><?php _e("Welcome to Instagram Feed Pro"); ?></h1>
         <p class="about-text">
-            <?php _e("Thanks for installing <b>Version 2.4</b> of the Instagram Feed Pro plugin! Use the tabs below to see what's new or to get started using the plugin."); ?>
+            <?php _e("Thanks for installing <b>Version 2.6</b> of the Instagram Feed Pro plugin! Use the tabs below to see what's new or to get started using the plugin."); ?>
         </p>
     </div>
 <?php }

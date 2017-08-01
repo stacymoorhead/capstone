@@ -173,16 +173,16 @@
    	padding: 0 1em;
     position: absolute;
     top: 0;
-    padding-top: 108px;
+    padding-top: 70px;
     display: flex;
     align-items: center;
 
-    @media screen and (min-width: $query__mobile) {
-		@include center(600px, 300px);
+
+		@include center(400px, 300px);
 
 		top: 50%;
 		left: 50%;
-    }    
+  
     @media screen and (min-width: $query__small) {
 		@include center(600px, 300px);
     }	

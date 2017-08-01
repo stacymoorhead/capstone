@@ -85,6 +85,9 @@ function dyeinstyle_setup() {
 endif;
 add_action( 'after_setup_theme', 'dyeinstyle_setup' );
 
+/* Editor Styles */
+add_editor_style( array( 'inc/editor.css') );
+
 /**
  * Add preconnect for Google Fonts.
  *
@@ -250,6 +253,20 @@ add_action( 'init', 'wpt_register_js' );
 
 // Register custom navigation walker
     require_once('wp-bootstrap-navwalker.php');
+    
+/**
+ * Multiple Post Thumbnails Plugin
+ */    
+if (class_exists('MultiPostThumbnails')) {
+
+	new MultiPostThumbnails(array(
+		'label' => 'Secondary Image',
+		'id' => 'secondary-image',
+		'post_type' => 'post'
+	 ) );
+
+ }    
+    
 
 /**
  * Implement the Custom Header feature.
