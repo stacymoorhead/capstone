@@ -58,6 +58,10 @@
 .container {
     width: 100%;
     box-sizing: border-box;
+    display: block;
+    float: left;
+    clear: both;
+    @include clearfix;
     
     @media screen and (min-width: $query__large) {
         width: 1080px;

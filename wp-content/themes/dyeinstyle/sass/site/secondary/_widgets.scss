@@ -66,12 +66,12 @@ input[type="search"] {
 	margin-top: 0;
 	margin-bottom: .5em;
 	font-size: 1.4em;
+	background: black;
+	color: $color__light-purple;
+	padding: .25em;
 }
 
 #about-sidebar {
-	h2 {
-		color: $color__dark-purple;
-	}
 	p {
 		margin: 1em 0 0 0 !important;
 		font-size: 1em;

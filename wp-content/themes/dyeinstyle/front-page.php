@@ -99,6 +99,8 @@ get_template_part( 'template-parts/content', 'instagram' ); ?>
 	</div><!-- news-container -->
 </section><!-- .news -->
 <section class="reviews">
-	<?php do_action( 'wprev_pro_plugin_action', 1 ); ?>
+	<div class="reviews-container">
+		<?php do_action( 'wprev_pro_plugin_action', 1 ); ?>
+	</div>
 </section><!-- .reviews -->
 <?php get_footer();

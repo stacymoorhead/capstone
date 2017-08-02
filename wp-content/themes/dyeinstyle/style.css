@@ -8342,7 +8342,7 @@ a:hover, a:active {
 	clear: both;
 	float: left;
 	list-style: none;
-	margin: 0;
+	margin: 10px 0 0 0;
 	padding-left: 0;
 	text-align: center;
 	width: 100%;
@@ -8433,6 +8433,7 @@ a:hover, a:active {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		padding-top: 0;
+		margin: 0;
 		text-align: left;
 		width: auto;
 	}
@@ -8920,6 +8921,18 @@ a:hover, a:active {
 .container {
 	width: 100%;
 	box-sizing: border-box;
+	display: block;
+	float: left;
+	clear: both;
+}
+
+.container:before, .container:after {
+	content: " ";
+	display: table;
+}
+
+.container:after {
+	clear: both;
 }
 
 @media screen and (min-width: 1025px) {
@@ -10125,6 +10138,7 @@ article {
 	height: 8px;
 	background: url("images/divider.svg") repeat-x;
 	background-size: auto 8px;
+	clear: both;
 }
 
 /*--------------------------------------------------------------
@@ -10252,8 +10266,8 @@ article {
 
 @media screen and (min-width: 500px) {
 	.news {
-		float: none;
-		clear: none;
+		/*float: none;
+        clear: none;*/
 	}
 }
 
@@ -10324,15 +10338,37 @@ article {
 	text-align: center;
 }
 
+.reviews-container {
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	clear: both;
+	position: relative;
+}
+
+.reviews-container:before, .reviews-container:after {
+	content: " ";
+	display: table;
+}
+
+.reviews-container:after {
+	clear: both;
+}
+
 .reviews {
-	margin: 1em 1em 0 1em;
+	display: block;
+	position: relative;
+	padding: 2em;
+	float: left;
+	clear: both;
+	margin: 0 auto;
 	width: 100%;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 600px) {
 	.reviews {
-		max-width: 1080px;
-		margin: 1em auto 0 auto;
+		padding: 2em 6em;
 	}
 }
 
@@ -10416,14 +10452,13 @@ input[type="search"] {
 	margin-top: 0;
 	margin-bottom: .5em;
 	font-size: 1.4em;
+	background: black;
+	color: #d2c7e2;
+	padding: .25em;
 }
 
 #about-sidebar {
 	padding-bottom: 0;
-}
-
-#about-sidebar h2 {
-	color: #836393;
 }
 
 #about-sidebar p {
