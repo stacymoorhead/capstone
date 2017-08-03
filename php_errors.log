@@ -868,3 +868,385 @@
 [01-Aug-2017 20:05:06 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977}() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
 [01-Aug-2017 20:05:06 UTC] PHP   8. WP_Widget->update_callback() /home/ubuntu/workspace/wp-admin/includes/ajax-actions.php:1977
 [01-Aug-2017 20:05:06 UTC] PHP   9. wprev_Widget->update() /home/ubuntu/workspace/wp-includes/class-wp-widget.php:456
+[02-Aug-2017 17:33:55 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 17:33:55 UTC] PHP Stack trace:
+[02-Aug-2017 17:33:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 17:33:55 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 17:33:55 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 17:33:55 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 17:33:55 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 17:33:55 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 17:33:55 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 17:33:55 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 17:33:55 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 17:33:55 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 17:33:55 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 17:33:55 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 17:33:55 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 17:33:55 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 17:33:55 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 17:33:55 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 17:33:55 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:30:55 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:30:55 UTC] PHP Stack trace:
+[02-Aug-2017 18:30:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:30:55 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:30:55 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:30:55 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:30:55 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:30:55 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:30:55 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:30:55 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:30:55 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:30:55 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:30:55 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:30:55 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:30:55 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:30:55 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:30:55 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:30:55 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:30:55 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:31:35 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:31:35 UTC] PHP Stack trace:
+[02-Aug-2017 18:31:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:31:35 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:31:35 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:31:35 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:31:35 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:31:35 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:31:35 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:31:35 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:31:35 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:31:35 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:31:35 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:31:35 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:31:35 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:31:35 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:31:35 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:31:35 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:31:35 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:09 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:32:09 UTC] PHP Stack trace:
+[02-Aug-2017 18:32:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:32:09 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:32:09 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:32:09 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:32:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:09 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:09 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:32:09 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:32:09 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:32:09 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:32:09 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:32:09 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:32:09 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:32:09 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:32:09 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:32:09 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:09 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:43 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:32:43 UTC] PHP Stack trace:
+[02-Aug-2017 18:32:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:32:43 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:32:43 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:32:43 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:32:43 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:43 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:43 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:32:43 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:32:43 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:32:43 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:32:43 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:32:43 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:32:43 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:32:43 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:32:43 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:32:43 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:32:43 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:15 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:33:15 UTC] PHP Stack trace:
+[02-Aug-2017 18:33:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:33:15 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:33:15 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:33:15 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:33:15 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:15 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:15 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:33:15 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:33:15 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:33:15 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:33:15 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:33:15 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:33:15 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:33:15 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:33:15 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:33:15 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:15 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:45 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:33:45 UTC] PHP Stack trace:
+[02-Aug-2017 18:33:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:33:45 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:33:45 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:33:45 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:33:45 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:45 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:45 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:33:45 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:33:45 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:33:45 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:33:45 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:33:45 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:33:45 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:33:45 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:33:45 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:33:45 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:33:45 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:34:35 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:34:35 UTC] PHP Stack trace:
+[02-Aug-2017 18:34:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:34:35 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:34:35 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:34:35 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:34:35 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:34:35 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:34:35 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:34:35 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:34:35 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:34:35 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:34:35 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:34:35 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:34:35 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:34:35 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:34:35 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:34:35 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:34:35 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:00 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:35:00 UTC] PHP Stack trace:
+[02-Aug-2017 18:35:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:35:00 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:35:00 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:35:00 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:35:00 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:00 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:00 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:35:00 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:35:00 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:35:00 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:35:00 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:35:00 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:35:00 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:35:00 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:35:00 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:35:00 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:00 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:30 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:35:30 UTC] PHP Stack trace:
+[02-Aug-2017 18:35:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:35:30 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:35:30 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:35:30 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:35:30 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:30 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:30 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:35:30 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:35:30 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:35:30 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:35:30 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:35:30 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:35:30 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:35:30 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:35:30 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:35:30 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:35:30 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:06 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:36:06 UTC] PHP Stack trace:
+[02-Aug-2017 18:36:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:36:06 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:36:06 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:36:06 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:36:06 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:06 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:06 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:36:06 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:36:06 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:36:06 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:36:06 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:36:06 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:36:06 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:36:06 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:36:06 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:36:06 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:06 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:40 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:36:40 UTC] PHP Stack trace:
+[02-Aug-2017 18:36:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:36:40 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:36:40 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:36:40 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:36:40 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:40 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:40 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:36:40 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:36:40 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:36:40 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:36:40 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:36:40 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:36:40 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:36:40 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:36:40 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:36:40 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:36:40 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:15 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:37:15 UTC] PHP Stack trace:
+[02-Aug-2017 18:37:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin.php:0
+[02-Aug-2017 18:37:15 UTC] PHP   2. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[02-Aug-2017 18:37:15 UTC] PHP   3. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:37:15 UTC] PHP   4. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:37:15 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:15 UTC] PHP   6. TablePress_Admin_Controller->show_admin_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:15 UTC] PHP   7. TablePress_View->render() /home/ubuntu/workspace/wp-content/plugins/tablepress/controllers/controller-admin.php:500
+[02-Aug-2017 18:37:15 UTC] PHP   8. TablePress_View->do_text_boxes() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:351
+[02-Aug-2017 18:37:15 UTC] PHP   9. call_user_func:{/home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260}() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:37:15 UTC] PHP  10. TablePress_Edit_View->textbox_hidden_containers() /home/ubuntu/workspace/wp-content/plugins/tablepress/classes/class-view.php:260
+[02-Aug-2017 18:37:15 UTC] PHP  11. wp_editor() /home/ubuntu/workspace/wp-content/plugins/tablepress/views/view-edit.php:495
+[02-Aug-2017 18:37:15 UTC] PHP  12. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:37:15 UTC] PHP  13. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:37:15 UTC] PHP  14. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:37:15 UTC] PHP  15. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:37:15 UTC] PHP  16. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:15 UTC] PHP  17. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:37:43 UTC] PHP Stack trace:
+[02-Aug-2017 18:37:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[02-Aug-2017 18:37:43 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[02-Aug-2017 18:37:43 UTC] PHP   3. wp_editor() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:632
+[02-Aug-2017 18:37:43 UTC] PHP   4. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:37:43 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:37:43 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:37:43 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:37:43 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP   9. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:37:43 UTC] PHP Stack trace:
+[02-Aug-2017 18:37:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[02-Aug-2017 18:37:43 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:292
+[02-Aug-2017 18:37:43 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:72
+[02-Aug-2017 18:37:43 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:37:43 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:37:43 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP   7. acf_field_wysiwyg->admin_footer() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP   8. wp_editor() /home/ubuntu/workspace/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php:193
+[02-Aug-2017 18:37:43 UTC] PHP   9. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:37:43 UTC] PHP  10. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:37:43 UTC] PHP  11. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:37:43 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:37:43 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:37:43 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:40:52 UTC] PHP Stack trace:
+[02-Aug-2017 18:40:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[02-Aug-2017 18:40:52 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[02-Aug-2017 18:40:52 UTC] PHP   3. wp_editor() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:632
+[02-Aug-2017 18:40:52 UTC] PHP   4. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:40:52 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:40:52 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:40:52 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:40:52 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP   9. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[02-Aug-2017 18:40:52 UTC] PHP Stack trace:
+[02-Aug-2017 18:40:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[02-Aug-2017 18:40:52 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:292
+[02-Aug-2017 18:40:52 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:72
+[02-Aug-2017 18:40:52 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:40:52 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:40:52 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP   7. acf_field_wysiwyg->admin_footer() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP   8. wp_editor() /home/ubuntu/workspace/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php:193
+[02-Aug-2017 18:40:52 UTC] PHP   9. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[02-Aug-2017 18:40:52 UTC] PHP  10. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[02-Aug-2017 18:40:52 UTC] PHP  11. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[02-Aug-2017 18:40:52 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[02-Aug-2017 18:40:52 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[02-Aug-2017 18:40:52 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:30:05 UTC] PHP Stack trace:
+[03-Aug-2017 16:30:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:30:05 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[03-Aug-2017 16:30:05 UTC] PHP   3. wp_editor() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:632
+[03-Aug-2017 16:30:05 UTC] PHP   4. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:30:05 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:30:05 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:30:05 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:30:05 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP   9. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:30:05 UTC] PHP Stack trace:
+[03-Aug-2017 16:30:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:30:05 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:292
+[03-Aug-2017 16:30:05 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:72
+[03-Aug-2017 16:30:05 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:30:05 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:30:05 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP   7. acf_field_wysiwyg->admin_footer() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP   8. wp_editor() /home/ubuntu/workspace/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php:193
+[03-Aug-2017 16:30:05 UTC] PHP   9. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:30:05 UTC] PHP  10. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:30:05 UTC] PHP  11. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:30:05 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:30:05 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:30:05 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:02 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:35:02 UTC] PHP Stack trace:
+[03-Aug-2017 16:35:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:35:02 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[03-Aug-2017 16:35:02 UTC] PHP   3. wp_editor() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:632
+[03-Aug-2017 16:35:02 UTC] PHP   4. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:35:02 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:35:02 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:02 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:02 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:02 UTC] PHP   9. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:03 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:35:03 UTC] PHP Stack trace:
+[03-Aug-2017 16:35:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:35:03 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:292
+[03-Aug-2017 16:35:03 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:72
+[03-Aug-2017 16:35:03 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:03 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:03 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:03 UTC] PHP   7. acf_field_wysiwyg->admin_footer() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:03 UTC] PHP   8. wp_editor() /home/ubuntu/workspace/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php:193
+[03-Aug-2017 16:35:03 UTC] PHP   9. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:35:03 UTC] PHP  10. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:35:03 UTC] PHP  11. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:03 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:03 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:03 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:07 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:35:07 UTC] PHP Stack trace:
+[03-Aug-2017 16:35:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:35:07 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:173
+[03-Aug-2017 16:35:07 UTC] PHP   3. wp_editor() /home/ubuntu/workspace/wp-admin/edit-form-advanced.php:632
+[03-Aug-2017 16:35:07 UTC] PHP   4. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:35:07 UTC] PHP   5. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:35:07 UTC] PHP   6. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:07 UTC] PHP   7. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:07 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:07 UTC] PHP   9. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:08 UTC] PHP Notice:  Undefined variable: shortcodes_list in /home/ubuntu/workspace/wp-content/plugins/wp-facebook-reviews/admin/class-wp-fb-reviews-admin.php on line 415
+[03-Aug-2017 16:35:08 UTC] PHP Stack trace:
+[03-Aug-2017 16:35:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post.php:0
+[03-Aug-2017 16:35:08 UTC] PHP   2. include() /home/ubuntu/workspace/wp-admin/post.php:292
+[03-Aug-2017 16:35:08 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:72
+[03-Aug-2017 16:35:08 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:08 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:08 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:08 UTC] PHP   7. acf_field_wysiwyg->admin_footer() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:08 UTC] PHP   8. wp_editor() /home/ubuntu/workspace/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php:193
+[03-Aug-2017 16:35:08 UTC] PHP   9. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[03-Aug-2017 16:35:08 UTC] PHP  10. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[03-Aug-2017 16:35:08 UTC] PHP  11. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[03-Aug-2017 16:35:08 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[03-Aug-2017 16:35:08 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[03-Aug-2017 16:35:08 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298

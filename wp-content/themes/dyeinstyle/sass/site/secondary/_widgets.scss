@@ -117,3 +117,22 @@ input[type="search"] {
 		margin: 0;
 	}
 }
+
+/* Facebook Reviews App */
+.wprs_unslider-arrow.next { 
+	margin-right: 20px !important; 
+} 
+.wprs_unslider-arrow.prev { 
+	margin-left: 20px !important; 
+} 
+p.wprevpro_t1_P_3.wprev_preview_tcolor1_T1 { 
+	font-family: $font__sans !important; 
+} 
+
+span.wprevpro_t1_SPAN_5.wprev_preview_tcolor2_T1 { 
+	font-family: $font__sans !important; 
+}
+
+.wprevpro_t1_SPAN_5, .wprev_preview_tcolor2_T1 {
+	font-weight: 800 !important;
+}

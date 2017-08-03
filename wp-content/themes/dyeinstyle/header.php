@@ -42,12 +42,18 @@
 			<nav class="navbar navbar-default main-navigation" role="navigation"> 
 			<!-- Brand and toggle get grouped for better mobile display --> 
 			  <div class="navbar-header"> 
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+			    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
 			      <span class="sr-only">Toggle navigation</span> 
 			      <span class="icon-bar top-bar"></span> 
 			      <span class="icon-bar middle-bar"></span> 
 			      <span class="icon-bar bottom-bar"></span> 
-			    </button> 
+			    </button> -->
+			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
 			  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			  </div> 
 			  <!-- Collect the nav links, forms, and other content for toggling --> 

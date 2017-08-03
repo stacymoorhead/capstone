@@ -3,15 +3,11 @@
 * Editor styles for TinyMCE
 */
 
-html {
-    padding: 0 2em;
-}
-
 body {
-    max-width: 1080px;
     margin: 0 auto;
     color: black;
     font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    font-weight: 400;
 	font-size: 14.4px;
 	/*font-size: $sizeValue * 1rem;*/
 	line-height: 1.5;

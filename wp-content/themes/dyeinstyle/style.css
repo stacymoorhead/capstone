@@ -8515,13 +8515,13 @@ a:hover, a:active {
 	}
 }
 
-.collapse, .navbar-collapse, .navbar-ex1-collapse, .navbar-collapse.collapse {
+.navbar-collapse, .navbar-ex1-collapse, .navbar-collapse.collapse {
 	box-sizing: border-box;
 	box-shadow: none;
 }
 
 @media screen and (min-width: 900px) {
-	.collapse, .navbar-collapse, .navbar-ex1-collapse, .navbar-collapse.collapse {
+	.navbar-collapse, .navbar-ex1-collapse, .navbar-collapse.collapse {
 		width: 65%;
 		float: left;
 		clear: none;
@@ -8562,43 +8562,89 @@ a:hover, a:active {
 	border: none;
 }
 
+.navbar-toggle {
+	border: none;
+	background: transparent;
+}
+
+.navbar-toggle:hover {
+	background: transparent;
+}
+
 .navbar-toggle .icon-bar {
 	width: 22px;
+	left: 3px;
 	transition: all 0.2s;
+	position: relative;
 }
 
-.navbar-toggle .navbar-ex1-collapse .top-bar, .navbar-toggle .collapse .top-bar {
-	-webkit-transform: rotate(0) !important;
-	        transform: rotate(0) !important;
-}
-
-.navbar-toggle .navbar-ex1-collapse .middle-bar, .navbar-toggle .collapse .middle-bar {
-	opacity: 1  !important;
-}
-
-.navbar-toggle .navbar-ex1-collapse .bottom-bar, .navbar-toggle .collapse .bottom-bar {
-	-webkit-transform: rotate(0) !important;
-	        transform: rotate(0) !important;
-}
-
-.navbar-toggle:active .top-bar, .navbar-toggle:focus .top-bar {
+.navbar-toggle .icon-bar:nth-child(2) {
 	-webkit-transform: rotate(45deg);
 	        transform: rotate(45deg);
 	-webkit-transform-origin: 10% 10%;
 	        transform-origin: 10% 10%;
 }
 
-.navbar-toggle:active .middle-bar, .navbar-toggle:focus .middle-bar {
+.navbar-toggle .icon-bar:nth-child(3) {
 	opacity: 0;
 }
 
-.navbar-toggle:active .bottom-bar, .navbar-toggle:focus .bottom-bar {
+.navbar-toggle .icon-bar:nth-child(4) {
 	-webkit-transform: rotate(-45deg);
 	        transform: rotate(-45deg);
 	-webkit-transform-origin: 10% 90%;
 	        transform-origin: 10% 90%;
 }
 
+.navbar-toggle.collapsed .icon-bar {
+	left: 0;
+}
+
+.navbar-toggle.collapsed .icon-bar:nth-child(2) {
+	-webkit-transform: rotate(0);
+	        transform: rotate(0);
+}
+
+.navbar-toggle.collapsed .icon-bar:nth-child(3) {
+	opacity: 1;
+}
+
+.navbar-toggle.collapsed .icon-bar:nth-child(4) {
+	-webkit-transform: rotate(0);
+	        transform: rotate(0);
+}
+
+/*.navbar-toggle {
+	.icon-bar {
+		width: 22px;
+		transition: all 0.2s;
+ 	 }
+	.navbar-ex1-collapse, .collapse {
+	    .top-bar {
+			transform: rotate(0) !important;      
+	    }
+	    .middle-bar {
+			opacity: 1  !important;
+	    }
+	    .bottom-bar {
+			transform: rotate(0)  !important;
+	    }
+	}    
+  
+	&:active, &:focus {
+		.top-bar {
+		    transform: rotate(45deg);
+		    transform-origin: 10% 10%;
+	  	}
+	  	.middle-bar {
+	   		opacity: 0;
+	  	}
+	  	.bottom-bar {
+		    transform: rotate(-45deg);
+		    transform-origin: 10% 90%;
+	 	}
+  	}  
+}*/
 /*--------------------------------------------------------------
 ## Content navigation
 --------------------------------------------------------------*/
@@ -8868,6 +8914,15 @@ a:hover, a:active {
 	padding: 1em 0 0 0;
 	background-color: trans(white, 0.5);
 	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.content-container:before, .content-container:after {
+	content: " ";
+	display: table;
+}
+
+.content-container:after {
+	clear: both;
 }
 
 @media screen and (min-width: 600px) {
@@ -9146,6 +9201,7 @@ a:hover, a:active {
 @media screen and (max-width: 500px) {
 	.header-image {
 		padding-top: 95px;
+		max-height: 300px;
 	}
 }
 
@@ -10498,6 +10554,27 @@ input[type="search"] {
 
 .contact-info p {
 	margin: 0;
+}
+
+/* Facebook Reviews App */
+.wprs_unslider-arrow.next {
+	margin-right: 20px !important;
+}
+
+.wprs_unslider-arrow.prev {
+	margin-left: 20px !important;
+}
+
+p.wprevpro_t1_P_3.wprev_preview_tcolor1_T1 {
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+}
+
+span.wprevpro_t1_SPAN_5.wprev_preview_tcolor2_T1 {
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+}
+
+.wprevpro_t1_SPAN_5, .wprev_preview_tcolor2_T1 {
+	font-weight: 800 !important;
 }
 
 /*--------------------------------------------------------------
