@@ -117,13 +117,21 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background: url("images/greyfloral_2X.png") repeat fixed #fff;
-	/* Fallback for when there is no custom background color defined. */
-}
-
 p {
 	margin-bottom: 1em;
+}
+
+blockquote {
+	padding: 10px 20px;
+	margin: 0 0 20px;
+	font-size: 17.5px;
+	border-left: 5px solid #eeeeee;
+}
+
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+	margin-bottom: 0;
 }
 
 blockquote, q {
