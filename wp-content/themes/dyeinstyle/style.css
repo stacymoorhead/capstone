@@ -8993,7 +8993,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 1025px) {
 	.content-area {
-		width: 1000px;
+		max-width: 1080px;
 		margin: 0 auto;
 	}
 }
