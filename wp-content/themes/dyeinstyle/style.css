@@ -8486,7 +8486,7 @@ a:hover, a:active {
 		opacity: 1;
 		width: 218px;
 		position: absolute;
-		top: 35px;
+		top: 33px;
 	}
 }
 
@@ -8569,6 +8569,11 @@ a:hover, a:active {
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	background-color: #836393;
 	color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: white;
+	background-color: #333333;
 }
 
 .navbar-toggle {

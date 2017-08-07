@@ -142,7 +142,7 @@
 		opacity: 1;
 		width: 218px;
 		position: absolute;
-		top: 35px;
+		top: 33px;
 	}	
 }
 
@@ -211,6 +211,11 @@
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: $color__dark-purple;
     color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: $color__dark-gray;
 }
 
 // Animated hamburger
