@@ -28,7 +28,7 @@
 						'theme_location' => 'social',
 					) );
 				?>
-				<a href="https://clients.mindbodyonline.com/asp/su1.asp?fl=true&tabID=2"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+				<a href="https://clients.mindbodyonline.com/LoginLaunch?studioid=283257"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
 			</div>	
 			<div class="hours">
 				<?php get_sidebar( 'footer-hours'); ?>
