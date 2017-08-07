@@ -2,13 +2,13 @@
 * Theme: Dyn in Style
 * Editor styles for TinyMCE
 */
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,800,800i');
 
 body {
     color: black;
     font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
     font-weight: 400;
 	font-size: 14.4px;
-	/*font-size: $sizeValue * 1rem;*/
 	line-height: 1.5;
 }
 
@@ -45,6 +45,11 @@ h6 {
 	font-size: 1.2em;
 }
 
+strong {
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-weight: 800;
+}
+
 article h2 {
 	font-family: "Grand Hotel", Georgia, Cambria, cursive;
 	color: #836393;
@@ -59,7 +64,8 @@ p {
 }
 
 dfn, cite, em, i {
-	font-style: italic;
+	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    font-style: italic;
 }
 
 blockquote {
@@ -74,7 +80,6 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
-	/*font-size: $sizeValue * 1rem;*/
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -85,7 +90,6 @@ pre {
 code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
-	/*font-size: $sizeValue * 1rem;*/
 }
 
 abbr, acronym {

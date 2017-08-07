@@ -48,29 +48,30 @@
 			      <span class="icon-bar middle-bar"></span> 
 			      <span class="icon-bar bottom-bar"></span> 
 			    </button> -->
-			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-			  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      </button>
+				  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			  </div> 
 			  <!-- Collect the nav links, forms, and other content for toggling --> 
-			  <div class="collapse navbar-collapse navbar-ex1-collapse"> 
+
 			    <?php /* Primary navigation */
 				wp_nav_menu( array(
-				  'menu' => 'top_menu',
-				  'depth' => 2,
-				  'container' => false,
-				  'menu_class' => 'nav',
-				  'theme_location' => 'main-nav',
-				  'menu_id'        => 'primary-menu',
-				  //Process nav menu using our custom nav walker
-				  'walker' => new wp_bootstrap_navwalker())
+					'menu'				=> 'main-nav',
+					'theme_location'    => 'main-nav',
+					'depth' 			=> 2,
+					'container'         => 'div',
+	                'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
+	                'container_id'      => 'bs-example-navbar-collapse-1',
+	                'menu_class'        => 'nav navbar-nav',
+	                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+	                'walker'            => new WP_Bootstrap_Navwalker())
 				);
 				?>
-			  </div>
+
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 	</div><!-- .fixed -->	

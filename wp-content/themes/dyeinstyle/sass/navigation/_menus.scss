@@ -204,6 +204,15 @@
     border: none;
 }
 
+.navbar-default .navbar-nav > li > a {
+    color: $color__light-purple;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: $color__dark-purple;
+    color: white;
+}
+
 // Animated hamburger
 .navbar-toggle {
   border: none;
@@ -251,38 +260,3 @@
 
   }
 }
-
-
-
-
-/*.navbar-toggle {
-	.icon-bar {
-		width: 22px;
-		transition: all 0.2s;
- 	 }
-	.navbar-ex1-collapse, .collapse {
-	    .top-bar {
-			transform: rotate(0) !important;      
-	    }
-	    .middle-bar {
-			opacity: 1  !important;
-	    }
-	    .bottom-bar {
-			transform: rotate(0)  !important;
-	    }
-	}    
-  
-	&:active, &:focus {
-		.top-bar {
-		    transform: rotate(45deg);
-		    transform-origin: 10% 10%;
-	  	}
-	  	.middle-bar {
-	   		opacity: 0;
-	  	}
-	  	.bottom-bar {
-		    transform: rotate(-45deg);
-		    transform-origin: 10% 90%;
-	 	}
-  	}  
-}*/

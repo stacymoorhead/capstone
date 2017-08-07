@@ -8562,6 +8562,15 @@ a:hover, a:active {
 	border: none;
 }
 
+.navbar-default .navbar-nav > li > a {
+	color: #d2c7e2;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background-color: #836393;
+	color: white;
+}
+
 .navbar-toggle {
 	border: none;
 	background: transparent;
@@ -8614,37 +8623,6 @@ a:hover, a:active {
 	        transform: rotate(0);
 }
 
-/*.navbar-toggle {
-	.icon-bar {
-		width: 22px;
-		transition: all 0.2s;
- 	 }
-	.navbar-ex1-collapse, .collapse {
-	    .top-bar {
-			transform: rotate(0) !important;      
-	    }
-	    .middle-bar {
-			opacity: 1  !important;
-	    }
-	    .bottom-bar {
-			transform: rotate(0)  !important;
-	    }
-	}    
-  
-	&:active, &:focus {
-		.top-bar {
-		    transform: rotate(45deg);
-		    transform-origin: 10% 10%;
-	  	}
-	  	.middle-bar {
-	   		opacity: 0;
-	  	}
-	  	.bottom-bar {
-		    transform: rotate(-45deg);
-		    transform-origin: 10% 90%;
-	 	}
-  	}  
-}*/
 /*--------------------------------------------------------------
 ## Content navigation
 --------------------------------------------------------------*/

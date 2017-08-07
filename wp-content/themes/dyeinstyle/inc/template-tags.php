@@ -32,7 +32,7 @@ function dyeinstyle_posted_on() {
 
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( 'Written by %s', 'post author', 'dyeinstyle' ),
+		esc_html_x( 'Posted by %s', 'post author', 'dyeinstyle' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
