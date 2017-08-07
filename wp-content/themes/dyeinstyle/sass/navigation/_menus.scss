@@ -218,6 +218,11 @@
     background-color: $color__dark-gray;
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: $color__light-purple;
+    background-color: $color__dark-gray;
+}
+
 // Animated hamburger
 .navbar-toggle {
   border: none;

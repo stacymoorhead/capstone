@@ -8576,6 +8576,11 @@ a:hover, a:active {
 	background-color: #333333;
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #d2c7e2;
+	background-color: #333333;
+}
+
 .navbar-toggle {
 	border: none;
 	background: transparent;
