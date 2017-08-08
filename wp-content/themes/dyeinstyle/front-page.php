@@ -62,7 +62,7 @@ get_header(); ?>
 <?php 
 get_template_part( 'template-parts/content', 'instagram' ); ?>
 <section class="news">
-	<h2>Recent Posts</h2>
+	<h2>The Latest</h2>
 	<hr class="purple">
 	<div class="news-container">
 	
