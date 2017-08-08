@@ -3,6 +3,7 @@
     width: 100%;
     float: left;
     clear: both;
+    margin-bottom: 1em;
     padding: 1em;
     font-family: $font__sans;
     color: $color__gray;
@@ -140,11 +141,10 @@
     text-align: center;
     margin: 1em;
     font-size: .8em;
-    float: left;
-    
+
     @media screen and (min-width: $query__medium) {
         margin: 1em 2em;
-        width: 100%;
+
         clear: both;
         
     }

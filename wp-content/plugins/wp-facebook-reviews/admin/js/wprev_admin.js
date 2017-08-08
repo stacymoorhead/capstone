@@ -231,6 +231,7 @@ function openpopup(title, body, body2){
 						var temppagename = "";
 						for (i = 0; i < fbpagearray.length; i++) { 
 							temppagename = fbpagearray[i].name.replace(/'/g, "%27");
+							temppagename = temppagename.replace(/"/g, "");
 							tablerows = tablerows + '<tr id="" class=""><td><button onclick=\'getfbreviewsfunction("' + fbpagearray[i].id + '", "' + fbpagearray[i].access_token + '", "' + temppagename + '")\' id="getreviews_' + fbpagearray[i].id + '" type="button" class="btn_green">Retrieve Reviews</button></td> \
 										<td><strong>' + fbpagearray[i].name + '</strong></td> \
 										<td><strong>' + fbpagearray[i].id + '</strong></td> \

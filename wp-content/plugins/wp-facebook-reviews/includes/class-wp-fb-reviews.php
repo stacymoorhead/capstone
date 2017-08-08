@@ -69,7 +69,7 @@ class WP_FB_Reviews {
 	public function __construct() {
 
 		$this->_token = 'wp-fb-reviews';
-		$this->version = '2.3';
+		$this->version = '2.4';
 		//using this for development
 		//$this->version = time();
 

@@ -9992,6 +9992,7 @@ article {
 	width: 100%;
 	float: left;
 	clear: both;
+	margin-bottom: 1em;
 	padding: 1em;
 	font-family: "Muli", "Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #bbbdbf;
@@ -10163,13 +10164,11 @@ article {
 	text-align: center;
 	margin: 1em;
 	font-size: .8em;
-	float: left;
 }
 
 @media screen and (min-width: 900px) {
 	.site-info {
 		margin: 1em 2em;
-		width: 100%;
 		clear: both;
 	}
 }
@@ -10386,7 +10385,6 @@ article {
 	width: 100%;
 	box-sizing: border-box;
 	display: block;
-	float: left;
 	clear: both;
 	position: relative;
 }
@@ -10398,6 +10396,17 @@ article {
 
 .reviews-container:after {
 	clear: both;
+}
+
+@media screen and (min-width: 900px) {
+	.reviews-container {
+		max-width: 1025px;
+		box-sizing: border-box;
+		display: block;
+		clear: both;
+		position: relative;
+		margin: 0 auto;
+	}
 }
 
 .reviews {
@@ -10449,8 +10458,8 @@ article {
 .widget ul li,
 .widget ol li {
 	display: block;
-	/*border-top: 1px dotted $color__gray;
-			padding: .5em 0;*/
+	margin: .5em 0;
+	line-height: 1.4em;
 }
 
 .widget ul li ul,

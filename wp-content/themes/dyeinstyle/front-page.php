@@ -30,7 +30,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			*/?>
 			
-			<section class="services-icons">
+			<section class="services-icons content-area">
 				<h2>Services</h2>
 				<hr>
 				<div class="icon-boxes">

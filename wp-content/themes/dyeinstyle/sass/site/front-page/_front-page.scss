@@ -157,12 +157,19 @@
     width: 100%;
     box-sizing: border-box;
     display: block;
-    float: left;
+
     clear: both;
     position: relative;
     @include clearfix;
     
-   
+    @media screen and (min-width: $query__medium) {
+        max-width: 1025px;
+        box-sizing: border-box;
+        display: block;
+        clear: both;
+        position: relative;
+        margin: 0 auto;
+    }
 }
 
 .reviews {
