@@ -67,7 +67,7 @@ get_template_part( 'template-parts/content', 'instagram' ); ?>
 	<div class="news-container">
 	
 	<?php
-	$recent_posts_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 2));
+	$recent_posts_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 3));
 	while ($recent_posts_query->have_posts()) {
 		$recent_posts_query->the_post();
 	?>
