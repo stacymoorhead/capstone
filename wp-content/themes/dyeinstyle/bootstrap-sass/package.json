@@ -80,5 +80,8 @@
     "tmp": "tmp/bootstrap-sass-3.3.7.tgz_1469481083038_0.9325655004940927"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/bootstrap-sass/-/bootstrap-sass-3.3.7.tgz"
+  "_resolved": "https://registry.npmjs.org/bootstrap-sass/-/bootstrap-sass-3.3.7.tgz",
+  "dependencies": {
+    "ejs": "^2.5.7"
+  }
 }
