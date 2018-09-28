@@ -3,7 +3,7 @@
  * @module Compatibility
  * @requires WPGMZA
  */
-(function($) {
+jQuery(function($) {
 	
 	WPGMZA.Compatibility = function()
 	{
@@ -16,7 +16,7 @@
 		
 		document.write = function(content)
 		{
-			if(content.match(/maps\.google/))
+			if(content.match && content.match(/maps\.google/))
 				return;
 			
 			old.call(document, content);
@@ -25,4 +25,4 @@
 	
 	WPGMZA.compatiblityModule = new WPGMZA.Compatibility();
 	
-})(jQuery);
+});

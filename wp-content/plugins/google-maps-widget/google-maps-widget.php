@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Google Maps Widget
-Plugin URI: http://www.gmapswidget.com/
+Plugin URI: https://www.gmapswidget.com/
 Description: Display a single image super-fast loading Google map in a widget. A larger, full featured map is available in a lightbox. Includes a user-friendly interface and numerous appearance options.
-Author: WebFactory Ltd
-Version: 3.90
-Author URI: http://www.webfactoryltd.com/
+Author: Google Maps Widget
+Version: 4.0
+Author URI: https://www.gmapswidget.com/
 Text Domain: google-maps-widget
 Domain Path: lang
 
@@ -273,11 +273,15 @@ class GMW {
       return false;
     }
 
+    if ($type == 'fallback' && empty($options['api_key'])) {
+      shuffle($default_api_keys);
+      return $default_api_keys[0];
+    }
+
     if (!empty($options['api_key'])) {
       return $options['api_key'];
     } else {
-      shuffle($default_api_keys);
-      return $default_api_keys[0];
+      return false;
     }
   } // get_api_key
 
@@ -841,23 +845,23 @@ class GMW {
       $out .= '<tr>';
       $out .= '<td>';
       if ($promo_active) {
-        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="http://www.gmapswidget.com/buy/?p=pro-agency-welcome&r=welcome-GMW+v' . GMW::$version . '" target="_blank">only <strike>$79</strike> $54</a><span>discount: 32%</span></div>';
+        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="https://gum.co/gmw-pro-agency/welcome?wanted=true&plugin_info=GMW+v' . GMW::$version . '" target="_blank" data-gumroad-single-product="true">only <strike>$79</strike> $54</a><span>discount: 32%</span></div>';
       } else {
-        $out .= '<div class="gmw-promo-button"><a href="http://www.gmapswidget.com/buy/?p=pro-agency&r=GMW+v' . GMW::$version . '" data-noprevent="1" target="_blank">BUY $79</a></div>';
+        $out .= '<div class="gmw-promo-button"><a href="https://gum.co/gmw-pro-agency?wanted=true&plugin_info=GMW+v' . GMW::$version . '" data-noprevent="1" target="_blank" data-gumroad-single-product="true">BUY $79</a></div>';
       }
       $out .= '<span class="instant-download"><span class="dashicons dashicons-yes"></span> 100% No-Risk Money Back Guarantee<br><span class="dashicons dashicons-yes"></span> Secure payment<br><span class="dashicons dashicons-yes"></span> Instant activation</span>';
       $out .= '</td>';
       $out .= '<td>';
       if ($promo_active) {
-        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="http://www.gmapswidget.com/buy/?p=pro-welcome4&r=welcome-GMW+v' . GMW::$version . '" target="_blank">only <strike>$39</strike> $29</a><span>discount: 25%</span></div>';
+        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="https://gum.co/gmw-pro/welcomepromo4?wanted=true&plugin_info=GMW+v' . GMW::$version . '" target="_blank" data-gumroad-single-product="true">only <strike>$39</strike> $29</a><span>discount: 25%</span></div>';
       } elseif ($promo_active2) {
-        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="http://www.gmapswidget.com/buy/?p=olduser4&r=olduser-GMW+v' . GMW::$version . '" target="_blank">only <strike>$39</strike> $29</a><span>discount: 25%</span></div>';
+        $out .= '<div class="gmw-promo-button gmw-promo-button-extra"><a href="https://gum.co/gmw-pro/olduser4?wanted=true&plugin_info=GMW+v' . GMW::$version . '" target="_blank" data-gumroad-single-product="true">only <strike>$39</strike> $29</a><span>discount: 25%</span></div>';
       } else {
-        $out .= '<div class="gmw-promo-button"><a href="http://www.gmapswidget.com/buy/?p=pro-unlimited2&r=GMW+v' . GMW::$version . '" data-noprevent="1" target="_blank">BUY $29</a></div>';
+        $out .= '<div class="gmw-promo-button"><a href="https://gum.co/gmw-pro?wanted=true&plugin_info=GMW+v' . GMW::$version . '" data-noprevent="1" data-gumroad-single-product="true" target="_blank">BUY $39</a></div>';
       }
       $out .= '<span class="instant-download"><span class="dashicons dashicons-yes"></span> 100% No-Risk Money Back Guarantee<br><span class="dashicons dashicons-yes"></span> Secure payment<br><span class="dashicons dashicons-yes"></span> Instant activation</span>';
       $out .= '</td>';
-      $out .= '<td><div class="gmw-promo-button"><a href="http://www.gmapswidget.com/buy/?p=yearly2&r=GMW+v' . GMW::$version . '" data-noprevent="1" target="_blank">$19 <small>/year</small></a></div>';
+      $out .= '<td><div class="gmw-promo-button"><a href="https://gum.co/gmw-yearly?wanted=false&yearly=true&plugin_info=GMW+v' . GMW::$version . '" data-noprevent="1" target="_blank" data-gumroad-single-product="true">$18.99 <small>/year</small></a></div>';
       $out .= '<span class="instant-download"><span class="dashicons dashicons-yes"></span> 100% No-Risk Money Back Guarantee<br><span class="dashicons dashicons-yes"></span> Secure payment<br><span class="dashicons dashicons-yes"></span> Instant activation</span>';
       $out .= '</td>';
       $out .= '</tr>';
@@ -1157,6 +1161,9 @@ class GMW {
     echo '</div>'; // license tab
 
     echo '</form>';
+    if (!GMW::is_activated()) {
+      echo '<script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>';
+    }
     echo '</div>'; // wrap
   } // settings_screen
 
@@ -1213,7 +1220,7 @@ class GMW {
     } // if !$response
 
     if (!is_wp_error($response) && wp_remote_retrieve_body($response)) {
-      $data = json_decode(wp_remote_retrieve_body($response));
+      $data = json_decode(wp_remote_retrieve_body($response), false);
       if (empty($current)) {
         $current = new stdClass();
       }
@@ -1221,6 +1228,8 @@ class GMW {
         $current->response = array();
       }
       if (!empty($data) && is_object($data)) {
+        $data->icons = (array) $data->icons;
+        $data->banners = (array) $data->banners;
         $current->response[$plugin] = $data;
       }
     }

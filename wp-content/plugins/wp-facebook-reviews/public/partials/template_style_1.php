@@ -19,11 +19,11 @@ $imgs_url = esc_url( plugins_url( 'imgs/', __FILE__ ) );
 for ($x = 0; $x < count($rowarray); $x++) {
 	if(	$currentform[0]->template_type=="widget"){
 		?>
-		<div class="wprevpro_t1_outer_div_widget w3_wprs-row-padding-small">
+		<div class="wprevpro_t1_outer_div_widget w3_wprs-row-padding-small wprevprodiv">
 		<?php
 		} else {
 		?>
-		<div class="wprevpro_t1_outer_div w3_wprs-row-padding">
+		<div class="wprevpro_t1_outer_div w3_wprs-row-padding wprevprodiv">
 		<?php
 	}
 	//loop 
@@ -59,7 +59,12 @@ for ($x = 0; $x < count($rowarray); $x++) {
 		
 		//star alt tag
 		$altimgtag = $review->rating.' star review';
-		
+		//star html
+		if($review->rating>0){
+			$starhtml = '<img src="'.$imgs_url.$starfile.'" alt="'.$altimgtag.'" class="wprevpro_t1_star_img_file">&nbsp;&nbsp;';
+		} else {
+			$starhtml = '';
+		}
 		$reviewtext = "";
 		if($review->review_text !=""){
 			$reviewtext = $review->review_text;
@@ -75,10 +80,10 @@ for ($x = 0; $x < count($rowarray); $x++) {
 		<div class="wprevpro_t1_DIV_1<?php if(	$currentform[0]->template_type=="widget"){echo ' marginb10';}?> w3_wprs-col l<?php echo $perrow; ?>">
 			<div class="wprevpro_t1_DIV_2 wprev_preview_bg1_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?> wprev_preview_bradius_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>">
 				<p class="wprevpro_t1_P_3 wprev_preview_tcolor1_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>">
-					<span class="wprevpro_star_imgs_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><img src="<?php echo $imgs_url."".$starfile; ?>" alt="<?php echo $altimgtag; ?>" class="wprevpro_t1_star_img_file">&nbsp;&nbsp;</span><?php echo stripslashes($reviewtext); ?>
+					<span class="wprevpro_star_imgs_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><?php echo $starhtml; ?></span><?php echo stripslashes($reviewtext); ?>
 				</p>
 				<?php echo $yelp_logo; ?>
-			</div><span class="wprevpro_t1_A_8"><img src="<?php echo $userpic; ?>" alt="thumb" class="wprevpro_t1_IMG_4" /></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><?php echo stripslashes($review->reviewer_name); ?><br/><span class="wprev_showdate_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><?php echo date("n/d/Y",$review->created_time_stamp); ?></span> </span>
+			</div><span class="wprevpro_t1_A_8"><img wprevid="<?php echo $review->id;?>" src="<?php echo $userpic; ?>" alt="thumb" class="wprevpro_t1_IMG_4" /></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><?php echo stripslashes($review->reviewer_name); ?><br/><span class="wprev_showdate_T<?php echo $currentform[0]->style; ?><?php if($iswidget){echo "_widget";} ?>"><?php echo date("n/d/Y",$review->created_time_stamp); ?></span> </span>
 		</div>
 	<?php
 	}

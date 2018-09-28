@@ -1,18 +1,18 @@
-=== Google Maps Widget - Ultimate Google Maps Plugin ===
-Contributors: WebFactory, GoogleMapsWidget
-Tags: google maps, google map, gmap, maps, map widget, map markers, google maps plugin, wp google map, map plugin, map directions, google maps widget, map builder
+=== Google Maps Widget - Best Google Maps Plugin ===
+Contributors: WebFactory, GoogleMapsWidget, WPReset, securityninja
+Tags: google maps, maps, map, map markers, google map, google maps plugin, wp google maps, wp google map, map plugin, directions, google map plugin, map widget
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 3.90
+Stable tag: 4.0
 Requires PHP: 5.2
 
-Tired of broken Google Maps taking hours to setup? With Google Maps Widget you'll have a perfect map with a thumbnail & lightbox in minutes!
+Google Maps taking forever to load? Try Google Maps Widget. You'll have a fast Google Map with a thumbnail & lightbox in minutes!
 
 == Description ==
 
-Tired of buggy & slow Google Maps plugins that take hours to setup? With Google Maps Widget you'll have a perfect map with a thumbnail & lightbox in minutes! **No nonsense maps - we know you're in a hurry!** Join 100,000+ happy Google Maps users.
+Tired of buggy & slow Google Maps plugins that take hours to setup? With Google Maps Widget you'll have a perfect map with a thumbnail & lightbox in minutes! **No nonsense Google maps - we know you're in a hurry!** Join 100,000+ happy Google maps users.
 
 [youtube https://www.youtube.com/watch?v=oVrTGKepPPI]
 
@@ -26,30 +26,35 @@ Check out some examples on the <a href="https://www.gmapswidget.com/">Google Map
 
 **Thumbnail Google map options**
 
-* map size - width & height
-* map type - road, satellite, terrain & hybrid
-* map color scheme - default, bright, gowalla, midnight, refreshed, ultra light, mapbox + 11 extra & any custom map style in PRO
+Google Maps Widget thumbnail uses the Google Maps Static Maps API. It loads the entire google map in only one request compared to 20+ requests it takes other Google maps plugins to load them. This ensures your site loads as fast as possible!
+
+* Custom google map size - map width & map height
+* Choose any google map type you prefer - road map, satellite map, terrain map & hybrid map
+* Plenty of google map color schemes - default, bright, gowalla, gray, midnight, refreshed, ultra light, mapbox + 11 extra & any custom google map style in PRO
 * zoom level
 * pin type
 * pin color
 * pin size
 * pin label
-* custom pin icon - any image can be used
-* 1500+ pins library in PRO
-* link type - lightbox, custom URL, replace thumbnail with interactive map (PRO), immediately show interactive map (PRO) or disable link
+* custom map pin icon - any image can be used
+* 1500+ map pins library in PRO
+* link type - lightbox map, custom URL, replace thumbnail map with interactive google map (PRO), immediately show interactive google map (PRO) or disable link
 * image format
-* map language
-* text above map
-* text below map
+* google map language
+* hide widget title
+* text above google map
+* text below google map
 
 **Interactive Google map options**
 
-* lightbox size - width & height (auto-adjusted on smaller screens) or fullscreen in PRO
-* map mode - place + in PRO: directions, search, view & street view
+Interactive google maps loads in a lightbox or as an in-place replacement for the thumbnail Google map if your using Google Maps Widget PRO. It has all the standard interactive google map features users are accustomed too.
+
+* lightbox size - map width & map height (auto-adjusted on smaller screens) or fullscreen map in PRO
+* map mode - place + in PRO: directions, search, view & google street view
 * map type - road & satellite
-* map color scheme - 15 styles & any custom map style in PRO
+* map color scheme - 15 map styles & any custom google map style in PRO
 * pins clustering - PRO feature
-* zoom level
+* map zoom level
 * lightbox skin - light, dark + 20 extra in PRO
 * lightbox features - close on overlay click, close on esc key, close button & show map title
 * map language
@@ -63,27 +68,27 @@ Check out some examples on the <a href="https://www.gmapswidget.com/">Google Map
 **Multiple Pins**
 
 * full clustering and filtering support for pins on Google maps - <a href="https://www.gmapswidget.com/">demos</a> available on site
-* you can add unlimited pins with custom markers and descriptions to thumbnail and interactive map (PRO feature)
-* every map pin has the following options: show on thumbnail and/or interactive map, set custom pin image, set on-click behavior: open custom description bubble, open URL in new/same tab or do nothing
+* you can add unlimited pins with custom markers and descriptions to thumbnail and interactive Google maps (PRO feature)
+* every map pin has the following options: show on the map thumbnail and/or interactive map, set custom map pin image, set on-click behavior: open custom description bubble, open URL in new/same tab or do nothing
 
 
-> > **PRO** version of Google Maps Widget offers more than 50 extra features and options including multiple pins support, clustering, pins library, skins, export, import and widget cloning features, Google Analytics integration and premium, USA based support. Install the plugin and try the PRO features 7 days for free! Features are activated instantly. Or read more about it on the <a href="https://www.gmapswidget.com/">official Google Maps Widget site</a>.
+> > **PRO** version of Google Maps Widget offers more than 50 extra features and options including multiple map pins support, map pin clustering, pins library, skins, export, import and widget cloning features, Google Analytics integration and premium, USA based support. Read more about the PRO version on the <a href="https://www.gmapswidget.com/">official Google Maps Widget site</a>.
 
 
 **Showcase & What others say about Google Maps Widget**
 
 * see a live example of Google Maps Widget showing off server locations around the world on <a href="http://www.bitcatcha.com/">Bitcatcha</a>
 * voted on the <a href="http://themesplugins.com/Plugin-detail/google-maps-widget-google-map-free-plugin-for-wordpress/" title="Top 100 WordPressian plugin">Top 100 List</a> by WordPressian
-* made it on the <a href="http://tidyrepo.com/google-maps-widget/">Tidy Repo</a> list
+* made it on the <a href="http://tidyrepo.com/google-maps-widget/">Tidy Repo</a> as "well supported Google Maps plugin"
 * reviewed 5/5 by <a href="http://websmush.com/google-maps-widget-plugin-review/">Web Smush</a>
-* one of 3 best google map plugins by <a href="http://torquemag.io/the-3-best-map-plugins-for-wordpress/">The Torque Mag</a>
+* one of 3 best Google map plugins by <a href="http://torquemag.io/the-3-best-map-plugins-for-wordpress/">The Torque Mag</a>
 * "an easier way to add Google maps to your site" says <a href="http://www.wpbeginner.com/wp-tutorials/how-to-add-google-maps-in-wordpress/">WP Beginner</a>
 * <a href="http://designscrazed.org/wordpress-google-map-plugins/">Design Crazed</a> puts in on the top 20 Google maps list
-* <a href="http://www.inkthemes.com/easily-integrate-google-map-in-your-wordpress-themes-widget-area/09/">InkThemes</a> shows how easy it is to use GMW
-* <a href="http://www.indexwp.com/google-maps-widget/">IndexWP</a> calls it a "handy map plugin"
+* <a href="http://www.inkthemes.com/easily-integrate-google-map-in-your-wordpress-themes-widget-area/09/">InkThemes</a> shows how easy it is to use Google Maps Widget
+* <a href="http://www.indexwp.com/google-maps-widget/">IndexWP</a> calls it a "handy google maps plugin"
+* <a href="https://www.webhostingsecretrevealed.net/blog/wordpress-blog/an-easy-and-painless-guide-for-adding-google-map-in-wordpress/">A Painless Guide For Adding Google Maps In WordPress</a> by WHSR
 
-
-**Translators (thank you!)**
+**Google Maps Widget Translators (thank you!)**
 
 * English - original :)
 * Swedish - Sofia Asklund
@@ -107,19 +112,19 @@ Check out some examples on the <a href="https://www.gmapswidget.com/">Google Map
 
 == Installation ==
 
-**Follow the usual routine**
+**Follow the usual routine to install Google Maps Widget**
 
 1. Open WordPress admin, go to Plugins, click Add New
 2. Enter "Google Maps Widget" in search and hit Enter
 3. Plugin will show up as the first on the list, click "Install Now"
-4. Activate & go to Appearance - Widgets to configure
+4. Activate & go to Appearance - Widgets to configure Google Maps Widget
 
 **Or if needed, upload manually**
 
 1. Download the plugin.
 2. Unzip it and upload to _wp-content/plugin/_
-3. Open WordPress admin - Plugins and click "Activate" next to the plugin
-4. Configure the plugin under Appearance - Widgets
+3. Open WordPress admin - Plugins and click "Activate" next to the Google Maps Widget plugin
+4. Configure the Google Maps Widget under Appearance - Widgets
 
 
 == Frequently Asked Questions ==
@@ -128,28 +133,45 @@ Check out some examples on the <a href="https://www.gmapswidget.com/">Google Map
 
 For anyone who needs a map on their site in 5 seconds.
 
-= Map shows the wrong location =
+= Google Map shows the wrong location =
 
 Write the address differently, or more precisely. Make sure you enter the street, town and country name. If necessary enter lat/lng coordinates instead of the address. Use the numeric notation, eg: "40.7127, 74.0059"
 
 = How to generate the API key =
 
-We understand that creating an API key is frustrating but it takes less than a minute and it's something Google requires.
-Follow <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_embed_backend&keyType=CLIENT_SIDE&reusekey=true" target="_blank">wizard step #1</a> - login with any Gmail account, click next/confirm a few times with the default settings &amp; copy the key you see on the screen; it's the key you need. Then use <a href="https://console.developers.google.com/flows/enableapi?apiid=static_maps_backend&keyType=CLIENT_SIDE&reusekey=true" target="_blank">wizard step #2</a>, select the same "My Project" project from the list and that's it. Save the key in GMW settings.
+We understand that creating a Google Maps API key is frustrating but it takes less than a minute and it's something Google requires.
+Follow <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_embed_backend&keyType=CLIENT_SIDE&reusekey=true" target="_blank">wizard step #1</a> - login with any Gmail account, click next/confirm a few times with the default settings &amp; copy the Google Maps API key you see on the screen; it's the key you need. Then use <a href="https://console.developers.google.com/flows/enableapi?apiid=static_maps_backend&keyType=CLIENT_SIDE&reusekey=true" target="_blank">wizard step #2</a>, select the same "My Project" project from the list and that's it. Save the key in Google Maps Widget settings.
 If you want to protect your API key by using the "Accept requests from these HTTP referrers (web sites)" option in Google Console make sure to add your domain in these two formats: `*.mydomain.com/*` and `mydomain.com/*` and wait a few minutes until Google makes the necessary changes.
+If that didn't help read our detailed guide on <a href="https://www.gmapswidget.com/documentation/generate-google-maps-api-key/">how to create a Google Maps API key</a>.
 
-= Thumbnail map works but lightbox won't open on click =
+= Google map thumbnail works but lightbox won't open on click =
 
-You probably have Fancybox JS and CSS files included twice; once by the theme and second time by GMW plugin. Remove one instance of files. If that's not the case then you have a fatal JS error that's preventing execution of other JS code. Hit F12 in Firefox or Chrome and have a look at the debug console. If there are any red lines - it's a fatal error.
+You probably have Fancybox JS and CSS files included twice; once by the theme and second time by Google Maps Widget plugin. Remove one instance of files. If that's not the case then you have a fatal JS error that's preventing execution of other JS code. Hit F12 in Firefox or Chrome and have a look at the debug console. If there are any red lines - it's a fatal error.
+
+= The Google map is not working!!! Arrrrrrrrr =
+
 Open a new thread in the <a href="http://wordpress.org/support/plugin/google-maps-widget">support forums</a> but please bear in mind that support is community based and we do this in our spare time.
 
-= It's not working!!! Arrrrrrrrr =
+= How do I get Google Maps Widget Pro? =
 
-Read the <a href="http://wordpress.org/support/plugin/google-maps-widget">support forum</a> rules (no seriously, read them) and then if needed open new a thread.
+Simply visit <a href="https://www.gmapswidget.com">gmapswidget.com</a> and purchase the GMW PRO. Yearly and lifetime licenses are available.
+
+= I've installed the plugin, now what? =
+
+In WordPress admin open Appearance - Widgets and add a Google Maps Widget to a sidebar. And make sure you follow instructions on how to generate a Google Maps API key. Without it maps won't work.
+
+= How do I put a Google map on my page/post? =
+
+In order to show your Google map in your page or post, simply copy the shortcode supplied and paste it into your page or post. This feature is available only in GMW PRO.
+
+= I want to use Google Maps but don't have WordPress =
+
+Try <a href="http://www.niftymaps.co">Nifty Maps</a> - a comprehensive Map Builder for any website
+
 
 == Screenshots ==
 
-1. Simple & fast - you'll have a great map working in under a minute
+1. Simple & fast - you'll have a great google map working in under a minute
 2. Thumbnail map is shown as a widget and since it's just one image it loads super-fast (1 request, about 20KB)
 3. Larger map with all interactive features is available in the lightbox
 4. Widget options - Thumbnail map
@@ -159,9 +181,23 @@ Read the <a href="http://wordpress.org/support/plugin/google-maps-widget">suppor
 
 == Changelog ==
 
+= 4.0 =
+* 2018/09/18
+* added Gray thumbnail color scheme
+* added Hide Widget Title option
+* 1,645,000 downloads
+
+= 3.95 =
+* 2018/07/12
+* yearly prices test; $19 -> $18.99
+* integrated GR popup in admin
+* removed /lang/ folder
+* added Neon color scheme
+* removed test API keys - all maps now need a valid API key
+
 = 3.90 =
 * 2018/05/29
-* added Midnight thumbnail color scheme
+* added Midnight thumbnail map color scheme
 * new prices for lifetime license
 * we're at 1,550,000 downloads
 
@@ -480,7 +516,7 @@ Read the <a href="http://wordpress.org/support/plugin/google-maps-widget">suppor
 
 = 1.35 =
 * 2014/02/05
-* added optional plugin usage tracking (<a href="https://www.gmapswidget.com/plugin-tracking-info/">detailed info</a>)
+* added optional plugin usage tracking (<a href="http://www.gmapswidget.com/plugin-tracking-info/">detailed info</a>)
 
 = 1.31 =
 * 2014/02/03
@@ -554,7 +590,7 @@ Read the <a href="http://wordpress.org/support/plugin/google-maps-widget">suppor
 * 2013/09/05
 * prepared everything for translation, POT file is available and all strings are wrapped in <i>__()</i>
 * protocols should now match http/https for both thumbnail and ligtbox map
-* <a href="https://www.gmapswidget.com/">www.gmapswidget.com</a> is up and running
+* <a href="http://www.gmapswidget.com/">www.gmapswidget.com</a> is up and running
 
 = 0.65 =
 * 2013/08/05

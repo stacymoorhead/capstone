@@ -3,7 +3,7 @@
  * @module OLGeocoder
  * @requires WPGMZA.Geocoder
  */
-(function($) {
+jQuery(function($) {
 	
 	/**
 	 * @class OLGeocoder
@@ -34,6 +34,9 @@
 				query: address
 			},
 			success: function(response, xhr, status) {
+				// Legacy compatibility support
+				response.lng = response.lon;
+				
 				callback(response);
 			}
 		});
@@ -87,51 +90,76 @@
 		});
 	}
 	
-	/**
-	 * @function getLatLngFromAddress
-	 * @access public
-	 * @summary Attempts to geocode an address, firstly by checking the cache for previous
-	 * results, if this fails the Nominatim server will be queried, cached and sent to the
-	 * specified callback
-	 * @param {object} options An object containing the options for geocoding, address is a mandatory field
-	 * @param {function} callback The function to send the results to, as an array
-	 * @returns {void}
-	 */
 	WPGMZA.OLGeocoder.prototype.getLatLngFromAddress = function(options, callback)
 	{
+		return WPGMZA.OLGeocoder.prototype.geocode(options, callback);
+	}
+	
+	WPGMZA.OLGeocoder.prototype.getAddressFromLatLng = function(options, callback)
+	{
+		return WPGMZA.OLGeocoder.prototype.geocode(options, callback);
+	}
+	
+	WPGMZA.OLGeocoder.prototype.geocode = function(options, callback)
+	{
 		var self = this;
-		var address = options.address;
 		
-		var latLng;
-		if(latLng = WPGMZA.isLatLngString(address))
-			return WPGMZA.Geocoder.prototype.getLatLngFromAddress.call(this, options, callback);
+		if(!options)
+			throw new Error("Invalid options");
 		
-		function finish(response, status)
+		if(options.location)
+			options.latLng = new WPGMZA.LatLng(options.location);
+		
+		var finish, location;
+		
+		if(options.address)
 		{
-			for(var i = 0; i < response.length; i++)
+			location = options.address;
+			
+			finish = function(response, status)
 			{
-				response[i].geometry = {
-					location: new WPGMZA.LatLng({
+				for(var i = 0; i < response.length; i++)
+				{
+					response[i].geometry = {
+						location: new WPGMZA.LatLng({
+							lat: parseFloat(response[i].lat),
+							lng: parseFloat(response[i].lon)
+						})
+					};
+					
+					response[i].latLng = {
 						lat: parseFloat(response[i].lat),
 						lng: parseFloat(response[i].lon)
-					})
-				};
+					};
+					
+					// Backward compatibility with old UGM
+					response[i].lng = response[i].lon;
+				}
 				
-				response[i].lat = parseFloat(response[i].lat);
-				response[i].lng = parseFloat(response[i].lon);
+				callback(response, status);
 			}
-			
-			callback(response, status);
 		}
+		else if(options.latLng)
+		{
+			location = options.latLng.toString();
+			
+			finish = function(response, status)
+			{
+				var address = response[0].display_name;
+				callback([address], status);
+			}
+		}
+		else
+			throw new Error("You must supply either a latLng or address")
 		
-		this.getResponseFromCache(address, function(response) {
+		this.getResponseFromCache(location, function(response) {
 			if(response.length)
 			{
 				finish(response, WPGMZA.Geocoder.SUCCESS);
 				return;
 			}
 			
-			self.getResponseFromNominatim(options, function(response, status) {
+			self.getResponseFromNominatim($.extend(options, {address: location}), function(response, status) {
 				if(status == WPGMZA.Geocoder.FAIL)
 				{
 					callback(null, WPGMZA.Geocoder.FAIL);
@@ -140,15 +168,15 @@
 				
 				if(response.length == 0)
 				{
-					callback(response, WPGMZA.Geocoder.ZERO_RESULTS);
+					callback([], WPGMZA.Geocoder.ZERO_RESULTS);
 					return;
 				}
 				
 				finish(response, WPGMZA.Geocoder.SUCCESS);
 				
-				self.cacheResponse(address, response);
+				self.cacheResponse(location, response);
 			});
 		});
 	}
 	
-})(jQuery);
+});

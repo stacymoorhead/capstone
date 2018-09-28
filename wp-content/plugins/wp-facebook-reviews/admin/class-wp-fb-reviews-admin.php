@@ -77,7 +77,7 @@ class WP_FB_Reviews_Admin {
 		 */
 		//only load for this plugin
 		if(isset($_GET['page'])){
-			if($_GET['page']=="wp_fb-settings" || $_GET['page']=="wp_fb-reviews" || $_GET['page']=="wp_fb-templates_posts" || $_GET['page']=="wp_fb-get_pro"){
+			if($_GET['page']=="wp_fb-facebook" || $_GET['page']=="wp_fb-settings" || $_GET['page']=="wp_fb-reviews" || $_GET['page']=="wp_fb-templates_posts" || $_GET['page']=="wp_fb-get_pro"){
 			wp_enqueue_style( $this->_token, plugin_dir_url( __FILE__ ) . 'css/wprev_admin.css', array(), $this->version, 'all' );
 			wp_enqueue_style( $this->_token."_wprev_w3", plugin_dir_url( __FILE__ ) . 'css/wprev_w3.css', array(), $this->version, 'all' );
 			
@@ -115,7 +115,7 @@ class WP_FB_Reviews_Admin {
 
 		//scripts for all pages in this plugin
 		if(isset($_GET['page'])){
-			if($_GET['page']=="wp_fb-settings" || $_GET['page']=="wp_fb-reviews" || $_GET['page']=="wp_fb-templates_posts" || $_GET['page']=="wp_fb-get_pro"){
+			if($_GET['page']=="wp_fb-facebook" || $_GET['page']=="wp_fb-settings" || $_GET['page']=="wp_fb-reviews" || $_GET['page']=="wp_fb-templates_posts" || $_GET['page']=="wp_fb-get_pro"){
 				//pop-up script
 				wp_register_script( 'simple-popup-js',  plugin_dir_url( __FILE__ ) . 'js/wprev_simple-popup.min.js' , '', $this->version, false );
 				wp_enqueue_script( 'simple-popup-js' );
@@ -124,7 +124,17 @@ class WP_FB_Reviews_Admin {
 		
 		//scripts for get fb reviews page
 		if(isset($_GET['page'])){
-			if($_GET['page']=="wp_fb-settings"){
+			if($_GET['page']=="wp_fb-facebook"){
+				//facebook js
+				wp_enqueue_script( $this->_token, plugin_dir_url( __FILE__ ) . 'js/wprev_facebook.js', array( 'jquery' ), $this->version, false );
+				//used for ajax
+				wp_localize_script($this->_token, 'adminjs_script_vars', 
+					array(
+					'wpfb_nonce'=> wp_create_nonce('randomnoncestring')
+					)
+				);
+			}
+			if($_GET['page']=="wp_fb-facebook" || $_GET['page']=="wp_fb-settings"){
 				//admin js
 				wp_enqueue_script( $this->_token, plugin_dir_url( __FILE__ ) . 'js/wprev_admin.js', array( 'jquery' ), $this->version, false );
 				//used for ajax
@@ -172,13 +182,17 @@ class WP_FB_Reviews_Admin {
 		$page_title = 'WP FB Reviews : Get Facebook Reviews';
 		$menu_title = 'WP FB Reviews';
 		$capability = 'manage_options';
-		$menu_slug = 'wp_fb-settings';
+		$menu_slug = 'wp_fb-facebook';
 		
-		add_menu_page($page_title, $menu_title, $capability, $menu_slug, array($this,'wp_fb_settings'),'dashicons-star-half');
-		
+		add_menu_page($page_title, $menu_title, $capability, $menu_slug, array($this,'wp_fb_facebook'),'dashicons-star-half');
 		// We add this submenu page with the same slug as the parent to ensure we don't get duplicates
-		$sub_menu_title = 'Get FB Reviews';
-		add_submenu_page($menu_slug, $page_title, $sub_menu_title, $capability, $menu_slug, array($this,'wp_fb_settings'));
+		$sub_menu_title = 'Facebook';
+		add_submenu_page($menu_slug, $page_title, $sub_menu_title, $capability, $menu_slug, array($this,'wp_fb_facebook'));
+
+		// We add this submenu page with the same slug as the parent to ensure we don't get duplicates
+		//$menu_slug = 'wp_fb-settings';
+		//$sub_menu_title = 'Get FB Reviews';
+		//add_submenu_page($menu_slug, $page_title, $sub_menu_title, $capability, $menu_slug, array($this,'wp_fb_settings'));
 		
 		// Now add the submenu page for the actual reviews list
 		$submenu_page_title = 'WP FB Reviews : Reviews List';
@@ -199,9 +213,14 @@ class WP_FB_Reviews_Admin {
 		add_submenu_page($menu_slug, $submenu_page_title, $submenu_title, $capability, $submenu_slug, array($this,'wp_fb_getpro'));
 	}
 	
-	public function wp_fb_settings() {
-		require_once plugin_dir_path( __FILE__ ) . '/partials/settings.php';
+	
+	public function wp_fb_facebook() {
+		require_once plugin_dir_path( __FILE__ ) . '/partials/facebook.php';
 	}
+	
+	//public function wp_fb_settings() {
+	//	require_once plugin_dir_path( __FILE__ ) . '/partials/settings.php';
+	//}
 
 	public function wp_fb_reviews() {
 		require_once plugin_dir_path( __FILE__ ) . '/partials/review_list.php';
@@ -213,10 +232,73 @@ class WP_FB_Reviews_Admin {
 	public function wp_fb_getpro() {
 		require_once plugin_dir_path( __FILE__ ) . '/partials/get_pro.php';
 	}
+
+	/**
+	 * custom option and settings on new facebook settings page
+	 */
+	public function wpfbr_facebook_init()
+	{
+		// register a new setting for "wp_fb-settings" page
+		register_setting('wp_fb-facebook', 'wpfbr_facebook');
+		
+		// register a new section in the "wp_fb-settings" page
+		add_settings_section(
+			'wpfbr_facebook_code',
+			'',
+			array($this,'wpfbr_facebook_code_cb'),
+			'wp_fb-facebook'
+		);
+		//register fb app id input field
+		add_settings_field(
+			'fb_app_code', // as of WP 4.6 this value is used only internally
+			'Secret Access Code',
+			array($this,'wpfbr_field_fb_code_cb'),
+			'wp_fb-facebook',
+			'wpfbr_facebook_code',
+			[
+				'label_for'         => 'fb_app_code',
+				'class'             => 'wpfbr_row',
+				'wpfbr_custom_data' => 'custom',
+			]
+		);
+		
+	}	
+	//==== developers section cb ====
+	// section callbacks can accept an $args parameter, which is an array.
+	// $args have the following keys defined: title, id, callback.
+	// the values are defined at the add_settings_section() function.
+	public function wpfbr_facebook_code_cb($args)
+	{
+		//echos out at top of section
+	}	
+	//==== field cb =====
+	// field callbacks can accept an $args parameter, which is an array.
+	// $args is defined at the add_settings_field() function.
+	// wordpress has magic interaction with the following keys: label_for, class.
+	// the "label_for" key value is used for the "for" attribute of the <label>.
+	// the "class" key value is used for the "class" attribute of the <tr> containing the field.
+	// you can add custom key value pairs to be used inside your callbacks.
+	public function wpfbr_field_fb_code_cb($args)
+	{
+		// get the value of the setting we've registered with register_setting()
+		$options = get_option('wpfbr_facebook');
+		if(!isset($options[$args['label_for']])){
+			$options[$args['label_for']] = "";
+		}
+		// output the field
+		?>
+		<input id="<?= esc_attr($args['label_for']); ?>" data-custom="<?= esc_attr($args['wpfbr_custom_data']); ?>" type="text" name="wpfbr_facebook[<?= esc_attr($args['label_for']); ?>]" placeholder="" value="<?php echo $options[$args['label_for']]; ?>">
+		
+		<p class="description">
+			<?= esc_html__('Enter the Access Code that you copied from the link above. Do not share this code.', 'wp_fb-settings'); ?>
+		</p>
+		<?php
+	}
+	
 	
 	/**
 	 * custom option and settings on settings page
-	 */
+	 
 	public function wpfbr_settings_init()
 	{
 		// register a new setting for "wp_fb-settings" page
@@ -269,6 +351,7 @@ class WP_FB_Reviews_Admin {
 		);
 		
 	}
+	*/
 	/**
 	 * custom option and settings:
 	 * callback functions
@@ -278,10 +361,10 @@ class WP_FB_Reviews_Admin {
 	// section callbacks can accept an $args parameter, which is an array.
 	// $args have the following keys defined: title, id, callback.
 	// the values are defined at the add_settings_section() function.
-	public function wpfbr_section_developers_cb($args)
-	{
+	//public function wpfbr_section_developers_cb($args)
+	//{
 		//echos out at top of section
-	}
+	//}
 	
 	//==== field cb =====
 	// field callbacks can accept an $args parameter, which is an array.
@@ -290,6 +373,7 @@ class WP_FB_Reviews_Admin {
 	// the "label_for" key value is used for the "for" attribute of the <label>.
 	// the "class" key value is used for the "class" attribute of the <tr> containing the field.
 	// you can add custom key value pairs to be used inside your callbacks.
+	/*
 	public function wpfbr_field_fb_app_id_cb($args)
 	{
 		// get the value of the setting we've registered with register_setting()
@@ -327,6 +411,7 @@ class WP_FB_Reviews_Admin {
 		</p>
 		<?php
 	}
+	*/
 	/**
 	 * Store reviews in table, called from javascript file admin.js
 	 * @access  public
@@ -356,7 +441,17 @@ class WP_FB_Reviews_Admin {
 			$created_time_stamp = strtotime($created_time);
 			$reviewer_name = $item['reviewer_name'];
 			$reviewer_id = $item['reviewer_id'];
-			$rating = $item['rating'];
+			$reviewer_imgurl = $item['reviewer_imgurl'];
+			if($item['rating']){
+				$rating = $item['rating'];
+			} else {
+				$rating ="";
+			}
+			if($item['recommendation_type']){
+				$recommendation_type = $item['recommendation_type'];
+			} else {
+				$recommendation_type ="";
+			}
 			$review_text = $item['review_text'];
 			$review_length = str_word_count($review_text);
 			if($review_length <1 && $review_text !=""){		//fix for other language error
@@ -375,10 +470,12 @@ class WP_FB_Reviews_Admin {
 						'reviewer_name' => $reviewer_name,
 						'reviewer_id' => $reviewer_id,
 						'rating' => $rating,
+						'recommendation_type' => $recommendation_type,
 						'review_text' => $review_text,
 						'hide' => '',
 						'review_length' => $review_length,
-						'type' => $rtype
+						'type' => $rtype,
+						'userpic' => $reviewer_imgurl
 					);
 			}
 		}
@@ -440,7 +537,7 @@ class WP_FB_Reviews_Admin {
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
-	 */	
+	 
 	 
 	//for ajax call to fb backup master
 	public function wprevpro_ajax_download_fb_backup() {
@@ -478,9 +575,7 @@ class WP_FB_Reviews_Admin {
 				$reviews = [];
 				$n=1;
 				$urlvalue = $currenturl;
-				//$urlvalue ='https://www.facebook.com/Soulconnection2you/reviews/';
-				//$urlvalue ='https://www.facebook.com/pg/danbeautyeshop/reviews/';
-				//$urlvalue = "https://www.facebook.com/pg/BaapoChile/reviews/";
+				//$urlvalue ='https://www.facebook.com/pg/Mutinytattoos/reviews/';
 
 									
 				$response = wp_remote_get( $urlvalue );
@@ -552,6 +647,7 @@ class WP_FB_Reviews_Admin {
 							$user_name_slash = addslashes($user_name);
 						}
 						}
+						if(mb_detect_encoding($user_name) != 'UTF-8') {$user_name = utf8_encode($user_name);}
 											
 
 						// Find userimage
@@ -597,6 +693,7 @@ class WP_FB_Reviews_Admin {
 							$rtext =str_replace("&#65533;","",$rtext);
 							
 						}
+						if(mb_detect_encoding($rtext) != 'UTF-8') {$rtext = utf8_encode($rtext);}
 						
 						if($rating>0){
 							//$review_length = str_word_count($rtext);
@@ -693,6 +790,6 @@ class WP_FB_Reviews_Admin {
 
 	}
 //--======================= end fb tempmethod =======================--//	
-	
+	*/	
 
 }

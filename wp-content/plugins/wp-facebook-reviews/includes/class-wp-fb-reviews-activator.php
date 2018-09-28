@@ -72,6 +72,7 @@ class WP_FB_Reviews_Activator {
 			reviewer_name tinytext NOT NULL,
 			reviewer_id varchar(50) DEFAULT '' NOT NULL,
 			rating int(2) NOT NULL,
+			recommendation_type varchar(12) DEFAULT '' NOT NULL,
 			review_text text NOT NULL,
 			hide varchar(3) DEFAULT '' NOT NULL,
 			review_length int(5) NOT NULL,

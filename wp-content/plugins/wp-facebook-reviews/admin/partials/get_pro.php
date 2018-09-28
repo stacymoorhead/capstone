@@ -33,7 +33,7 @@ include("tabmenu.php");
 	<li>US based customer support via email and a forum.</li>
 	<li>Download your Yelp, TripAdvisor, and Google reviews as well!</li>
 	<li>Easily create a cool Summary review badge for your site.</li>
-	<li>Front end review submission form (coming soon).</li>
+	<li>Front end review submission form.</li>
 	<li>Get email notifications when new low reviews are found.</li>
 	<li>Option to serve review Avatars from your website.</li>
 	<li>Hide certain reviews from displaying.</li>
@@ -60,23 +60,24 @@ include("tabmenu.php");
 }</style>
 							  <div class="w3_wprs-col">
 							  <div class="wprevpro_t1_DIV_1">	
-							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Great for my site! Good choice of styles & formats, easy to use. Show cases our 5* (others if required) reviews from Facebook & Google+ easy to update. Good all round plugin.</p>									</div><span class="wprevpro_t1_A_8"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins//reviews/c8174af85095ea546c03cddd103abfd2.jpg" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">Antony Bowers<br>Director, <a href="https://www.sweetfantasies.co.uk" target="_blank">Sweet Fantasies Cakes </a><br><span id="wprev_showdate">9/17/2017</span> </span>								
+							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Great for my site! Good choice of styles & formats, easy to use. Show cases our 5* (others if required) reviews from Facebook & Google+ easy to update. Good all round plugin.</p>									</div><span class="wprevpro_t1_A_8"><img src="https://s3-us-west-2.amazonaws.com/freemius/plugins//reviews/c8174af85095ea546c03cddd103abfd2.jpg" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">Antony Bowers<br>Director, <a href="https://www.sweetfantasies.co.uk" target="_blank">Sweet Fantasies Cakes </a><br><span id="wprev_showdate"></span> </span>								
 							  </div>								
 							  </div>
 							</div>
 							<div class="w3_wprs-col s4">
 							  <div class="w3_wprs-col">							
 							  <div class="wprevpro_t1_DIV_1">									
-							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Great product, great support! Love this product and the support received has been amazing and fast.</p>									</div><span class="wprevpro_t1_A_8"><img src="https://s3-media3.fl.yelpcdn.com/photo/9Fs55PxyEqobFBQwzmu_wg/120s.jpg" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">Russ Kemp<br>Owner, <a href="https://www.russkempphotography.com" target="_blank">Russ Kemp Photography </a><br><span id="wprev_showdate">8/10/2017</span> </span>								</div>								
+							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Great product, great support! Love this product and the support received has been amazing and fast.</p>									</div><span class="wprevpro_t1_A_8"><img src="https://s3-media3.fl.yelpcdn.com/photo/9Fs55PxyEqobFBQwzmu_wg/120s.jpg" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">Russ Kemp<br>Owner, <a href="https://www.russkempphotography.com" target="_blank">Russ Kemp Photography </a><br><span id="wprev_showdate"></span> </span>								</div>								
 							  </div>
 							</div>
 						  <div class="w3_wprs-col s4">
 							  <div class="w3_wprs-col">							
 							  <div class="wprevpro_t1_DIV_1">
-							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Exactly what I needed. Excellent support as well.		</p>									</div><span class="wprevpro_t1_A_8"><img src="https://www.gravatar.com/avatar/950af451288353b2525a0064e4e95efa?size=75&default=https%3A%2F%2Fdashboard.freemius.com%2Fassets%2Fimg%2Ffs%2Fprofile-pics%2Fprofile-pic-2.png" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">C.J. Ware<br><span id="wprev_showdate">9/14/2017</span> </span>								</div>								
+							  <div class="wprevpro_t1_DIV_2 wprev_preview_bg1 wprev_preview_bradius" style="border-radius: 0px; background: rgb(253, 253, 253);">										<p class="wprevpro_t1_P_3 wprev_preview_tcolor1" style="color: rgb(85, 85, 85);">											<span class="wprevpro_star_imgs"><img src="https://ljapps.com/wp-content/plugins/wp-review-slider-pro-premium/public/partials/imgs/stars_5_yellow.png" alt="">&nbsp;&nbsp;</span>Exactly what I needed. Excellent support as well.		</p>									</div><span class="wprevpro_t1_A_8"><img src="https://www.gravatar.com/avatar/950af451288353b2525a0064e4e95efa?size=75&default=https%3A%2F%2Fdashboard.freemius.com%2Fassets%2Fimg%2Ffs%2Fprofile-pics%2Fprofile-pic-2.png" alt="thumb" class="wprevpro_t1_IMG_4"></span> <span class="wprevpro_t1_SPAN_5 wprev_preview_tcolor2" style="color: rgb(85, 85, 85);">C.J. Ware<br><span id="wprev_showdate"></span> </span>								</div>								
 							  </div>
 						  </div>
 					</div>
+					</br>
 	<div>				
 	<a href="https://ljapps.com/feedback-for-wp-review-slider-pro/" target="_blank">Read More Feedback</a>
 	</div>		

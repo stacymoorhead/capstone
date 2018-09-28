@@ -3,7 +3,7 @@
  * @module Polygon
  * @requires WPGMZA.MapObject
  */
-(function($) {
+jQuery(function($) {
 	WPGMZA.Polygon = function(row, enginePolygon)
 	{
 		var self = this;
@@ -25,16 +25,16 @@
 	{
 		switch(WPGMZA.settings.engine)
 		{
-			case "google-maps":
-				if(WPGMZA.isProVersion())
-					return WPGMZA.GoogleProPolygon;
-				return WPGMZA.GooglePolygon;
-				break;
-				
-			default:
+			case "open-layers":
 				if(WPGMZA.isProVersion())
 					return WPGMZA.OLProPolygon;
 				return WPGMZA.OLPolygon;
+				break;
+			
+			default:
+				if(WPGMZA.isProVersion())
+					return WPGMZA.GoogleProPolygon;
+				return WPGMZA.GooglePolygon;
 				break;
 		}
 	}
@@ -58,4 +58,4 @@
 		return result;
 	}
 	
-})(jQuery);
+});

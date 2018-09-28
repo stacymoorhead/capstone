@@ -69,7 +69,7 @@ _e('Search reviews, hide certain reviews, manually add reviews, save a CSV file 
 	if(!isset($_GET['sortby'])){
 		$_GET['sortby'] = "";
 	}
-	$allowed_keys = ['created_time_stamp', 'reviewer_name', 'rating', 'review_length', 'pagename', 'type' ];
+	$allowed_keys = ['created_time_stamp', 'reviewer_name', 'rating', 'review_length', 'pagename', 'type', 'recommendation_type' ];
 	$checkorderby = sanitize_key($_GET['sortby']);
 	
 		if(in_array($checkorderby, $allowed_keys, true) && $_GET['sortby']!=""){
@@ -100,16 +100,18 @@ _e('Search reviews, hide certain reviews, manually add reviews, save a CSV file 
 			$sorticoncolor[5]="text_green";
 		} else if($sorttable=="type "){
 			$sorticoncolor[6]="text_green";	
+		}else if($sorttable=="recommendation_type "){
+			$sorticoncolor[7]="text_green";	
 		}
 		
 		$html .= '
 		<table class="wp-list-table widefat striped posts">
 			<thead>
 				<tr>
-					<th scope="col" width="70px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'hide',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[0].'" aria-hidden="true"></i> '.__('Hide', 'wp-fb-reviews').'</a></th>
 					<th scope="col" width="50px" class="manage-column">'.__('Pic', 'wp-fb-reviews').'</th>
 					<th scope="col" style="min-width:70px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'reviewer_name',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[1].'" aria-hidden="true"></i> '.__('Name', 'wp-fb-reviews').'</a></th>
 					<th scope="col" width="70px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'rating',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[2].'" aria-hidden="true"></i> '.__('Rating', 'wp-fb-reviews').'</a></th>
+					<th scope="col" width="70px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'recommendation_type',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[7].'" aria-hidden="true"></i> '.__('R_Type', 'wp-fb-reviews').'</a></th>
 					<th scope="col" class="manage-column">'.__('Review Text', 'wp-fb-reviews').'</th>
 					<th scope="col" width="100px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'created_time_stamp',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[3].'" aria-hidden="true"></i> '.__('Date', 'wp-fb-reviews').'</a></th>
 					<th scope="col" width="70px" class="manage-column"><a href="'.esc_url( add_query_arg( 'sortby', 'review_length',$currenturl ) ).$sortdirection.'"><i class="dashicons dashicons-sort '.$sorticoncolor[4].'" aria-hidden="true"></i> '.__('Length', 'wp-fb-reviews').'</a></th>
@@ -157,10 +159,10 @@ _e('Search reviews, hide certain reviews, manually add reviews, save a CSV file 
 				}
 	
 				$html .= '<tr id="'.$reviewsrow->id.'">
-						<th scope="col" class="wpfbr_upgrade_needed manage-column">'.$hideicon.'</th>
 						<th scope="col" class="manage-column">'.$userpic.'</th>
 						<th scope="col" class="manage-column">'.$reviewsrow->reviewer_name.'</th>
 						<th scope="col" class="manage-column">'.$reviewsrow->rating.'</th>
+						<th scope="col" class="manage-column">'.$reviewsrow->recommendation_type.'</th>
 						<th scope="col" class="manage-column">'.$reviewsrow->review_text.'</th>
 						<th scope="col" class="manage-column">'.$reviewsrow->created_time.'</th>
 						<th scope="col" class="manage-column">'.$reviewsrow->review_length.'</th>
@@ -170,7 +172,7 @@ _e('Search reviews, hide certain reviews, manually add reviews, save a CSV file 
 			}
 		} else {
 				$html .= '<tr>
-						<th colspan="9" scope="col" class="manage-column">'.__('No reviews found. Please visit the <a href="?page=wp_fb-settings">Get FB Reviews</a> page to retrieve reviews from Facebook, or manually add one.', 'wp-fb-reviews').'</th>
+						<th colspan="9" scope="col" class="manage-column">'.__('No reviews found. Please visit the <a href="?page=wp_fb-facebook">Get FB Reviews</a> page to retrieve reviews from Facebook, or manually add one.', 'wp-fb-reviews').'</th>
 					</tr>';
 		}					
 				

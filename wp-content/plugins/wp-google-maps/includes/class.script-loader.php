@@ -307,9 +307,47 @@ class ScriptLoader
 		
 		wp_enqueue_style('remodal', plugin_dir_url(__DIR__) . 'lib/remodal.css');
 		wp_enqueue_style('remodal-default-theme', plugin_dir_url(__DIR__) . 'lib/remodal-default-theme.css');
-
-		wp_register_style('fontawesome', plugin_dir_url(__DIR__) . 'css/font-awesome.min.css');
-		wp_enqueue_style('fontawesome');
+	}
+	
+	/**
+	 * Returns an array of objects representing all scripts used by the plugin
+	 * @return array
+	 */
+	public function getPluginScripts()
+	{
+		global $wpgmza;
+		
+		if($wpgmza->isUsingMinifiedScripts())
+		{
+			$dir = ($this->proMode ? plugin_dir_path(WPGMZA_PRO_FILE) : plugin_dir_path(__DIR__));
+			
+			$combined = 'js/v8/wp-google-maps' . ($this->proMode ? '-pro' : '') . '.combined.js';
+			$minified = 'js/v8/wp-google-maps' . ($this->proMode ? '-pro' : '') . '.min.js';
+			
+			$src = $minified;
+			
+			$minified_file_exists = file_exists($dir . $minified);
+			
+			if($minified_file_exists)
+				$delta = filemtime($dir . $combined) - filemtime($dir . $minified);
+			
+			if(!$minified_file_exists || $delta > 0)
+				$src = $combined;
+			
+			$scripts = array('wpgmza' => 
+				(object)array(
+					'src'	=> $src,
+					'pro'	=> $this->proMode
+				)
+			);
+		}
+		else
+		{
+			// Enqueue core object with library dependencies
+			$scripts = (array)json_decode(file_get_contents($this->scriptsFileLocation));
+		}
+		
+		return $scripts;
 	}
 	
 	public function enqueueScripts()
@@ -339,47 +377,47 @@ class ScriptLoader
 			wp_enqueue_script($handle, $src, array('jquery'));
 		}
 		
-		if($wpgmza->isUsingMinifiedScripts())
+		// FontAwesome?
+		$version = (empty($wpgmza->settings->use_fontawesome) ? '4.*' : $wpgmza->settings->use_fontawesome);
+		
+		switch($version)
 		{
-			$dir = ($this->proMode ? plugin_dir_path(WPGMZA_PRO_FILE) : plugin_dir_path(__DIR__));
-			
-			$combined = 'js/v8/wp-google-maps' . ($this->proMode ? '-pro' : '') . '.combined.js';
-			$minified = 'js/v8/wp-google-maps' . ($this->proMode ? '-pro' : '') . '.min.js';
-			
-			$src = $minified;
-			
-			$minified_file_exists = file_exists($dir . $minified);
-			
-			if($minified_file_exists)
-				$delta = filemtime($dir . $combined) - filemtime($dir . $minified);
-			
-			if(!$minified_file_exists || $delta > 0)
-				$src = $combined;
-			
-			$this->scripts = array('wpgmza' => 
-				(object)array(
-					'src'	=> $src,
-					'pro'	=> $this->proMode
-				)
-			);
+			case 'none':
+				break;
+				
+			case '5.*':
+				wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.9/css/all.css');
+				
+				if(!is_admin())
+					break;
+				
+			default:
+				wp_enqueue_style('fontawesome', plugin_dir_url(__DIR__) . 'css/font-awesome.min.css');
+				break;
 		}
-		else
-		{
-			// Enqueue core object with library dependencies
-			$this->scripts = (array)json_decode(file_get_contents($this->scriptsFileLocation));
-		}
+		
+		// Scripts
+		$this->scripts = $this->getPluginScripts();
 		
 		// Give the core script library dependencies
 		$dependencies = array_keys($libraries);
-		$dependencies[] = 'wpgmza_api_call';
+		
+		// Sometimes we need to load the plugin JS files but not the maps API. The following code stops the API being loaded as a dependency of the plugin JS files when that is the case.
+		$apiLoader = new GoogleMapsAPILoader();
+		if($apiLoader->isIncludeAllowed())
+			$dependencies[] = 'wpgmza_api_call';
 		
 		$this->scripts['wpgmza']->dependencies = $dependencies;
+		
+		$version_string = $wpgmza->getBasicVersion();
+		if(method_exists($wpgmza, 'getProVersion'))
+			$version_string .= '+pro-' . $wpgmza->getProVersion();
 		
 		// Enqueue other scripts
 		foreach($this->scripts as $handle => $script)
 		{
 			$fullpath = plugin_dir_url(($script->pro ? WPGMZA_PRO_FILE : __DIR__)) . $script->src;
-			wp_enqueue_script($handle, $fullpath, $script->dependencies);
+			wp_enqueue_script($handle, $fullpath, $script->dependencies, $version_string);
 		}
 		
 		// Enqueue localized data

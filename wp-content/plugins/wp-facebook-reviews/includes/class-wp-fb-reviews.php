@@ -69,7 +69,7 @@ class WP_FB_Reviews {
 	public function __construct() {
 
 		$this->_token = 'wp-fb-reviews';
-		$this->version = '5.5';
+		$this->version = '6.7';
 		//using this for development
 		//$this->version = time();
 
@@ -119,7 +119,72 @@ class WP_FB_Reviews {
 	 * @return  void
 	 */
 	private function _log_version_number () {
+		$current_version = get_option($this->_token . '_version', 0);
 		update_option( $this->_token . '_version', $this->version );
+		
+		if($current_version!=$this->version){
+			global $wpdb;
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			$table_name = $wpdb->prefix . 'wpfb_reviews';
+			
+			$charset_collate = $wpdb->get_charset_collate();
+
+			$sql = "CREATE TABLE $table_name (
+				id mediumint(9) NOT NULL AUTO_INCREMENT,
+				pageid varchar(50) DEFAULT '' NOT NULL,
+				pagename tinytext NOT NULL,
+				created_time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+				created_time_stamp int(12) NOT NULL,
+				reviewer_name tinytext NOT NULL,
+				reviewer_id varchar(50) DEFAULT '' NOT NULL,
+				rating int(2) NOT NULL,
+				recommendation_type varchar(12) DEFAULT '' NOT NULL,
+				review_text text NOT NULL,
+				hide varchar(3) DEFAULT '' NOT NULL,
+				review_length int(5) NOT NULL,
+				type varchar(12) DEFAULT '' NOT NULL,
+				userpic varchar(250) DEFAULT '' NOT NULL,
+				UNIQUE KEY id (id)
+			) $charset_collate;";
+
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			dbDelta( $sql );
+			
+			//create template posts table in dbDelta 
+			$table_name = $wpdb->prefix . 'wpfb_post_templates';
+			
+			$sql = "CREATE TABLE $table_name (
+				id mediumint(9) NOT NULL AUTO_INCREMENT,
+				title varchar(200) DEFAULT '' NOT NULL,
+				template_type varchar(7) DEFAULT '' NOT NULL,
+				style int(2) NOT NULL,
+				created_time_stamp int(12) NOT NULL,
+				display_num int(2) NOT NULL,
+				display_num_rows int(3) NOT NULL,
+				display_order varchar(6) DEFAULT '' NOT NULL,
+				hide_no_text varchar(3) DEFAULT '' NOT NULL,
+				template_css text NOT NULL,
+				min_rating int(2) NOT NULL,
+				min_words int(4) NOT NULL,
+				max_words int(4) NOT NULL,
+				rtype varchar(20) DEFAULT '' NOT NULL,
+				rpage varchar(200) DEFAULT '' NOT NULL,
+				createslider varchar(3) DEFAULT '' NOT NULL,
+				numslides int(2) NOT NULL,
+				sliderautoplay varchar(3) DEFAULT '' NOT NULL,
+				sliderdirection varchar(3) DEFAULT '' NOT NULL,
+				sliderarrows varchar(3) DEFAULT '' NOT NULL,
+				sliderdots varchar(3) DEFAULT '' NOT NULL,
+				sliderdelay int(2) NOT NULL,
+				sliderheight varchar(3) DEFAULT '' NOT NULL,
+				showreviewsbyid varchar(600) DEFAULT '' NOT NULL,
+				template_misc varchar(200) DEFAULT '' NOT NULL,
+				UNIQUE KEY id (id)
+			) $charset_collate;";
+			
+			dbDelta( $sql );
+			
+		}
 	} // End _log_version_number ()
 	
 
@@ -218,8 +283,14 @@ class WP_FB_Reviews {
 		
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		// NEW-------
+		//register our wpfbr_facebook_init to the admin_init action hook, add setting inputs
+		$this->loader->add_action('admin_init', $plugin_admin, 'wpfbr_facebook_init');
+		
+		//End New ---------------
+		
 		// register our wpfbr_settings_init to the admin_init action hook, add setting inputs
-		$this->loader->add_action('admin_init', $plugin_admin, 'wpfbr_settings_init');
+		//$this->loader->add_action('admin_init', $plugin_admin, 'wpfbr_settings_init');
 		
 		//add menu page
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_pages' );
@@ -233,6 +304,8 @@ class WP_FB_Reviews {
 		//add select shortcode list to post edit page
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'add_sc_select',11 ); 
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'button_js' ); 
+		
+		
 	}
 
 	/**
@@ -251,6 +324,9 @@ class WP_FB_Reviews {
 
 		//add shortcode shortcode_wprev_usetemplate
 		$plugin_public->shortcode_wprev_usetemplate();
+		
+		//add ajax updating missing images
+		$this->loader->add_action( 'wp_ajax_wprp_update_profile_pic', $plugin_public, 'wppro_update_profile_pic_ajax' );
 		
 		
 	}

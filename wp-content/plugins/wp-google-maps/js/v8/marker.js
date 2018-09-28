@@ -3,7 +3,7 @@
  * @module Marker
  * @requires WPGMZA
  */
-(function($) {
+jQuery(function($) {
 	/**
 	 * Constructor
 	 * @param json to load (optional)
@@ -29,13 +29,14 @@
 		if(row && row.heatmap)
 			return; // Don't listen for these events on heatmap markers.
 		
-		this.on("init", function(event) {
-			if(row.position)
-				this.setPosition(row.position);
-			
-			if(row.map)
-				row.map.addMarker(this);
-		});
+		if(row)
+			this.on("init", function(event) {
+				if(row.position)
+					this.setPosition(row.position);
+				
+				if(row.map)
+					row.map.addMarker(this);
+			});
 		
 		this.addEventListener("added", function(event) {
 			self.onAdded(event);
@@ -55,16 +56,16 @@
 	{
 		switch(WPGMZA.settings.engine)
 		{
-			case "google-maps":
+			case "open-layers":
 				if(WPGMZA.isProVersion())
-					return WPGMZA.GoogleProMarker;
-				return WPGMZA.GoogleMarker;
+					return WPGMZA.OLProMarker;
+				return WPGMZA.OLMarker;
 				break;
 				
 			default:
 				if(WPGMZA.isProVersion())
-					return WPGMZA.OLProMarker;
-				return WPGMZA.OLMarker;
+					return WPGMZA.GoogleProMarker;
+				return WPGMZA.GoogleMarker;
 				break;
 		}
 	}
@@ -138,7 +139,15 @@
 	
 	WPGMZA.Marker.prototype.getIcon = function()
 	{
-		return WPGMZA.settings.default_marker_icon;
+		function stripProtocol(url)
+		{
+			if(typeof url != "string")
+				return url;
+			
+			return url.replace(/^http(s?):/, "");
+		}
+		
+		return stripProtocol(WPGMZA.settings.default_marker_icon);
 	}
 	
 	/**
@@ -231,6 +240,11 @@
 		
 	}
 	
+	WPGMZA.Marker.prototype.setOptions = function()
+	{
+		
+	}
+	
 	WPGMZA.Marker.prototype.panIntoView = function()
 	{
 		if(!this.map)
@@ -264,4 +278,4 @@
 	}
 	
 	
-})(jQuery);
+});

@@ -3,13 +3,16 @@
  * @module MapsEngineDialog
  * @requires WPGMZA
  */
-(function($) {
+jQuery(function($) {
 	
 	WPGMZA.MapsEngineDialog = function(element)
 	{
 		var self = this;
 		
 		this.element = element;
+		
+		if(window.wpgmzaUnbindSaveReminder)
+			window.wpgmzaUnbindSaveReminder();
 		
 		$(element).show();
 		$(element).remodal().open();
@@ -57,4 +60,4 @@
 		
 	});
 	
-})(jQuery);
+});

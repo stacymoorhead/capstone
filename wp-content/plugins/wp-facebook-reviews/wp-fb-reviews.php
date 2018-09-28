@@ -16,7 +16,7 @@
  * Plugin Name:       WP Facebook Review Slider
  * Plugin URI:        http://ljapps.com/wp-review-slider-pro/
  * Description:       Allows you to easily display your Facebook Page reviews in your Posts, Pages, and Widget areas.
- * Version:           5.5
+ * Version:           6.7
  * Author:            LJ Apps
  * Author URI:        http://ljapps.com/
  * License:           GPL-2.0+
@@ -71,6 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-fb-reviews.php';
 function run_WP_FB_Reviews() {
 	define( 'wpfbrev_plugin_dir', plugin_dir_path( __FILE__ ) );
 	define( 'wpfbrev_plugin_url', plugins_url( "",__FILE__) );
+
 	
 	$plugin = new WP_FB_Reviews();
 	$plugin->run();

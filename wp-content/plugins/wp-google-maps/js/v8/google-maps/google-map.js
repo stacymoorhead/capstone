@@ -4,7 +4,7 @@
  * @requires WPGMZA.Map
  * @pro-requires WPGMZA.ProMap
  */
-(function($) {
+jQuery(function($) {
 	var Parent;
 	
 	/**
@@ -27,9 +27,10 @@
 			
 			if(status.code == "USER_CONSENT_NOT_GIVEN")
 			{
-				console.log(WPGMZA.api_consent_html);
 				return;
 			}
+			
+			$(element).html("<div class='notice notice-error'><p>" + WPGMZA.localized_strings.google_api_not_loaded + "<pre>" + message + "</pre></p></div>");
 			
 			throw new Error(message);
 		}
@@ -38,9 +39,14 @@
 		
 		if(options)
 			this.setOptions(options);
-			
+
 		google.maps.event.addListener(this.googleMap, "click", function(event) {
-			self.dispatchEvent("click");
+			var wpgmzaEvent = new WPGMZA.Event("click");
+			wpgmzaEvent.latLng = {
+				lat: event.latLng.lat(),
+				lng: event.latLng.lng()
+			};
+			self.dispatchEvent(wpgmzaEvent);
 		});
 		
 		google.maps.event.addListener(this.googleMap, "rightclick", function(event) {
@@ -270,6 +276,9 @@
 	 */
 	WPGMZA.GoogleMap.prototype.setZoom = function(value)
 	{
+		if(isNaN(value))
+			throw new Error("Value must not be NaN");
+		
 		return this.googleMap.setZoom(value);
 	}
 	
@@ -491,4 +500,4 @@
 		google.maps.event.trigger(this.googleMap, "resize");
 	}
 	
-})(jQuery);
+});

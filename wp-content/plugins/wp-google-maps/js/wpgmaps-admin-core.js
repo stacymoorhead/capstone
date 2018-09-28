@@ -49,6 +49,26 @@
 	$("#wpgmza_addmarker").data("original-text", $("#wpgmza_addmarker").val());
 	$("#wpgmza_addmarker_loading").hide();
 	
+	function enableEditMarkerButton(enable)
+	{
+		var button = $("#wpgmza_editmarker");
+		button.prop("disabled", (enable ? false : "disabled"));
+		button.val(enable ? button.data("original-text") : "Saving...");
+		
+		if(enable)
+		{
+			button.parent().show();
+			$("#wpgmza_editmarker_loading").hide();
+		}
+		else
+		{
+			button.parent().hide();
+			$("#wpgmza_editmarker_loading").show();
+		}
+	}
+	$("#wpgmza_editmarker").data("original-text", $("#wpgmza_editmarker").val());
+	$("#wpgmza_editmarker_loading").hide();
+	
 	function setMarkerAdded(added)
 	{
 		var button = $("#wpgmza_addmarker");
@@ -76,6 +96,11 @@
 	function unbindSaveReminder()
 	{
 		window.removeEventListener("beforeunload", onBeforeUnload);
+	}
+	
+	window.wpgmzaUnbindSaveReminder = function()
+	{
+		unbindSaveReminder();
 	}
 	
 	function wpgmza_select_all_markers()
@@ -141,7 +166,16 @@
 		}
 	}
 
-    jQuery(document).ready(function(){
+	jQuery(function($) {
+		
+		if(WPGMZA.isProVersion())
+		{
+			if(console && console.warn)
+				console.warn("Unexpected plugin load order");
+			
+			return;
+		}
+		
 		$("input[type='submit'].button-primary").on("click", function() {
 			unbindSaveReminder();
 		});
@@ -164,7 +198,7 @@
             wpgmza_table_length = jQuery(this).val();
         })
 
-		if (/*WPGMZA.isGoogleAutocompleteSupported()*/ window.google && google.maps && google.maps.places && google.maps.places.Autocomplete)
+		if (/*WPGMZA.isGoogleAutocompleteSupported()*/ window.google && google.maps && google.maps.places && google.maps.places.Autocomplete && WPGMZA.settings.engine == "google-maps")
 		{
 			if(document.getElementById('wpgmza_add_address'))
 			{
@@ -589,6 +623,7 @@
 
                 } else {
                     alert("Geocode was not successful for the following reason: " + status);
+					enableEditMarkerButton(true);
                 }
             });
             } else {

@@ -197,3 +197,6 @@ tbody#review_list_select {
 div#wprevpro_template_preview {
     margin-left: -10px;
 }
+div#pageslisterror {
+    color: red;
+}

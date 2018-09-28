@@ -41,7 +41,7 @@ function getandsavefbreviews(pageid,pagetoken,pagename,reviewarray,totalinserted
 		}, function(response) {
 		console.log(response);
 		//console.log(response.data.length);
-		console.log(response.data[0].reviewer);
+		//console.log(response.data[0].reviewer);
 		if (typeof(response.data) == 'undefined') {
 			console.log(response);
 			msg = "It appears Facebook is still temporarily blocking access to parts of their Pages API. Check the javascript console for more details. Now attempting alternative method to retrieve your 10 most helpful reviews. This shouldn't take more than a few seconds. ";

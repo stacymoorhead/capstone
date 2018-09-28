@@ -4,7 +4,7 @@ Donate link: http://ljapps.com/
 Tags: Facebook, reviews, slider, testimonials, yelp, facebook page reviews
 Requires at least: 3.0.1
 Tested up to: 4.9
-Stable tag: 5.5
+Stable tag: 6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,13 +32,14 @@ Feature List:
 [Check out our Google version!](https://wordpress.org/plugins/wp-google-places-review-slider/)
 [Check out our Yelp version!](https://wordpress.org/plugins/wp-yelp-review-slider/)
 [Check out our TripAdvisor version!](https://wordpress.org/plugins/wp-tripadvisor-review-slider/)
+[Check out our Thumbtack version!](https://wordpress.org/plugins/wp-thumbtack-review-slider/)
 
 [Upgrade to Pro for More Features:](https://ljapps.com/wp-review-slider-pro/)
 
 * US Based customer support via email and a forum.
 * Download your Yelp, TripAdvisor, and Google Places reviews as well.
 * Create a really cool summary badge!
-* Front end review submission form (coming soon).
+* Front end review submission form.
 * Get email notifications when new low reviews are found.
 * Hide certain reviews from displaying.
 * Manually add reviews to your database.
@@ -76,6 +77,35 @@ We are always looking for features to add. Just post on the support forum or con
 5. Create as many templates as you like.
 
 == Changelog ==
+= 6.4 =
+* Small bug fix with review downloads.
+= 6.6 =
+* Fix for expired FB profile pics.
+= 6.5 =
+* Fix for FB recommendations.
+= 6.4 =
+* Small bug fix.
+= 6.3 =
+* Small bug fix.
+= 6.2 =
+* Small bug fix.
+= 6.1 =
+* Now using app to pull reviews.
+
+= 6.0 =
+* Small bug fix.
+
+= 5.9 =
+* Small bug fix.
+
+= 5.8 =
+* Small bug fix.
+
+= 5.7 =
+* Small bug fix with language characters.
+
+= 5.6 =
+* Small bug fix.
 
 = 5.5 =
 * Small bug fix.

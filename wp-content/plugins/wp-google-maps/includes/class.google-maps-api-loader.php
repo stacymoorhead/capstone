@@ -27,6 +27,12 @@ class GoogleMapsAPILoader
 			global $wpgmza;
 			GoogleMapsAPILoader::$settings = (array)$wpgmza->settings;
 		}
+		
+		$include_allowed = $this->isIncludeAllowed($status);
+		$isAllowed = $this->isIncludeAllowed($status);
+		
+		wp_enqueue_script('wpgmza_data', plugin_dir_url(__DIR__) . 'wpgmza_data.js');
+		wp_localize_script('wpgmza_data', 'wpgmza_google_api_status', (array)$status);
 	}
 	
 	public static function _createInstance()
@@ -108,6 +114,9 @@ class GoogleMapsAPILoader
 		if(GoogleMapsAPILoader::$googleAPILoadCalled)
 			return;
 		
+		if(!$this->isIncludeAllowed())
+			return;
+		
 		$params = $this->getGoogleMapsAPIParams();
 		
 		$suffix = $params['suffix'];
@@ -134,6 +143,9 @@ class GoogleMapsAPILoader
 	
 	public function enqueueGoogleMaps()
 	{
+		if(!$this->isIncludeAllowed())
+			return;
+		
 		wp_enqueue_script('wpgmza_api_call');
 	}
 	
@@ -187,7 +199,7 @@ class GoogleMapsAPILoader
 		$settings = (array)$wpgmza->settings;
 		
 		// Correction for Pro <= 7.10.04
-		if($settings['wpgmza_maps_engine'] == 'open-street-map')
+		if(!empty($settings['wpgmza_maps_engine']) && $settings['wpgmza_maps_engine'] == 'open-street-map')
 			$settings['wpgmza_maps_engine'] = 'open-layers';
 		
 		if(!empty($settings['wpgmza_settings_remove_api']))
@@ -198,7 +210,9 @@ class GoogleMapsAPILoader
 			return false;
 		}
 		
-		if(!empty($settings['wpgmza_gdpr_require_consent_before_load']) && !isset($_COOKIE['wpgmza-api-consent-given']))
+		if(!is_admin() && 
+			!empty($settings['wpgmza_gdpr_require_consent_before_load']) && 
+			!isset($_COOKIE['wpgmza-api-consent-given']))
 		{
 			$status->message = 'User consent not given';
 			$status->code = GoogleMapsAPILoader::USER_CONSENT_NOT_GIVEN;
@@ -272,12 +286,9 @@ class GoogleMapsAPILoader
 		if(preg_match('/maps\.google/i', $src))
 		{
 			if(!$this->isIncludeAllowed($status))
-			{
-				echo "<script>var wpgmza_google_api_status = " . json_encode($status) . "</script>";
 				return '';
-			}
 			
-			else if($handle != 'wpgmza_api_call')
+			if($handle != 'wpgmza_api_call')
 				return '';
 			
 			if(!preg_match('/\?.+$/', $src))

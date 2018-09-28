@@ -3,7 +3,7 @@
  * @module Polyline
  * @requires WPGMZA.MapObject
  */
-(function($) {
+jQuery(function($) {
 	WPGMZA.Polyline = function(row, googlePolyline)
 	{
 		var self = this;
@@ -22,12 +22,12 @@
 	{
 		switch(WPGMZA.settings.engine)
 		{
-			case "google-maps":
-				return WPGMZA.GooglePolyline;
-				break;
-				
-			default:
+			case "open-layers":
 				return WPGMZA.OLPolyline;
+				break;
+			
+			default:
+				return WPGMZA.GooglePolyline;
 				break;
 		}
 	}
@@ -53,4 +53,4 @@
 	}
 	
 	
-})(jQuery);
+});

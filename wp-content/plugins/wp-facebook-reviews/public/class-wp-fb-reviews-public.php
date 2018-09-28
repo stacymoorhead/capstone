@@ -51,7 +51,7 @@ class WP_FB_Reviews_Public {
 
 		$this->_token = $plugintoken;
 		$this->version = $version;
-		
+		//$this->version = time();
 		
 	}
 
@@ -118,6 +118,13 @@ class WP_FB_Reviews_Public {
 		 */
 
 		wp_enqueue_script( $this->_token."_plublic", plugin_dir_url( __FILE__ ) . 'js/wprev-public.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script($this->_token."_plublic", 'wprevpublicjs_script_vars', 
+					array(
+					'wpfb_nonce'=> wp_create_nonce('randomnoncestring'),
+					'wpfb_ajaxurl' => admin_url( 'admin-ajax.php' ),
+					'wprevpluginsurl' => wpfbrev_plugin_url
+					)
+				);
 		wp_enqueue_script( $this->_token."_unslider-min", plugin_dir_url( __FILE__ ) . 'js/wprs-unslider-min.js', array( 'jquery' ), $this->version, false );
 
 	}
@@ -141,5 +148,57 @@ class WP_FB_Reviews_Public {
 				ob_start();
 				include plugin_dir_path( __FILE__ ) . '/partials/wp-fb-reviews-public-display.php';
 				return ob_get_clean();
+	}
+	
+		/**
+	 * Ajax, tries to update missing image src, facebook expires them.
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function wppro_update_profile_pic_ajax(){
+	//ini_set('display_errors',1);  
+	//error_reporting(E_ALL);
+		check_ajax_referer('randomnoncestring', 'wpfb_nonce');
+		$revid = sanitize_text_field($_POST['revid']);
+		if($revid>0){
+		//get review details, if FB then try to update it with call to fbapp.ljapps.com
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'wpfb_reviews';
+		$reviewinfo = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$table_name." WHERE id=%d LIMIT 1", "$revid"), ARRAY_A);
+
+			//check for type and continue if FB
+			if($reviewinfo[0]['type']=="Facebook"){
+				//set default image
+				$newimagesrc['url'] = plugin_dir_url( __FILE__ )."/partials/imgs/fb_mystery_man_big.png";
+				//now try to get from fb app.
+				$option = get_option('wprevpro_options');
+				$accesscode = $option['fb_app_code'];
+				$tempurl = "https://fbapp.ljapps.com/ajaxgetprofilepic.php?q=getpic&acode=".$accesscode."&callback=cron&pid=".$reviewinfo[0]['pageid']."&rid=".$reviewinfo[0]['reviewer_id'];
+				
+				if (ini_get('allow_url_fopen') == true) {
+					$data=file_get_contents($tempurl);
+				} else if (function_exists('curl_init')) {
+					$data=$this->file_get_contents_curl($tempurl);
+				}
+				
+				$data = json_decode($data, true);
+				$profileimgurl = $data['data'];
+				
+				//escape and add to db
+				$escapedimgurl = esc_url( $profileimgurl);
+				if($escapedimgurl!=''){
+					$newimagesrc['url'] = $escapedimgurl;
+					$temprevid = $reviewinfo[0]['id'];
+					//update the database with this new image url
+					$updatereviewsrc = $wpdb->query( $wpdb->prepare("UPDATE ".$table_name." SET userpic = %s WHERE id = %d AND reviewer_id = %s", $escapedimgurl, $temprevid, $reviewinfo[0]['reviewer_id'] ) );
+					$temprevid ='';
+				}
+						
+				
+			}
+
+		}
+		exit();
 	}
 }

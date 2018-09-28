@@ -4,7 +4,7 @@
  * @requires WPGMZA.InfoWindow
  * @pro-requires WPGMZA.ProInfoWindow
  */
-(function($) {
+jQuery(function($) {
 	
 	var Parent;
 	
@@ -58,7 +58,6 @@
 		$(this.element).show();
 		
 		this.dispatchEvent("infowindowopen");
-		$(this.element).trigger("infowindowopen.wpgmza");
 	}
 	
 	WPGMZA.OLInfoWindow.prototype.close = function(event)
@@ -84,6 +83,11 @@
 	{
 		if(WPGMZA.settings.developer_mode)
 			console.log(options);
+		
+		if(options.maxWidth)
+		{
+			$(this.element).css({"max-width": options.maxWidth + "px"});
+		}
 	}
 	
-})(jQuery);
+});

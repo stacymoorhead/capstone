@@ -221,7 +221,7 @@
 	$reviews_table_name = $wpdb->prefix . 'wpfb_reviews';
 	$reviewtotalcount = $wpdb->get_var( 'SELECT COUNT(*) FROM '.$reviews_table_name );
 	if($reviewtotalcount<1){
-		$dbmsg = $dbmsg . '<div id="setting-error-wpfbr_message" class="updated settings-error notice is-dismissible">'.__('<p><strong>No reviews found. Please visit the <a href="?page=wp_fb-settings">Get FB Reviews</a> page to retrieve reviews from Facebook, or manually add one on the <a href="?page=wp_fb-reviews">Review List</a> page. </strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>', 'wp-fb-reviews').'</div>';
+		$dbmsg = $dbmsg . '<div id="setting-error-wpfbr_message" class="updated settings-error notice is-dismissible">'.__('<p><strong>No reviews found. Please visit the <a href="?page=wp_fb-facebook">Get FB Reviews</a> page to retrieve reviews from Facebook, or manually add one on the <a href="?page=wp_fb-reviews">Review List</a> page. </strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>', 'wp-fb-reviews').'</div>';
 	}
 	
 	//add thickbox

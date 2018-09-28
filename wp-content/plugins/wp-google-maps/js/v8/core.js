@@ -2,13 +2,43 @@
  * @module WPGMZA
  * @summary This is the core Javascript module. Some code exists in ../core.js, the functionality there will slowly be handed over to this module.
  */
-(function($) {
+jQuery(function($) {
 	var core = {
 		maps: [],
 		events: null,
 		settings: null,
 		
 		loadingHTML: '<div class="wpgmza-preloader"><div class="wpgmza-loader">...</div></div>',
+		
+		/**
+		 * Override this method to add a scroll offset when using animated scroll
+		 * @return number
+		 */
+		getScrollAnimationOffset: function() {
+			return (WPGMZA.settings.scroll_animation_offset || 0);
+		},
+		
+		/**
+		 * Animated scroll, accounts for animation settings and fixed header height
+		 * @return void
+		 */
+		animateScroll: function(element, milliseconds) {
+			
+			var offset = WPGMZA.getScrollAnimationOffset();
+			
+			if(!milliseconds)
+			{
+				if(WPGMZA.settings.scroll_animation_milliseconds)
+					milliseconds = WPGMZA.settings.scroll_animation_milliseconds;
+				else
+					milliseconds = 500;
+			}
+			
+			$("html, body").animate({
+				scrollTop: $(element).offset().top - offset
+			}, milliseconds);
+			
+		},
 		
 		/**
 		 * @function guid
@@ -222,14 +252,20 @@
 			};
 			
 			navigator.geolocation.getCurrentPosition(function(position) {
-				callback(position);
+				if(callback)
+					callback(position);
+				
+				WPGMZA.events.trigger("userlocationfound");
 			},
 			function(error) {
 				
 				options.enableHighAccuracy = false;
 				
 				navigator.geolocation.getCurrentPosition(function(position) {
-					callback(position);
+					if(callback)
+						callback(position);
+					
+					WPGMZA.events.trigger("userlocationfound");
 				},
 				function(error) {
 					console.warn(error.code, error.message);
@@ -286,12 +322,12 @@
 			
 			switch(WPGMZA.settings.engine)
 			{
-				case "google-maps":
-					engine = "Google";
+				case "open-layers":
+					engine = "OL";
 					break;
 				
 				default:
-					engine = "OL";
+					engine = "Google";
 					break;
 			}
 			
@@ -335,7 +371,21 @@
 			return typeof google === 'object' && typeof google.maps === 'object' && typeof google.maps.places === 'object' && typeof google.maps.places.Autocomplete === 'function';
 		},
 		
-		googleAPIStatus: window.wpgmza_google_api_status
+		googleAPIStatus: window.wpgmza_google_api_status,
+		
+		isDeviceiOS: function() {
+			
+			return (
+			
+				(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
+				
+				||
+				
+				(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform))
+			
+			);
+			
+		}
 	};
 	
 	if(window.WPGMZA)
@@ -349,7 +399,7 @@
 		WPGMZA[key] = value;
 	}
 	
-	$(document).ready(function(event) {
+	jQuery(function($) {
 		
 		// Combined script warning
 		if($("script[src*='wp-google-maps.combined.js'], script[src*='wp-google-maps-pro.combined.js']").length)
@@ -362,6 +412,17 @@
 
 		if(elements.length > 1)
 			console.warn("Multiple jQuery versions detected: ", elements);
+		
+		// Rest API
+		WPGMZA.restAPI = WPGMZA.RestAPI.createInstance();
+		
+		// TODO: Move to map edit page JS
+		$(document).on("click", ".wpgmza_edit_btn", function() {
+			
+			WPGMZA.animateScroll("#wpgmaps_tabs_markers");
+			
+		});
+		
 	});
 	
 	$(window).on("load", function(event) {
@@ -377,4 +438,7 @@
 		}
 		
 	});
-})(jQuery);
+	
+	
+	
+});

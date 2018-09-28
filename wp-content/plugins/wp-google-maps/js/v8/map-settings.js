@@ -3,7 +3,7 @@
  * @module MapSettings
  * @requires WPGMZA
  */
-(function($) {
+jQuery(function($) {
 	
 	WPGMZA.MapSettings = function(element)
 	{
@@ -14,6 +14,13 @@
 		//var json = JSON.parse(window["wpgmza_map_settings_" + id]);
 		
 		WPGMZA.assertInstanceOf(this, "MapSettings");
+		
+		for(var key in WPGMZA.settings)
+		{
+			var value = WPGMZA.settings[key];
+			
+			this[key] = value;
+		}
 		
 		for(var key in json)
 		{
@@ -126,18 +133,20 @@
 			options.maxZoom = parseInt(this.max_zoom);
 		
 		// These settings are all inverted because the checkbox being set means "disabled"
-		options.zoomControl 			= !(this.map_zoom == true);
-		options.panControl 				= !(this.map_pan == true);
-		options.mapTypeControl			= !(this.disable_map_type_controls == true);
-		options.streetViewControl		= !(this.map_streetview == true);
-		options.fullscreenControl		= !(this.map_full_screen_control == true);
+		options.zoomControl				= !(this.wpgmza_settings_map_zoom == 'yes');
+        options.panControl				= !(this.wpgmza_settings_map_pan == 'yes');
+        options.mapTypeControl			= !(this.wpgmza_settings_map_type == 'yes');
+        options.streetViewControl		= !(this.wpgmza_settings_map_streetview == 'yes');
+        options.fullscreenControl		= !(this.wpgmza_settings_map_full_screen_control == 'yes');
+        
+        options.draggable				= !(this.wpgmza_settings_map_draggable == 'yes');
+        options.disableDoubleClickZoom	= !(this.wpgmza_settings_map_clickzoom == 'yes');
+        options.scrollwheel				= !(this.wpgmza_settings_map_scroll == 'yes');
 		
-		options.draggable				= !(this.map_draggable == true);
-		options.disableDoubleClickZoom	= !(this.map_clickzoom == true);
-		options.scrollwheel				= !(this.map_scroll == true);
-		
-		if(this.force_greedy_gestures)
+		if(this.wpgmza_force_greedy_gestures == "greedy" || this.wpgmza_force_greedy_gestures == "yes")
 			options.gestureHandling = "greedy";
+		else
+			options.gestureHandling = "cooperative";
 		
 		switch(parseInt(this.map_type))
 		{
@@ -169,4 +178,4 @@
 		
 		return options;
 	}
-})(jQuery);
+});

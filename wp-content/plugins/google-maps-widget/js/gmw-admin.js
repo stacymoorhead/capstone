@@ -25,6 +25,11 @@ jQuery(function($) {
     return false;
   }); // open promo dialog
 
+  $('.gmw-promo-button').on('click', function(e) {
+    $('#gmw_promo_dialog').dialog('close');
+
+    return true;
+  })
 
   // init variables
   if (typeof google != 'undefined') {
