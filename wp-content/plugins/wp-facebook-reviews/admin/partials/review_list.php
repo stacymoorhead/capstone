@@ -142,12 +142,17 @@ _e('Search reviews, hide certain reviews, manually add reviews, save a CSV file 
 				}
 				$hideicon ='';
 				//user image
-				$userpic = '<img style="-webkit-user-select: none" src="http://graph.facebook.com/'.$reviewsrow->reviewer_id.'/picture?type=square">';
+				if($reviewsrow->userpic!=""){
+					$userpic = '<img style="-webkit-user-select: none" src="'.$reviewsrow->userpic.'">';
+				} else {
+				$userpic = '<img style="-webkit-user-select: none" src="https://graph.facebook.com/v2.2/'.$reviewsrow->reviewer_id.'/picture?type=square">';
+				}
 				//user profile link
+				$profilelink='';
 				if($reviewsrow->type=="Facebook"){
 					$profilelink = "http://facebook.com/".$reviewsrow->reviewer_id;
 				}
-				if($profilelink){
+				if($profilelink==''){
 					$userpic = '<a href="'.$profilelink.'" target=_blank>'.$userpic.'</a>';
 				}
 	

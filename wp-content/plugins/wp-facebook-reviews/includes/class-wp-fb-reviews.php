@@ -69,7 +69,7 @@ class WP_FB_Reviews {
 	public function __construct() {
 
 		$this->_token = 'wp-fb-reviews';
-		$this->version = '2.4';
+		$this->version = '5.5';
 		//using this for development
 		//$this->version = time();
 
@@ -107,7 +107,7 @@ class WP_FB_Reviews {
 		if($numtimesran>50 && $numtimesran<54){
 			//display message asking for review
 			$mess = '<div class="notice notice-info is-dismissible"><p>Do you like the plugin "WP Facebook Review Slider"? If so please take a moment to leave us a review <a href="https://wordpress.org/plugins/wp-facebook-reviews/" target="blank">here!</a></p></div>';
-			echo $mess;
+			//echo $mess;
 		}
 
 	}
@@ -174,6 +174,12 @@ class WP_FB_Reviews {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-fb-reviews-template_action.php';
 
+		
+		/**
+		 * The class responsible for parsing yelp and tripadvisor pages
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wppro_simple_html_dom.php';
+		
 		//register the loader
 		$this->loader = new WP_FB_Reviews_Loader();
 		
@@ -220,6 +226,9 @@ class WP_FB_Reviews {
 		
 		//add ajax for adding feedback to table
 		$this->loader->add_action( 'wp_ajax_wpfb_get_results', $plugin_admin, 'wpfb_process_ajax' ); 
+		
+		//add ajax for adding FB backup method feedback to table
+		$this->loader->add_action( 'wp_ajax_wpfb_fb_backup_reviews', $plugin_admin, 'wprevpro_ajax_download_fb_backup' );
 		
 		//add select shortcode list to post edit page
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'add_sc_select',11 ); 

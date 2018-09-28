@@ -76,7 +76,16 @@ class WP_FB_Reviews_Public {
 		wp_register_style( 'wp-review-slider-pro-public_template1', plugin_dir_url( __FILE__ ) . 'css/wprev-public_template1.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'wp-review-slider-pro-public_template1' );
 
+		//for rtl support
+		// extra RTL stylesheet
+		if ( is_rtl() )
+		{
+			wp_register_style( 'wp-review-slider-pro-public_template1_rtl', plugin_dir_url( __FILE__ ) . 'css/wprev-public_template1_rtl.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'wp-review-slider-pro-public_template1_rtl' );			
+		}
+		
 		wp_register_style( 'wprev_w3', plugin_dir_url( __FILE__ ) . 'css/wprev_w3.css', array(), $this->version, 'all' );
+		
 		
 		//register slider stylesheet
 		wp_register_style( 'unslider', plugin_dir_url( __FILE__ ) . 'css/wprs_unslider.css', array(), $this->version, 'all' );

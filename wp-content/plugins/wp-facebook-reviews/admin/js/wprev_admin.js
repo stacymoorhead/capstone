@@ -16,6 +16,20 @@ function getfbreviewsfunction(pageid,pagetoken,pagename) {
 
 }
 
+function backupfbscrape(pageid,pagename){
+					senddata = {
+					action: 'wpfb_fb_backup_reviews',	//required
+					wpfb_nonce: adminjs_script_vars.wpfb_nonce,
+					pid: pageid,
+					pname: pagename
+					};
+				
+				jQuery.post(ajaxurl, senddata, function (response){
+					console.log(response);
+					jQuery( "#popup_bobytext2").append(response);
+				});
+}
+
 function getandsavefbreviews(pageid,pagetoken,pagename,reviewarray,totalinserted,numtodownload,aftercode){	
 	//start a loop here that loops on success and stops on error or no more entries, try every 25, update progress bar
 	var pagingdata = "";
@@ -25,8 +39,34 @@ function getandsavefbreviews(pageid,pagetoken,pagename,reviewarray,totalinserted
 		limit:numtodownload,
 		after:aftercode
 		}, function(response) {
-		//console.log(response);
+		console.log(response);
 		//console.log(response.data.length);
+		console.log(response.data[0].reviewer);
+		if (typeof(response.data) == 'undefined') {
+			console.log(response);
+			msg = "It appears Facebook is still temporarily blocking access to parts of their Pages API. Check the javascript console for more details. Now attempting alternative method to retrieve your 10 most helpful reviews. This shouldn't take more than a few seconds. ";
+				jQuery( "#popup_bobytext2").html(msg);
+				//try to scrape fb reviews page using the page id
+				backupfbscrape(pageid,pagename);
+				
+				//------------------
+				//when api starts working again we need to remove all 
+				//------------------
+		} else if(response.data.length < 1) {
+			console.log(response);
+			msg = "It appears Facebook is still temporarily blocking access to parts of their Pages API. Response is empty. Now attempting alternative method to retrieve your 10 most helpful reviews. This shouldn't take more than a few seconds. ";
+				jQuery( "#popup_bobytext2").html(msg);
+				//try to scrape fb reviews page using the page id
+				backupfbscrape(pageid,pagename);
+			
+		} else if(typeof response.data[0].reviewer == 'undefined') {
+			console.log(response);
+			msg = "It appears Facebook is still temporarily blocking access to parts of their Pages API. Unable to retrieve the name of the reviewer. Check the javascript console for more details. Now attempting alternative method to retrieve your 10 most helpful reviews. This shouldn't take more than a few seconds. ";
+				jQuery( "#popup_bobytext2").html(msg);
+				//try to scrape fb reviews page using the page id
+				backupfbscrape(pageid,pagename);
+			
+		}else {
 			if(response.data.length > 0){
 				var fbreviewarray = response.data;
 				pagingdata = response.paging;
@@ -87,7 +127,7 @@ function getandsavefbreviews(pageid,pagetoken,pagename,reviewarray,totalinserted
 				msg = "Oops, no reviews returned from Facebook for that page. If the page does in fact have reviews on Facebook, please try again or contact us for help.";
 				jQuery( "#popup_bobytext2").html(msg);
 			}
-
+		}
 	});
 
 	
@@ -103,7 +143,7 @@ function openpopup(title, body, body2){
 	
 	var popup = jQuery('#popup').popup({
 		width: 400,
-		height: 200,
+		height: 320,
 		offsetX: -100,
 		offsetY: 0,
 	});

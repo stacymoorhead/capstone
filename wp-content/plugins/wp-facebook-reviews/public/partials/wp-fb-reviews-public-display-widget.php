@@ -40,7 +40,13 @@
 			$sorttable = "created_time_stamp ";
 			$sortdir = "DESC";
 		}
-
+		$rtype = "Facebook";
+		if($currentform[0]->rtype=='["fb"]'){
+			$rtype = "Facebook";
+		}
+		if($currentform[0]->rtype=='["google"]'){
+			$rtype = "Google";
+		}
 		$reviewsperpage= $currentform[0]->display_num*$currentform[0]->display_num_rows;
 		$tablelimit = $reviewsperpage;
 		//change limit for slider
@@ -50,11 +56,10 @@
 		
 			$totalreviews = $wpdb->get_results(
 				$wpdb->prepare("SELECT * FROM ".$table_name."
-				WHERE id>%d AND review_length >= %d
+				WHERE id>%d AND review_length >= %d AND type = %s
 				ORDER BY ".$sorttable." ".$sortdir." 
-				LIMIT ".$tablelimit." ", "0","$rlength")
+				LIMIT ".$tablelimit." ", "0","$rlength","$rtype")
 			);
-
 			
 			//print_r($totalreviews);
 			//echo "<br><br>";
@@ -76,7 +81,11 @@
 			//make sure we have enough to create a show here
 			if($totalreviews>$reviewsperpage){
 				$makingslideshow = true;
-				echo '<div class="wprev-slider-widget"><ul>';
+				$rtltag = '';
+				if ( is_rtl() ) {
+				$rtltag = 'dir="rtl"';
+				}
+				echo '<div class="wprev-slider-widget" '.$rtltag.'><ul>';
 			}
 		}
 		
@@ -160,19 +169,30 @@
 		//if making slide show then end it
 		if($makingslideshow){
 				echo '</ul></div>';
-				echo "<script type='text/javascript' defer>
-						jQuery(document).ready(function($) {
-							$('.wprev-slider-widget').wprs_unslider(
-								{
-								autoplay:false,
-								speed: '750',
-								animation: 'horizontal',
-								arrows: false,
-								animateHeight: true,
-								activeClass: 'wprs_unslider-active',
-								}
-							);
-							$('.wprs_unslider-nav').show();
+				echo "<script type='text/javascript'>
+						var jqtimesranw = 0;
+						function wprs_defer(method) {
+							if (window.jQuery) {
+								method();
+							} else if(jqtimesranw<7) {
+								jqtimesranw = jqtimesranw +1;
+								setTimeout(function() { wprs_defer(method) }, 50);
+							}
+						}
+						wprs_defer(function () {
+							jQuery(document).ready(function($) {
+								$('.wprev-slider-widget').wprs_unslider(
+									{
+									autoplay:false,
+									speed: '750',
+									animation: 'horizontal',
+									arrows: false,
+									animateHeight: true,
+									activeClass: 'wprs_unslider-active',
+									}
+								);
+								$('.wprs_unslider-nav').show();
+							});
 						});
 						</script>";
 		}

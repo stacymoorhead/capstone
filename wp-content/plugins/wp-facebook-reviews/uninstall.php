@@ -41,7 +41,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	//check for pro version, if yes then do not delete this stuff
 	$filename = plugins_url( 'wp-review-slider-pro/wp-review-slider-pro.php', dirname(__FILE__) );
 
-	if ( is_plugin_active( 'wp-review-slider-pro/wp-review-slider-pro.php' ) ) {
+	if ( is_plugin_active( 'wp-review-slider-pro-premium/wp-review-slider-pro.php' ) ) {
 		//pro version is installed and activated do not delete tables
 		
 	} else {

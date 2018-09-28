@@ -2,9 +2,9 @@
 Contributors: smashballoon
 Support Website: http://smashballoon/instagram-feed/
 Requires at least: 3.0
-Tested up to: 4.8
-Stable tag: 2.6.1
-Version: 2.6.1
+Tested up to: 4.9
+Stable tag: 2.10
+Version: 2.10
 License: Non-distributable, Not for resale
 
 Display beautifully clean, customizable, and responsive feeds from multiple Instagram accounts
@@ -39,10 +39,103 @@ Display Instagram photos from any non-private Instagram accounts, either in the 
 5. You can display multiple Instagram feeds by using shortcode options, for example: `[instagram-feed id=YOUR_USER_ID_HERE cols=3 width=50 widthunit=%]`
 
 == Changelog ==
+= 2.10 =
+* New: Retrieving Access Tokens and connecting multiple Instagram accounts is now easier using our improved interface for managing account information. While on the Configure tab, click on the big blue button to connect an account, or use the "Manually Connect an Account" option to connect one using an existing Access Token. Once an account is connected, you can use the associated buttons to either add it to your primary User feed or to a different feed on your site using the `user` shortcode option, eg: `user=smashballoon`.
+* Tweak: Disabled auto load in the database for backup caches and white lists
+* Fix: Fixed a issue where comments could display potentially harmful HTML - Thanks Jonas Carlsson from Sweden!
+* Fix: Removed code and support for using user names in user ID settings. Will now default to the user ID attached to the Access Token.
+* Fix: Carousel feeds not working for right to left languages
+* Fix: Comments not being retrieved with the correct Access Token
+* Fix: Automatic loading of more posts on scroll disabled for carousel feeds
+
+= 2.9.7 =
+* Fix: Fixed and issue with new comments not being retrieved
+* Fix: Access Tokens may have been incorrectly saved as invalid under certain circumstances
+
+= 2.9.6 =
+* Tweak: Setting "Cache Error API Recheck" enabled by default for new installs
+* Tweak: Added back ability to show caption on the right side of the lightbox and avatars for user feeds in lightbox
+* Fix: Page caches created with the WP Rocket plugin will be cleared when the Instagram Feed settings are updated or the cache is forced to clear
+* Fix: Fixed a rare issue where feeds were displaying "Looking for cache that doesn't exist" when page caching was not being used
+
+= 2.9.5 =
+* Important: Due to [recent changes](https://smashballoon.com/instagram-api-changes-april-4-2018/) in the Instagram API it is no longer possible to display photos from other Instagram accounts which are not your own. You can only display the user feed of the account which is associated with your Access Token.
+* New: Added an Access Token shortcode option and support for multiple Access Tokens. If you own multiple Instagram accounts then you can now use multiple Access Tokens in order to display user feeds from each account, either in separate feeds, or in the same feed. Just use the `accesstoken` shortcode option. See [this FAQ](https://smashballoon.com/display-multiple-instagram-feeds/#multiple-user-feeds) for more information on displaying multiple User feeds.
+
+= 2.9.4 =
+* Fix: Fixed an issue caused by the last update where the Load More button would skip some posts
+* Fix: No source in video element in the lightbox causing an error in IE
+* Fix: Combination of a page cache, user feed header, and setting "Cache Error API Recheck" causing header to not display
+* Fix: Having more than one of the same feeds on the same page would sometimes cause the second feed not to load
+
+= 2.9.3 =
+* Fix: Fixed duplicating images in certain feeds
+* Fix: Includewords code missing non-hashtag words after a line break
+
+= 2.9.2 =
+* Tweak: Lightbox given a fixed position for large screens. Scrolling the browser window will no longer scroll the lightbox on desktop devices.
+* Tweak: Enabling "Cache Error API Recheck" setting will cause feeds to always assume a cache exists and will create one if one doesn't exist.
+* Tweak: Custom image sizes no longer supported by Instagram. This feature will be unavailable for now.
+* Fix: Added icon source setting for AJAX themes
+* Fix: Fixed incorrectly sized images when mobile columns set to "1"
+* Fix: SVG icons box-sizing set to "unset" to prevent issues with SVG icon sizes
+* Fix: Hover background moved farther to the foreground to prevent rare issue with it not displaying
+* Fix: Auto load more on scroll was causing problems for other features on sites that are triggered by scrolling
+* Fix: Extra check added to prevent infinite loop of displaying welcome screen when installing the plugin
+* Fix: Fixed links breaking for hashtags with underscores in the lightbox
+
+= 2.9.1 =
+* New: Added "alt" tags to lightbox images and screen reader text for improved accessibility
+* Fix: SVG icons not displaying correctly in IE11
+* Fix: Fixed a potential security vulnerability
+
+= 2.9 =
+* New: Added a permanent feed option. Permanent feeds are useful if you have a feed with a group of posts which never needs to be updated. It creates a permanent record of the feed for optimal performance. Use the shortcode setting "permanent" if a feed never needs to be updated: `[instagram-feed permanent="true"]`.
+* New: Added backup caching for all feeds. If the feed is unable to display or too many posts are being filtered out, a backup feed will be shown to visitors if a backup cache is available.
+* New: Added setting in moderation mode to make a "white list" feed permanent. Check the box labeled "This is a permanent white list (never needs to update)" when creating a "white list".
+* New: Icons are now generated as SVGs for a sharper look and more semantic markup.
+* New: Added support for translating the post date and the word "Share" in the lightbox.
+* New: Added a setting to the Misc section to disable jQuery mobile code. This will fix issues with jQuery versions 2.x or later.
+* New: Added support for running custom JavaScript code when the lightbox is launched
+* Tweak: Added CSS to remove borders underneath links in the feed which were added by some themes.
+* Tweak: Updating or installing the plugin will automatically clear the cache in popular page caching plugins and JavaScript optimizing plugins.
+
+= 2.8.3 =
+* New: Added config file for WPML compatibility. Display your feed on your multi-language sites [WPML website](https://wpml.org/)
+* New: Added translation files for Danish (da_DK), Finnish (fi_FL), Japanese (ja_JP), Norwegian (nn_NO), Portuguese (pt_PT), and Swedish (sv_SE) to translate "Load More..." and "Follow on Instagram"
+* Fix: Bug with linking random text in captions in the lightbox.
+* Fix: Carousel feeds were not displaying properly when resizing the browser window from desktop to mobile width.
+
+= 2.8.2 =
+* Fix: Directions for a single post feed were not opening on the "Configure" tab.
+* Fix: Carousel post types in the lightbox would not play the 2nd video in the carousel.
+* Fix: Regular expression to add links to hashtags, websites, and mentions in the caption of the lightbox is improved.
+
+= 2.8.1 =
+* Fix: Fixed carousel feeds with mobile columns set to "auto" not showing images at their proper size.
+
+= 2.8 =
+* New: You can now choose to set the number of columns and posts to use for mobile, which allows you to decide how your Instagram feed is displayed across all devices. You can find these settings by navigating to `Customize > Layout`, and clicking on `Show Mobile Options` under the respective setting, or you can use the following shortcode options: `colsmobile=3 nummobile=9`
+* New: Visitors to your site can now trigger the loading of more posts as they scroll down your feed. Enable this for all feeds by using the setting located at `Customize > Autoscroll Load More`, or apply this to a specific feed using the shortcode option: `autoscroll=true`
+* New: It's now easier to collect post IDs for creating single post feeds as they can be displayed underneath posts while viewing a feed in "Moderation Mode". To view the ID for a post, enable "Moderation Mode" for your feed and simply check the box labeled "Show post ID under image".
+* Tweak: Added an icon to carousel posts to let visitors know that it's a carousel
+* Fix: Fixed an issue where the video would not play when the first slide in a carousel post was a video
+
+= 2.7 =
+* New: "Custom Image Sizes" now available for use in your feeds. These are available image resolutions not officially supported by Instagram. To use them, go to the "Customize" tab and check the box to "Use a Custom Image Size". You can then select from the revealed dropdown menu.
+* New: Private feeds and single posts from private feeds will not break a feed but instead display a message to logged-in admins and exclude the private data
+* Tweak: Lightbox moved farther to the foreground to prevent an issue with the navigation menu covering the lightbox in certain themes
+* Tweak: Several images in the plugin have been optimized to reduce file size
+* Tweak: Welcome page now only displayed for major updates
+* Fix: Refactored code that was causing a false positive in a security plugin
+* Fix: Carousel "slideshow" posts are still included in feeds which are set to only display photos
+* Fix: Fixed missing "media" attribute in CSS file inclusion code
+
 = 2.6.1 =
 * Fix: Fixed an issue with videos in slideshow posts
 
 = 2.6 =
+* New: Added translation files for French (fr_FR), German (de_DE), English (en_EN), Spanish (es_ES), Italian (it_IT), and Russian (ru_RU) to translate "Load More..." and "Follow on Instagram"
 * New: Instagram "Slideshow" posts are now supported. When viewing a slideshow post in the popup lightbox you can now scroll through to view the other images.
 * Tweak: The lightbox navigation arrows have been moved outside of the image area to make room for slideshow posts and closer emulate the lightbox on Instagram
 * Tweak: Font Awesome stylesheet handle has been renamed so it will only be loaded once if Custom Facebook Feed is also active

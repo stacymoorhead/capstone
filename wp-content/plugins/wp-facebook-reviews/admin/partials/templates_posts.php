@@ -210,7 +210,7 @@
 	}
 
 	//Get list of all current forms--------------------------
-	$currentforms = $wpdb->get_results("SELECT id, title, template_type, created_time_stamp, style FROM $table_name");
+	$currentforms = $wpdb->get_results("SELECT id, title, template_type, created_time_stamp, style FROM $table_name WHERE `rtype` LIKE '%fb%' ");
 	
 	//-------------------------------------------------------
 	

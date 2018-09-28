@@ -84,7 +84,7 @@ class WP_FB_Reviews_Admin {
 			}
 			
 			//load template styles for wp_pro-templates_posts page
-			if($_GET['page']=="wp_fb-templates_posts"){
+			if($_GET['page']=="wp_fb-templates_posts" || $_GET['page']=="wp_fb-get_pro"){
 				//enque template styles for preview
 				wp_enqueue_style( $this->_token."_style1", plugin_dir_url(dirname(__FILE__)) . 'public/css/wprev-public_template1.css', array(), $this->version, 'all' );
 
@@ -157,7 +157,7 @@ class WP_FB_Reviews_Admin {
 				//add color picker here
 				wp_enqueue_style( 'wp-color-picker' );
 				//enque alpha color add-on wprevpro-wp-color-picker-alpha.js
-				wp_enqueue_script( 'wp-color-picker-alpha', plugin_dir_url( __FILE__ ) . 'js/wprevpro-wp-color-picker-alpha.js', array( 'wp-color-picker' ), '1.2.2', false );
+				wp_enqueue_script( 'wp-color-picker-alpha', plugin_dir_url( __FILE__ ) . 'js/wprevpro-wp-color-picker-alpha.js', array( 'wp-color-picker' ), '2.1.2', false );
 			}
 		}
 		
@@ -433,6 +433,266 @@ class WP_FB_Reviews_Admin {
 	}
 	
 	
+	
+//==========================================================================================	
+	/**
+	 * download fb backup method, only used if we get an error from the fb API reviews
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  void
+	 */	
+	 
+	//for ajax call to fb backup master
+	public function wprevpro_ajax_download_fb_backup() {
+		
+		check_ajax_referer('randomnoncestring', 'wpfb_nonce');
+		$thisurlpageid = $_POST['pid'];
+		$thisurlpagename = $_POST['pname'];
+		$getresponse = $this->wprevpro_download_fb_backup($thisurlpageid,$thisurlpagename);
+		//echo $getresponse;
+		die();
+	}
+	 
+	 
+	public function wprevpro_download_fb_backup($downloadurlpageid = 'all',$pagename) {
+			$options = get_option('wprevpro_yelp_settings');
+			
+			//check to see if only downloading one here, if not that skip and continue
+			if($downloadurlnum!='all'){
+					//build url with pageid  https://www.facebook.com/pg/102152479925798/reviews/
+					$currenturlmore = "https://www.facebook.com/".$downloadurlpageid."/reviews/";
+					$this->wprevpro_download_fb_backup_perurl($currenturlmore,$downloadurlpageid,$pagename);
+
+			} else {
+				//get all pageids that are checked
+			}
+
+	}
+	
+ 
+	public function wprevpro_download_fb_backup_perurl($currenturl,$pageid,$pagename) {
+		ini_set('memory_limit','256M');
+			global $wpdb;
+			$table_name = $wpdb->prefix . 'wpfb_reviews';
+			
+				$reviews = [];
+				$n=1;
+				$urlvalue = $currenturl;
+				//$urlvalue ='https://www.facebook.com/Soulconnection2you/reviews/';
+				//$urlvalue ='https://www.facebook.com/pg/danbeautyeshop/reviews/';
+				//$urlvalue = "https://www.facebook.com/pg/BaapoChile/reviews/";
+
+									
+				$response = wp_remote_get( $urlvalue );
+				if ( is_array( $response ) ) {
+				  $header = $response['headers']; // array of http header lines
+				  $fileurlcontents = $response['body']; // use the content
+				}
+				//need to trim the string down by removing all script tags
+					$dom = new DOMDocument();
+					$dom->loadHTML('<?xml encoding="utf-8" ?>' . $fileurlcontents);
+					$script = $dom->getElementsByTagName('script');
+					$remove = [];
+					foreach($script as $item)
+					{
+					  $remove[] = $item;
+					}
+					foreach ($remove as $item)
+					{
+					  $item->parentNode->removeChild($item); 
+					}
+					$htmlstripped = $dom->saveHTML();
+
+					//save file to see what we're getting
+					//$tempurlvalue = plugin_dir_path( __FILE__ ).'fbbackup'.$pageid.'.html';
+					//$savefile = file_put_contents($tempurlvalue,$htmlstripped );
+				
+				$html = wpfbrev_str_get_html($htmlstripped);
+
+
+				$pagename = $pagename;
+				$pageid = $pageid;
+
+				//find total and average number here and end break loop early if total number less than 50. review-count
+				
+				if($html->find('meta[itemprop=ratingValue]',0)){
+					$avgrating = $html->find('meta[itemprop=ratingValue]',0)->content;
+					$avgrating = (float)$avgrating;
+				}
+				if($html->find('meta[itemprop=ratingCount]',0)){
+					$totalreviews = $html->find('meta[itemprop=ratingCount]',0)->content;
+					$totalreviews = intval($totalreviews);
+				}
+					
+				
+				//print_r($allreviewsarray);
+				//foreach ($html->find('div._1dwg') as $review) {
+				for ($x = 0; $x <= 10; $x++) {
+					
+					if($html->find('div.userContentWrapper',$x)){
+					$review = $html->find('div.userContentWrapper',$x);
+					
+					
+						$user_name='';
+						$userimage='';
+						$rating='';
+						$datesubmitted='';
+						$rtext='';
+						// Find user_name
+						if($review->find('span.profileLink', 0)){
+							$user_name = $review->find('span.profileLink', 0)->plaintext;
+							$user_name = sanitize_text_field($user_name);
+							$user_name = addslashes($user_name);
+						}
+						if($user_name==''){
+						if($review->find('a.profileLink', 0)){
+							$user_name = $review->find('a.profileLink', 0)->plaintext;
+							$user_name = sanitize_text_field($user_name);
+							$user_name = $user_name;
+							$user_name_slash = addslashes($user_name);
+						}
+						}
+											
+
+						// Find userimage
+						if($review->find('img', 0)){
+							$userimage = $review->find('img', 0)->src;
+						}
+						
+						// find rating
+						if($review->find('i._51mq', 0)){
+							$rating = $review->find('i._51mq', 0)->plaintext;
+							$rating = intval($rating);
+						}
+						
+						//first method find the uttimstamp $results->getAttribute("data-name");
+						$uttimstamp='';
+						if($review->find('abbr._5ptz', 0)->getAttribute("data-utime")){
+							$uttimstamp = $review->find('abbr._5ptz', 0)->getAttribute("data-utime");
+						}
+
+						// find date
+						if($review->find('span.timestampContent', 0)){
+							$datesubmitted = $review->find('span.timestampContent', 0)->plaintext;
+							$datesubmitted = strstr($datesubmitted, ' at ', true) ?: $datesubmitted;
+							//fix for hrs ago hrs
+							if (strpos($datesubmitted, 'hrs') !== false) {
+								$datesubmitted = date('Y-m-d');
+							}
+						}
+						//backup date method
+						$utdate='';
+						if($review->find('abbr._5ptz', 0)){
+							$utdate = $review->find('abbr._5ptz', 0)->title;
+						}
+
+						// find text
+						$rtext ='';
+						if($review->find('div.userContent', 0)){
+							$rtext = $review->find('div.userContent', 0)->plaintext;
+							$rtext = sanitize_text_field($rtext);
+							$rtext = addslashes($rtext);
+							//remove See More
+							$rtext =str_replace("See More","",$rtext);
+							$rtext =str_replace("&#65533;","",$rtext);
+							
+						}
+						
+						if($rating>0){
+							//$review_length = str_word_count($rtext);
+							//if($review_length <2 && $rtext !=""){		//fix for other language error
+								$review_length = substr_count($rtext, ' ');
+							//}
+							$pos = strpos($userimage, 'default_avatars');
+							if (is_numeric($uttimstamp)) {
+								$timestamput = $uttimstamp;
+							} else {
+								if($datesubmitted!=''){
+									$timestamput = strtotime($datesubmitted);
+								} else {
+									$timestamput = strtotime($utdate);
+								}
+							}
+							$timestamp = date("Y-m-d H:i:s", $timestamput);
+							
+							//check to see if in database already
+										//check to see if row is in db already
+							$reviewindb = 'no';
+
+							$checkrow = $wpdb->get_var( "SELECT id FROM ".$table_name." WHERE reviewer_name = '".trim($user_name)."' " );
+								if( empty( $checkrow ) )
+								{
+									$reviewindb = 'no';
+								} else {
+									$reviewindb = 'yes';
+								}
+							//check again for ' in name
+							$checkrow2 = $wpdb->get_var( "SELECT id FROM ".$table_name." WHERE reviewer_name = '".trim($user_name_slash)."' " );
+								if( empty( $checkrow2 ) )
+								{
+									$reviewindb2 = 'no';
+								} else {
+									$reviewindb2 = 'yes';
+								}
+
+							if( $reviewindb == 'no' && $reviewindb2 == 'no')
+							{
+								$reviews[] = [
+										'reviewer_name' => trim($user_name),
+										'reviewer_id' => '',
+										'pageid' => trim($pageid),
+										'pagename' => trim($pagename),
+										'userpic' => $userimage,
+										'rating' => $rating,
+										'created_time' => $timestamp,
+										'created_time_stamp' => $timestamput,
+										'review_text' => trim($rtext),
+										'hide' => '',
+										'review_length' => $review_length,
+										'type' => 'Facebook'
+								];
+							}
+							$review_length ='';
+						}
+				 
+						$i++;
+					}
+				}
+				
+				//print_r($reviews);
+
+				//sleep for random 2 seconds
+				sleep(rand(0,1));
+				$n++;
+				
+				//var_dump($reviews);
+				// clean up memory
+				if (!empty($html)) {
+					$html->clear();
+					unset($html);
+				}
+
+
+				//go ahead and delete first, only if we have new ones and turned on.
+				if(count($reviews)>0){
+					//add all new yelp reviews to db
+					foreach ( $reviews as $stat ){
+						$insertnum = $wpdb->insert( $table_name, $stat );
+					}
+					//reviews added to db
+					if(isset($insertnum)){
+						$errormsg = ' ------'.count($reviews).' Most Helpful FB reviews downloaded.';
+						$this->errormsg = $errormsg;
+			
+					}
+				} else {
+					$errormsg = 'No new reviews found.';
+					$this->errormsg = $errormsg;
+				}
+				echo $errormsg;
+
+	}
+//--======================= end fb tempmethod =======================--//	
 	
 
 }

@@ -3,8 +3,8 @@ Contributors: jgwhite33
 Donate link: http://ljapps.com/
 Tags: Facebook, reviews, slider, testimonials, yelp, facebook page reviews
 Requires at least: 3.0.1
-Tested up to: 4.7
-Stable tag: 2.4
+Tested up to: 4.9
+Stable tag: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,8 @@ Allows you to easily display your Facebook Page reviews in your Posts, Pages, an
 == Description ==
 
 A great way to increase SEO and boost customer confidence! You work hard for your 5 star reviews on your Facebook page, now you can easily display them on your WordPress site!
+
+Note: As of March 2018 Facebook now requires your site to have an SSL cert to connect to their API. So you must be able to use https for this plugin to work.
 
 Feature List:
 
@@ -29,11 +31,15 @@ Feature List:
 
 [Check out our Google version!](https://wordpress.org/plugins/wp-google-places-review-slider/)
 [Check out our Yelp version!](https://wordpress.org/plugins/wp-yelp-review-slider/)
+[Check out our TripAdvisor version!](https://wordpress.org/plugins/wp-tripadvisor-review-slider/)
 
-[Upgrade to Pro for More Features:](http://ljapps.com/wp-review-slider-pro/)
+[Upgrade to Pro for More Features:](https://ljapps.com/wp-review-slider-pro/)
 
-* Customer support via email and a forum.
-* Download your Yelp and Google Places reviews as well.
+* US Based customer support via email and a forum.
+* Download your Yelp, TripAdvisor, and Google Places reviews as well.
+* Create a really cool summary badge!
+* Front end review submission form (coming soon).
+* Get email notifications when new low reviews are found.
 * Hide certain reviews from displaying.
 * Manually add reviews to your database.
 * Download all your reviews in CSV format to your computer.
@@ -42,9 +48,10 @@ Feature List:
 * Change the minimum rating of the reviews to display. Allows you to hide low rating reviews.
 * Use a minimum and maximum word count so you can hide short or long reviews.
 * Add a read more link to long reviews which shows the rest of the review when clicked!
-* Only display reviews of a certain type (Facebook, Yelp, manually input).
+* Display reviews by a certain type or mix them all together on one slider (Facebook, Yelp, Google, TripAdvisor, manually input).
 * Specify which Facebook page to display reviews from per a template.
 * Individually choose which reviews you want to display per a template.
+* Display a summary of your review ratings in a Google Search Result. You can automatically create the correct review snippet markup!
 * Access to all new features we add in the future!
 
 == Installation ==
@@ -69,6 +76,93 @@ We are always looking for features to add. Just post on the support forum or con
 5. Create as many templates as you like.
 
 == Changelog ==
+
+= 5.5 =
+* Small bug fix.
+
+= 5.4 =
+* Fix so now can work with Google widgets version.
+
+= 5.3 =
+* Fix so now can work with Google version.
+
+= 5.2 =
+* Small bug fix avatars.
+
+= 5.1 =
+* Small bug fix with emoticons.
+
+= 5.0 =
+* Small bug fix.
+
+= 4.9 =
+* Small bug fix with special characters.
+
+= 4.8 =
+* Small bug fix.
+
+= 4.7 =
+* Small bug fix with date.
+
+= 4.6 =
+* Small bug fix with date.
+
+= 4.5 =
+* Small bug fix.
+
+= 4.4 =
+* Small bug fix with date.
+
+= 4.3 =
+* Another small bug fix with date.
+
+= 4.2 =
+* Small bug fix with date.
+
+= 4.1 =
+* Added backup method if FB blocks API call.
+
+= 4.0 =
+* Small bug fix.
+
+= 3.9 =
+* updated instructions
+
+= 3.8 =
+* RTL support
+
+= 3.6 =
+* Small bug fix.
+
+= 3.5 =
+* delayed jquery call
+
+= 3.4 =
+* added alt tag to review images.
+
+= 3.3 =
+* Small bug fix.
+
+= 3.2 =
+* Small bug fix.
+
+= 3.1 =
+* Small bug fix.
+
+= 3.0 =
+* WordPress V4.9 compatible fix of color picker.
+
+= 2.9 =
+* Small bug fix.
+
+= 2.8 =
+* Small bug fix.
+
+= 2.7 =
+* Small bug fix.
+
+= 2.5 =
+* auto adjust slide height
 
 = 2.4 =
 * Fixed CSS problem when displaying more than one slider on the page at a time.
@@ -116,6 +210,9 @@ We are always looking for features to add. Just post on the support forum or con
 * First Version
 
 == Upgrade Notice ==
+
+= 3.0 =
+* WordPress V4.9 compatible fix of color picker.
 
 = 1.3 =
 * Fixed problem with ' in FB page name.

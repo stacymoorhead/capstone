@@ -3,12 +3,12 @@
 Plugin Name: Instagram Feed Pro Personal
 Plugin URI: http://smashballoon.com/instagram-feed
 Description: Add a customizable Instagram feed to your website
-Version: 2.6.1
+Version: 2.10
 Author: Smash Balloon
 Author URI: http://smashballoon.com/
 */
 /*
-Copyright 2017  Smash Balloon  (email: hey@smashballoon.com)
+Copyright 2018  Smash Balloon  (email: hey@smashballoon.com)
 This program is paid software; you may not redistribute it under any
 circumstances without the expressed written consent of the plugin author.
 This program is distributed in the hope that it will be useful,
@@ -26,7 +26,7 @@ if ( function_exists('display_instagram') ){
 }
 
 // set_site_transient( 'update_plugins', null );
-define( 'SBIVER', '2.6.1' );
+define( 'SBIVER', '2.10' );
 define( 'SBI_STORE_URL', 'http://smashballoon.com/' );
 define( 'SBI_PLUGIN_NAME', 'Instagram Feed Pro Personal' ); //Update #
 
@@ -57,16 +57,25 @@ add_action( 'admin_init', 'sb_instagram_plugin_updater', 0 );
 //Run function on plugin activate
 function sb_instagram_activate_pro() {
     $options = get_option('sb_instagram_settings');
-    $options[ 'sb_instagram_show_btn' ] = true;
-    $options[ 'sb_instagram_show_header' ] = true;
-    $options[ 'sb_instagram_show_follow_btn' ] = true;
-    update_option( 'sb_instagram_settings', $options );
 
-    //Set transient for welcome page
-    set_transient( '_sbi_activation_redirect', true, 30 );
+    //If the post types are all set to false then set them to be true as this likely means there was an issue with the settings not saving on activation
+    if( $options[ 'sb_instagram_show_btn' ] !== true && $options[ 'sb_instagram_show_header' ] !== true && $options[ 'sb_instagram_show_follow_btn' ] !== true ){
+        $options[ 'sb_instagram_show_btn' ] = true;
+        $options[ 'sb_instagram_show_header' ] = true;
+        $options[ 'sb_instagram_show_follow_btn' ] = true;
 
+        update_option( 'sb_instagram_settings', $options );
+    }
+    
+	//Clear page caching plugins and autoptomize
+	if ( is_callable( 'sb_instagram_clear_page_caches' ) ) {
+		sb_instagram_clear_page_caches();
+	}
     //Run cron twice daily when plugin is first activated for new users
     wp_schedule_event(time(), 'twicedaily', 'sb_instagram_cron_job');
+	delete_option( 'sb_expired_tokens' );
+	//Set transient for welcome page
+	set_transient( '_sbi_activation_redirect', true, 30 );
 }
 register_activation_hook( __FILE__, 'sb_instagram_activate_pro' );
 
@@ -89,8 +98,15 @@ function sb_instagram_uninstall_pro()
 
     //Settings
     delete_option( 'sb_instagram_settings' );
+	delete_option( 'sb_instagram_white_list_names' );
+	delete_option( 'sb_instagram_using_custom_sizes' );
+	delete_transient( 'sbinst_comment_cache' );
+	delete_option( 'sbi_ver' );
+	delete_option( 'sb_instagram_white_list_names' );
+	delete_option( 'sb_permanent_white_lists' );
+	delete_option( 'sb_expired_tokens' );
 
-    //Deactivate and delete license
+	//Deactivate and delete license
     // retrieve the license from the database
     $license = trim( get_option( 'sbi_license_key' ) );
     // data to send in our API request
@@ -103,6 +119,36 @@ function sb_instagram_uninstall_pro()
     $response = wp_remote_get( add_query_arg( $api_params, SBI_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
     delete_option( 'sbi_license_key' );
     delete_option( 'sbi_license_status' );
+
+	// Clear backup caches
+	global $wpdb;
+	$table_name = $wpdb->prefix . "options";
+	$wpdb->query( "
+        DELETE
+        FROM $table_name
+        WHERE `option_name` LIKE ('%!sbi\_%')
+        " );
+	$wpdb->query( "
+        DELETE
+        FROM $table_name
+        WHERE `option_name` LIKE ('%\_transient\_&sbi\_%')
+        " );
+	$wpdb->query( "
+        DELETE
+        FROM $table_name
+        WHERE `option_name` LIKE ('%\_transient\_timeout\_&sbi\_%')
+        " );
+	$wpdb->query("
+    DELETE
+    FROM $table_name
+    WHERE `option_name` LIKE ('%sb_instagram_white_lists_%')
+    ");
+	$wpdb->query("
+    DELETE
+    FROM $table_name
+    WHERE `option_name` LIKE ('%sb_wlupdated_%')
+    ");
+	
 }
 register_uninstall_hook( __FILE__, 'sb_instagram_uninstall_pro' );
 

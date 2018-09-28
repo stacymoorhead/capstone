@@ -68,6 +68,7 @@
 			
 	//only continue if some reviews found
 	$makingslideshow=false;
+	$animateheight = 'true';
 	if(count($totalreviews)>0){
 
 		//if creating a slider than we need to split into chunks for each slider
@@ -82,7 +83,12 @@
 			//make sure we have enough to create a show here
 			if($totalreviews>$reviewsperpage){
 				$makingslideshow = true;
-				echo '<div class="wprev-slider" id="wprev-slider-'.$currentform[0]->id.'"><ul>';
+				$rtltag = '';
+				if ( is_rtl() ) {
+				$rtltag = 'dir="rtl"';
+				$animateheight = 'false';
+				}
+				echo '<div class="wprev-slider" '.$rtltag.' id="wprev-slider-'.$currentform[0]->id.'"><ul>';
 			}
 		} else {
 			echo '<div class="wprev-no-slider" id="wprev-slider-'.$currentform[0]->id.'"><ul>';
@@ -144,30 +150,7 @@
 					$misc_style = $misc_style . '#wprev-slider-'.$currentform[0]->id.' .wprev_preview_tcolor3_T'.$currentform[0]->style.' {color:'.$template_misc_array['tcolor3'].';}';
 				}
 				//------------------------
-				
-				/*
-				$misc_style = $misc_style . '.wprev_preview_bradius_T'.$currentform[0]->style.' {border-radius: '.$template_misc_array['bradius'].'px;}';
-				$misc_style = $misc_style . '.wprev_preview_bg1_T'.$currentform[0]->style.' {background:'.$template_misc_array['bgcolor1'].';}';
-				$misc_style = $misc_style . '.wprev_preview_bg2_T'.$currentform[0]->style.' {background:'.$template_misc_array['bgcolor2'].';}';
-				$misc_style = $misc_style . '.wprev_preview_tcolor1_T'.$currentform[0]->style.' {color:'.$template_misc_array['tcolor1'].';}';
-				$misc_style = $misc_style . '.wprev_preview_tcolor2_T'.$currentform[0]->style.' {color:'.$template_misc_array['tcolor2'].';}';
-				
-				//style specific mods
-				if($currentform[0]->style=="1"){
-					$misc_style = $misc_style . '.wprev_preview_bg1_T'.$currentform[0]->style.'::after{ border-top: 30px solid '.$template_misc_array['bgcolor1'].'; }';
-				}
-				if($currentform[0]->style=="2"){
-					$misc_style = $misc_style . '.wprev_preview_bg1_T'.$currentform[0]->style.' {border-bottom:3px solid '.$template_misc_array['bgcolor2'].'}';
-				}
-				if($currentform[0]->style=="3"){
-					$misc_style = $misc_style . '.wprev_preview_tcolor3_T'.$currentform[0]->style.' {text-shadow:'.$template_misc_array['tcolor3'].' 1px 1px 0px;}';
-				}
-				if($currentform[0]->style=="4"){
-					$misc_style = $misc_style . '.wprev_preview_tcolor3_T'.$currentform[0]->style.' {color:'.$template_misc_array['tcolor3'].';}';
-				}
-				
-				
-				*/
+
 				echo "<style>".$misc_style."</style>";
 				
 			}
@@ -198,19 +181,30 @@
 		//if making slide show then end it
 		if($makingslideshow){
 				echo '</ul></div>';
-				echo "<script type='text/javascript' defer>
-						jQuery(document).ready(function($) {
-							$('.wprev-slider').wprs_unslider(
-								{
-								autoplay:false,
-								speed: '750',
-								animation: 'horizontal',
-								arrows: true,
-								animateHeight: false,
-								activeClass: 'wprs_unslider-active',
-								}
-							);
-							$('.wprs_unslider-nav').show();
+				echo "<script type='text/javascript'>
+						var jqtimesran = 0;
+						function wprs_defer(method) {
+							if (window.jQuery) {
+								method();
+							} else if(jqtimesran<7) {
+								jqtimesran = jqtimesran +1;
+								setTimeout(function() { wprs_defer(method) }, 50);
+							}
+						}
+						wprs_defer(function () {
+							jQuery(document).ready(function($) {
+								$('.wprev-slider').wprs_unslider(
+									{
+									autoplay:false,
+									speed: '750',
+									animation: 'horizontal',
+									arrows: true,
+									animateHeight: ".$animateheight.",
+									activeClass: 'wprs_unslider-active',
+									}
+								);
+								$('.wprs_unslider-nav').show();
+							});
 						});
 						</script>";
 		} else {

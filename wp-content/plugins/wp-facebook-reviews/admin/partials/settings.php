@@ -39,6 +39,7 @@ include("tabmenu.php");
 ?>	
 	
 	<p><?php _e('The first thing you need to do is create a Facebook application that this plugin will communicate with to read your Facebook Page reviews. Don\'t worry it isn\'t hard. Use the button below to go to the Facebook developer site and create an application. Click on the instructions link if you need help. Once you have your app id enter it in the box below and click the "Save Settings" button. Make sure your pop-up blocker is not blocking the Facebook window that pops up.', 'wp-fb-reviews'); ?> </p>
+	<p><?php _e('Note: As of March 2018 Facebook now requires your site to have an SSL cert to connect to their API. So you must be able to use https for this plugin to work.', 'wp-fb-reviews'); ?> </p>
 	<div id="createbtns">
 		<button id="fb_create_app" type="button" class="button button-secondary"><?php _e('Create Facebook App Here', 'wp-fb-reviews'); ?></button>&nbsp;&nbsp;
 		<a href="<?php echo plugin_dir_url( __FILE__ ) . 'WPFPR_Instructions.pdf'; ?>" target="_blank" id="fb_create_app_help" type="button" class=""><?php _e('Instructions', 'wp-fb-reviews'); ?></a>
@@ -55,7 +56,7 @@ include("tabmenu.php");
 		submit_button('Save Settings');
 		?>
 	</form>
-	<div id="pagelist"><h2><?php _e('Download Your Facebook Page Reviews', 'wp-fb-reviews'); ?></h2><p><?php _e('Click the button below for the page(s) you would like to display reviews for. Afterwords go to the "Reviews List" Page to see all your reviews.', 'wp-fb-reviews'); ?> </p>
+	<div id="pagelist"><h2><?php _e('Download Your Facebook Page Reviews', 'wp-fb-reviews'); ?></h2><p><?php _e('Click the button below for the page(s) you would like to display reviews for. Afterwords go to the "Reviews List" Page to see all your reviews.', 'wp-fb-reviews'); ?> </p><p><?php _e('Note: The Pro version allows you to set a cron job to automatically check for new reviews once a day.', 'wp-fb-reviews'); ?> </p>
 	<table class="wp-list-table widefat fixed striped posts">
 		<thead>
 			<tr>
