@@ -28,7 +28,9 @@
 						'theme_location' => 'social',
 					) );
 				?>
-				<a href="https://clients.mindbodyonline.com/LoginLaunch?studioid=283257"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+		        <?php if(get_theme_mod('donate_link',true) != '') { ?>
+		        	<a href="<?php echo esc_url( get_theme_mod('appointment_link') ); ?>"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+		        <?php } ?>	
 			</div>	
 			<div class="hours">
 				<?php get_sidebar( 'footer-hours'); ?>

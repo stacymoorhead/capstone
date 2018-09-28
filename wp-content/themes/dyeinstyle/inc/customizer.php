@@ -25,7 +25,31 @@ function dyeinstyle_customize_register( $wp_customize ) {
 			'render_callback' => 'dyeinstyle_customize_partial_blogdescription',
 		) );
 	}
+	
+	// Contact Section
+
+	$wp_customize->add_section(
+        'appointment_button',
+        array(
+            'title' => __('Appointment Link', 'vision-lite'),
+            'priority' => null,
+			'description'	=> __('Adds link for appointment button.','dyeinstyle'),	
+        )
+    );
+	
+	$wp_customize->add_setting('appointment_link',array(
+			'default' => null,
+			'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('appointment_link',array(
+			'type'	=> 'text',
+			'label'	=> __('Add link here.','dyeinstyle'),
+			'section'	=> 'appointment_button'
+	));		
+	
 }
+
 add_action( 'customize_register', 'dyeinstyle_customize_register' );
 
 /**
@@ -45,6 +69,7 @@ function dyeinstyle_customize_partial_blogname() {
 function dyeinstyle_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
+
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

@@ -1817,3 +1817,10 @@
 [07-Jun-2018 17:10:21 UTC] PHP  12. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:310
 [07-Jun-2018 17:10:21 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:286}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:286
 [07-Jun-2018 17:10:21 UTC] PHP  14. WP_FB_Reviews_Admin->add_sc_select() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:286
+[28-Sep-2018 14:44:09 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/wp-content/themes/dyeinstyle/inc/customizer.php on line 52
+[28-Sep-2018 14:44:09 UTC] PHP Stack trace:
+[28-Sep-2018 14:44:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/admin-ajax.php:0
+[28-Sep-2018 14:44:09 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/admin-ajax.php:22
+[28-Sep-2018 14:44:09 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-load.php:37
+[28-Sep-2018 14:44:09 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-config.php:92
+[28-Sep-2018 14:44:09 UTC] PHP   5. include() /home/ubuntu/workspace/wp-settings.php:426
