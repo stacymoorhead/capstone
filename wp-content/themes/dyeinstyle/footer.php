@@ -17,8 +17,12 @@
 		<div class="footer-container">
 			<div class="footer-logo">
 				<?php the_custom_logo(); ?>
-				<p>125 Mill Street</p>
-				<p>Bristol, Pennsylvania</p>
+				<?php if(get_theme_mod('street_address',true) != '') { ?>
+				<p><?php echo get_theme_mod('street_address') ?></p>
+				<?php } ?>
+				<?php if(get_theme_mod('city_state_zip',true) != '') { ?>
+				<p><?php echo get_theme_mod('city_state_zip') ?></p>
+				<?php } ?>
 				<p><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</p>
 			</div>
 			<div class="footer-social">

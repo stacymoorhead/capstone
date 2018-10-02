@@ -48,6 +48,28 @@ function dyeinstyle_customize_register( $wp_customize ) {
 			'section'	=> 'contact_social_appointment'
 	));   
 	
+ 	$wp_customize->add_setting('street_address',array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('street_address',array(
+			'type'	=> 'text',
+			'label'	=> __('Add street address here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));  
+	
+ 	$wp_customize->add_setting('city_state_zip',array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('city_state_zip',array(
+			'type'	=> 'text',
+			'label'	=> __('Add city, state and zip here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	)); 	
+	
 	$wp_customize->add_setting('email',array(
 			'default' => null,
 			'sanitize_callback'	=> 'esc_url_raw'
