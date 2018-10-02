@@ -26,16 +26,35 @@
 		<div class="info">
 			<div class="social-top">
 				<nav class="">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-						) );
-					?>
+					<div class="menu-social-container">
+						<ul id="menu-social" class="menu">
+							<?php if(get_theme_mod('facebook_link',true) != '') { ?>
+							<li>
+								<a href="<?php echo esc_url( get_theme_mod('facebook_link') ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							</li>
+							<?php } ?>	
+							<?php if(get_theme_mod('ig_link',true) != '') { ?>
+							<li>
+								<a href="<?php echo esc_url( get_theme_mod('ig_link') ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
+							<?php } ?>	
+							<?php if(get_theme_mod('twitter_link',true) != '') { ?>
+							<li>
+								<a href="<?php echo esc_url( get_theme_mod('twitter_link') ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							</li>
+							<?php } ?>
+						</ul>
+					</div>
 				</nav>	
 			</div>
 			<div class="contact-info">
 				<!--<span><i class="fa fa-phone" aria-hidden="true"></i> 215.781.6450</span> <a href="https://clients.mindbodyonline.com/asp/su1.asp?fl=true&tabID=2"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>-->
-				<?php get_sidebar( 'header-contact'); ?>
+				<?php if(get_theme_mod('phone',true) != '') { ?>
+		        	<span><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_theme_mod('phone')  ?></span>
+		        <?php } ?>	
+		        <?php if(get_theme_mod('appointment_link',true) != '') { ?>
+		        	<a href="<?php echo esc_url( get_theme_mod('appointment_link') ); ?>"><button class="appointment"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
+		        <?php } ?>	
 			</div>
 		</div>
 		<header id="masthead" class="site-header">

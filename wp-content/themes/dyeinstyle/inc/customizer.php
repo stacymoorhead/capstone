@@ -26,16 +26,71 @@ function dyeinstyle_customize_register( $wp_customize ) {
 		) );
 	}
 	
-	// Contact Section
+	// Contact, Social & Appointment Link Section
 
 	$wp_customize->add_section(
-        'appointment_button',
+        'contact_social_appointment',
         array(
-            'title' => __('Appointment Link', 'vision-lite'),
+            'title' => __('Contact, Social & Appointment Link', 'vision-lite'),
             'priority' => null,
-			'description'	=> __('Adds link for appointment button.','dyeinstyle'),	
+			'description'	=> __('Add phone number and links for social media and appointment button.','dyeinstyle'),	
         )
     );
+    
+ 	$wp_customize->add_setting('phone',array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('phone',array(
+			'type'	=> 'text',
+			'label'	=> __('Add phone number here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));   
+	
+	$wp_customize->add_setting('email',array(
+			'default' => null,
+			'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('email',array(
+			'type'	=> 'text',
+			'label'	=> __('Add email here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));	 	
+    
+	$wp_customize->add_setting('facebook_link',array(
+			'default' => null,
+			'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('facebook_link',array(
+			'type'	=> 'text',
+			'label'	=> __('Add Facebook link here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));	 
+	
+	$wp_customize->add_setting('ig_link',array(
+			'default' => null,
+			'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('ig_link',array(
+			'type'	=> 'text',
+			'label'	=> __('Add Instagram link here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));	 
+	
+	$wp_customize->add_setting('twitter_link',array(
+			'default' => null,
+			'sanitize_callback'	=> 'esc_url_raw'
+	));
+	
+	$wp_customize->add_control('twitter_link',array(
+			'type'	=> 'text',
+			'label'	=> __('Add Twitter link here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
+	));		
 	
 	$wp_customize->add_setting('appointment_link',array(
 			'default' => null,
@@ -44,8 +99,8 @@ function dyeinstyle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('appointment_link',array(
 			'type'	=> 'text',
-			'label'	=> __('Add link here.','dyeinstyle'),
-			'section'	=> 'appointment_button'
+			'label'	=> __('Add appointment link here.','dyeinstyle'),
+			'section'	=> 'contact_social_appointment'
 	));		
 	
 }

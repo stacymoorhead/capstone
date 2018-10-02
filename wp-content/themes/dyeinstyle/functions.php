@@ -45,7 +45,6 @@ function dyeinstyle_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'main-nav' => esc_html__( 'Main Navigation', 'dyeinstyle' ),
-		'social' => esc_html__( 'Social', 'dyeinstyle' ),
 	) );
 
 	/*
@@ -145,12 +144,6 @@ function dyeinstyle_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
-
-		register_sidebar( array(
-		'name'          => esc_html__( 'Header Contact Info', 'dyeinstyle' ),
-		'id'            => 'header-contact',
-		'description'   => esc_html__( 'Add contact info here.', 'dyeinstyle' ),
 	) );
 	
 	register_sidebar( array(

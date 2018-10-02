@@ -23,12 +23,26 @@
 			</div>
 			<div class="footer-social">
 				<h2>Find us on:</h2>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'social',
-					) );
-				?>
-		        <?php if(get_theme_mod('donate_link',true) != '') { ?>
+				<div class="menu-social-container">
+					<ul id="menu-social-1" class="menu">
+						<?php if(get_theme_mod('facebook_link',true) != '') { ?>
+						<li>
+							<a href="<?php echo esc_url( get_theme_mod('facebook_link') ); ?>"><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
+						</li>
+						<?php } ?>	
+						<?php if(get_theme_mod('ig_link',true) != '') { ?>
+						<li>
+							<a href="<?php echo esc_url( get_theme_mod('ig_link') ); ?>"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>
+						</li>
+						<?php } ?>	
+						<?php if(get_theme_mod('twitter_link',true) != '') { ?>
+						<li>
+							<a href="<?php echo esc_url( get_theme_mod('twitter_link') ); ?>"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+						</li>
+						<?php } ?>
+					</ul>
+				</div>
+		        <?php if(get_theme_mod('appointment_link',true) != '') { ?>
 		        	<a href="<?php echo esc_url( get_theme_mod('appointment_link') ); ?>"><button class="appointment-footer"><i class="fa fa-calendar" aria-hidden="true"></i> BOOK APPOINTMENT</button></a>
 		        <?php } ?>	
 			</div>	
